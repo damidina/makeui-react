@@ -1,0 +1,392 @@
+@import 'variables';
+
+body {
+	width: 100%;
+	height: 100%;
+	padding:0;
+	margin:0;
+}
+
+div {
+	box-sizing: border-box;
+}
+
+.hero-section {
+	width: 100%;
+	height: 100vh;
+/*	background: #FFD692;
+*/	overflow: hidden;
+	position: relative;
+	@include transition(all 0.5s $ease);
+
+	.square {
+		@include transition(all 0.5s $ease);
+
+		border-radius: 0 !important;
+	}
+	.round {
+		@include transition(all 0.5s $ease);
+
+		border-radius: 50px !important;
+	}
+	.rand-border-radius {
+		@include transition(all 0.5s $ease);
+	}
+	hr {
+		border: 0;
+		color: $black;
+		border-bottom: 3px solid $black;
+	}
+
+	#btn-makeui {
+		cursor: pointer;
+		position:absolute;
+		width:8%;
+		height:5%;
+		bottom:0;
+		left:50%;
+		@include transform(translateX(-50%));
+		.rect-button-top {
+			border-radius: 10px;
+			width:75%;
+			height:100%;
+			bottom:10%;
+			left:50%;
+			@include transform(translateX(-50%));
+			&.button-pressed {
+				animation: 1s 0.45s buttonpressed;
+			}
+		}
+		.rect-button-bottom {
+			width:100%;
+			height:40%;
+			bottom:0;
+			border-bottom:0;
+		}
+
+	}	
+
+	.arm {
+		position:absolute;
+		height:90%;
+		left:49.4%;
+		top: -15%;
+		@include transform(translateX(-49.4%));
+		&.start  {
+			animation: 1s infinite armmove;
+		}
+		&.button-pressed {
+			animation: 1s $easeInBack armpressed;
+		}
+		div {
+			width:25px;
+			height:100%;
+			background:black;
+			margin-left:28px;
+		}
+		img {
+			position: absolute;
+			top: 98%;
+		}
+	}
+
+	.arrow {
+		position:absolute;
+		width:46%;
+		top:50%;
+		right:0;
+		img {
+			width:27px; 
+			height:31px;
+			position:absolute;
+			top:-6px;left:-5px;
+		}
+	}
+
+	.radio-button {
+		position:absolute;
+		width:1.5%;
+		min-width:20px;
+		left:45%;
+		top:35%;
+	}
+
+	.magnify-glass {
+		 position:absolute;
+		 width:3%;
+		 min-width:43px;
+		 left:10%;
+		 top:19%;
+	}
+
+	.x-icon {
+		position:absolute;
+		width:2%;
+		right:15.5%;
+		bottom:15%;
+	}
+
+	.carousel {
+		position:absolute;
+		width:22%;
+		right:22%;
+		top:40%;
+	}
+
+	.circle {
+		width: 7%;
+		padding-bottom: 6.5%;
+		border-radius: 50%;
+		border: 3px solid $black;
+		background: $white;	
+		position: absolute;
+		@include transition(all 0.5s $ease);
+
+		&-1 {
+			left:-1%; top:35%
+		}
+		&-2 {
+			right: -4%; top: 10%;
+		}
+		&-3 {
+			right: 13%; bottom: -2%;
+		}
+		&-4 {
+			right:30%;
+			top:28%;
+			width: 3.5%;
+			padding-bottom:3%;
+		}
+		&-5 {
+			width:16px;
+			height:16px;
+			padding-bottom:0;
+		}
+		&-black {
+			width:20px;
+			height:20px;
+			padding-bottom:0%;
+			left:10%;
+			top:-8px;
+			border-radius:50%;
+			background:$black;
+
+		}
+		&-img {
+			position: absolute;
+			width: 1%;
+			&-1 {
+				left: 20%;top: 7%;
+			}
+			&-2 {
+				left: 55%;top: 56%;
+			}
+		}
+
+	}
+
+	.rect {
+		border: 3px solid $black;
+		background: $white;
+		position: absolute;
+		@include transition(all 0.5s $ease);
+		&-1 {
+			width:15%;
+			height:5%;
+			left:27%;
+			bottom:20%;
+		}
+		&-2 {
+			height:30%;
+			width:23px;
+			bottom:-10px;
+			right:5%;
+			border-radius:50px;
+			padding:5px 3px;
+		}
+		&-3 {
+			width:60%;
+			margin-top:10px;
+		}
+		&-4 {
+			width: 5%;
+			height:4%;
+			top:26.5%;
+			right:26.5%;
+		}
+
+		&-5 {
+			width:20%;height:10px;
+			border-radius:50px;
+			left:22.2%;bottom:28%;
+		}
+
+
+
+		&-cardcomp {
+ 			text-align:center;
+ 			bottom:10%;
+ 			right:28%;
+ 			width:13%;
+ 			height:30%;
+ 			border-bottom:50px solid $black;
+
+ 			.circle {
+ 				position:absolute;
+ 				width:40%;
+ 				padding-bottom:38.5%;
+ 				left:50%;top:10%;
+				@include transform(translateX(-50%));
+ 			}
+ 			.hr-group {
+ 				position:absolute;
+ 				width:70%;left:50%;bottom:10%;
+ 				@include transform(translateX(-50%));
+ 			}
+		}
+	}
+
+	.uielement {
+
+		&-1 {
+			position:absolute;
+			width:12%;
+			left: 30%;
+			top:10%
+		}
+		&-2 {
+			position:absolute;
+			width:100%;
+			height:8%;
+			left:-1%;
+			bottom:30%;
+			div {
+				@include transition(all 0.5s $ease);
+			}
+		}
+		&-3 {
+			position:absolute;
+			width:11%;
+			right:8%;
+			top:20%;
+			.rect {
+				@include transition(all 0.5s $ease);
+
+				width:100%;height:28px;padding:3px;border-radius:0px;
+				&:nth-child(2) {
+					top:32px;
+				}
+				&:nth-child(3) {
+					top:64px;
+				}
+				&:nth-child(4) {
+					top:96px;
+				}
+			}
+		}
+		&-4 {
+			position:absolute;
+			width:100%;
+			height:8%;
+			left:55%;
+
+			&-1 {
+				top:-1.5%;
+				
+			}
+			&-2 {
+				top:10%;
+			}
+			.comp {
+				width:5%;
+				height:100%;
+				float:left;
+				margin-right:20px;
+				div {
+					@include transition(all 0.5s $ease);
+					width:100%;
+					height:100%;
+					background:$white;
+					border:3px solid $black;
+
+				}
+			}
+			hr {
+				width:50%;
+			}
+		}
+	}
+
+
+	/* yes */
+	.hr-group hr {
+		margin-bottom:10px
+	}
+
+
+	#wave {
+		position:absolute;
+		bottom:5%;
+		left:0;
+		width:41.5%;
+		path {
+			stroke: $black;
+			stroke-width: 3px;
+			fill: none;
+		}
+	}
+
+	.form {
+		position:absolute;
+		width:100%;
+		height:40%;
+		left:75%;top:48%;
+		.el {
+			&-1 {
+				width:7%;
+				margin-bottom:4%;
+				.circle {
+					width:3.5%;
+					padding-bottom:3%;
+				}
+			}
+			&-2 {
+				width:10%;
+				float:left;
+				margin-right:10px;
+				.rect {
+					width:10%;height:7%;
+				}
+			}
+			&-3 {
+				width:5%;
+				float:left;
+				.rect {
+					width:5%;height:7%;
+					img {
+						position:absolute;
+						top:50%;
+						right: 5px;
+						width:10px;
+						@include transform(translateY(-50%));
+					}
+				}
+			}
+			&-4 {
+				width:15.75%;
+				float:left;
+				margin-top:2%;
+				.rect {
+					width:15.75%;height:7%;
+				}
+			}
+			&-5 {
+				width:5%;
+				height:7%;
+				background:$black;
+				margin-top:3%;
+			}
+		}
+	}
+}
+

@@ -24,3 +24,49 @@
     @extend .text-input;
     height: 10rem;
 }
+
+.radio-label {
+    margin: 0 $m-size 0 $m-size;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.radio-custom {
+    border: 3px solid black;
+}
+
+.radio-outer {
+    width: 50px;
+    height: 50px;
+    border-right: 3px solid black;
+    margin: $s-size $s-size $s-size 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.radio-inner {
+    width: 37px;
+    height: 35px;
+    background: black;
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 3px solid black;
+    height: 50px;
+    width: 200px;
+    margin: $s-size $s-size $s-size 0;
+
+    p {
+        width: 100px;
+        margin: 0;
+        text-align: center;
+        font-weight: $font-light;
+        font-size: $sub-heading;
+    }
+}

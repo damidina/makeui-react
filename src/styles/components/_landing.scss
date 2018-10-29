@@ -1,0 +1,35 @@
+.how-it-works {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: black;
+  padding: $l-size;
+}
+
+.customize-section {
+  padding: $l-size 0 10rem 0;
+}
+
+.upcomming {
+  background: #FFD692;
+}
+
+.img-box {
+  width: 125px;
+  height: 125px;
+}
+
+.img-box-black {
+  width: 125px;
+  height: 125px;
+  img {
+    fill: white;
+    background: black;
+  }
+}
+
+.timeline {
+  background: black;
+}
+

@@ -8,13 +8,22 @@ $gray: #666666;
 $font-size-large: 1.8rem;
 $font-size-small: 1.4rem;
 
+$section-heading: 4rem;
+$heading: 2.2rem;
+$sub-heading: 1.6rem;
+$paragraph: 1.4rem;
+
+$font-light: 300;
+
 
 // Spacing
 $s-size: 1.2rem;
 $m-size: 1.6rem;
 $l-size: 3.2rem;
 $xl-size: 4.8rem;
+$xxl-size: 5.2rem;
 $desktop-breakpoint: 45rem;
+$desktop-breakpoint-dl: 54rem;
 
 // Mixins
 @mixin box_shadow ($level) {

@@ -1,0 +1,15 @@
+{
+  "cornerRadius": 4,
+  "cornerRadiusConfig": {
+    "min": 0,
+    "max": 48
+  },
+  "colors": {
+    "01": "#3D45B8",
+    "02": "#4EAB1E",
+    "03": "#1EB0B0",
+    "04": "#EE9625",
+    "05": "#8A43A8",
+    "06": "#ED5050"
+  }
+}

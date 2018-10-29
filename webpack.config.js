@@ -50,11 +50,10 @@ module.exports = (env) => {
         plugins: [
             CSSExtract,
             new webpack.DefinePlugin({
-                'process.env.FIREBASE_API_KEY': JSON.stringify(process.env.FIREBASE_API_KEY),
-                'process.env.FIREBASE_AUTH_DOMAIN': JSON.stringify(process.env.FIREBASE_AUTH_DOMAIN),
-                'process.env.FIREBASE_DATABASE_URL': JSON.stringify(process.env.FIREBASE_DATABASE_URL),
-                'process.env.FIREBASE_PROJECT_ID': JSON.stringify(process.env.FIREBASE_PROJECT_ID),
-                'process.env.FIREBASE_PROJECT_ID': JSON.stringify(process.env.FIREBASE_PROJECT_ID),
+                'process.env.FB_API_KEY': JSON.stringify(process.env.FB_API_KEY),
+                'process.env.FB_AUTH_DOMAIN': JSON.stringify(process.env.FB_AUTH_DOMAIN),
+                'process.env.FB_DB_URL': JSON.stringify(process.env.FB_DB_URL),
+                'process.env.FB_PROJECT_ID': JSON.stringify(process.env.FB_PROJECT_ID),
                 'process.env.UIBLOCKS_SERVER_URL': JSON.stringify(process.env.UIBLOCKS_SERVER_URL),
                 'process.env.STRIPE_PUBLISH_KEY': JSON.stringify(process.env.STRIPE_PUBLISH_KEY)
             })

@@ -1,0 +1,44 @@
+
+
+$black: #000000;
+$white: #FFFFFF;
+
+$ease: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+$easeInBack: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+
+
+@mixin transform($transforms) {
+	   -moz-transform: $transforms;
+	     -o-transform: $transforms;
+	    -ms-transform: $transforms;
+		-webkit-transform: $transforms;
+          transform: $transforms;
+}
+
+@mixin transition($transition) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+
+@keyframes armmove{
+	0% { top: -15%; }
+  50% { top: -12%; }
+  50% { top: -12%; }
+  100% { top: -15%; }
+}
+
+@keyframes armpressed{
+  0% { top: -15%; }
+  50% { top: -7%; }
+  50% { top: -7%; }
+  100% { top: -15%; }
+}
+
+@keyframes buttonpressed{
+  0% { bottom: 10%; }
+  50% { bottom: -3%; }
+  50% { bottom: -3%; }
+  100% { bottom: 10%; }
+}

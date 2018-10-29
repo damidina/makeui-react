@@ -1,28 +1,18 @@
-import { firebase, emailAuthProvider } from '../firebase/firebase';
+import { auth } from '../firebase/firebase';
 
-export const startLogin = (credentials) => {
-    return (dispatch) => {
-        return firebase.auth().signInWithEmailAndPassword(credentials.email, credentials.password);
-    };
+const signOut = () => {
+    auth.signOut();
+    return { type: 'SIGN_OUT' };
 };
 
-export const startCreation = (credentials) => {
-    return (dispatch) => {
-        return firebase.auth().createUserWithEmailAndPassword(credentials.email, credentials.password);
-    };
+const signInSuccess = (userInfo) => {
+    return {
+        type: 'SIGN_IN_SUCCESS',
+        userInfo
+    }
 };
 
-export const startLogout = () => {
-    return (dispatch) => {
-        return firebase.auth().signOut();
-    };
-};
-
-export const login = (uid) => ({
-    type: 'LOGIN',
-    uid
-});
-
-export const logout = () => ({
-    type: 'LOGOUT'
-});
+export {
+    signOut,
+    signInSuccess,
+}

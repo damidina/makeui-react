@@ -1,0 +1,29 @@
+.hr-container {
+  min-width: 15%;
+  align-self: flex-start;
+  hr { 
+    margin-top: 16px;
+    border: white solid 1px; 
+  }
+
+  @media (max-width: $desktop-breakpoint) {
+    align-self: center;
+    min-height: 80px;
+    margin-top: 20px;
+    hr {
+      transform: rotate(90deg);
+    }
+  }
+}
+
+.flex-row-nobreak {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.timeline-margin {
+  margin-top: 5rem;
+  margin-bottom: 8rem;
+}
+

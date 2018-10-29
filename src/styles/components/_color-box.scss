@@ -1,0 +1,94 @@
+.color-container {
+  display: flex;
+}
+
+.color-box {
+  margin: $s-size $s-size $s-size 0;
+  height: 50px;
+  width: 200px;
+  border: 3px solid black;
+  display: flex;
+  flex-direction: row;
+}
+
+.color-box--color {
+  width: 50px;
+  height: 100%;
+  border-right: 3px solid black;
+}
+
+.color-box--hex {
+  width: 150px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.color-box--input {
+  border: none;
+  height: 100%;
+  width: 100px;
+  margin-left: $s-size;
+  &:focus {
+    outline: none;
+  }
+}
+
+.color-box--remove {
+  padding: 0;
+  background: transparent;
+  border: none;
+  display: none;
+}
+
+.radius-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border: 3px solid black;
+  margin: $s-size $s-size $s-size 0;
+
+  input {
+    border: none;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    font-weight: $font-light;
+    font-size: $sub-heading;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.slider-container {
+  display: flex;
+  align-items: center;
+  width: 250px;
+}
+
+.custom-slider-flex {
+  display: flex;
+  flex-direction: row;
+
+  @media (max-width: $desktop-breakpoint-dl) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.purchace-button {
+  background: black;
+  color: white;
+  border: none;
+  text-align: center;
+  height: 50px;
+  width: 200px;
+  margin: $s-size $s-size $s-size 0;
+  font-weight: $font-light;
+  font-size: $sub-heading;
+}

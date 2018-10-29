@@ -1,0 +1,383 @@
+@keyframes armmove {
+  0% {
+    top: -15%; }
+  50% {
+    top: -12%; }
+  50% {
+    top: -12%; }
+  100% {
+    top: -15%; } }
+@keyframes armpressed {
+  0% {
+    top: -15%; }
+  50% {
+    top: -7%; }
+  50% {
+    top: -7%; }
+  100% {
+    top: -15%; } }
+@keyframes buttonpressed {
+  0% {
+    bottom: 10%; }
+  50% {
+    bottom: -3%; }
+  50% {
+    bottom: -3%; }
+  100% {
+    bottom: 10%; } }
+body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0; }
+
+div {
+  box-sizing: border-box; }
+
+.hero-section {
+  width: 100%;
+  height: 100vh;
+  /*	background: #FFD692;
+  */
+  overflow: hidden;
+  position: relative;
+  -moz-transition: all 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+  -o-transition: all 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+  -webkit-transition: all 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+  transition: all 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+  /* yes */ }
+  .hero-section .square {
+    -moz-transition: all 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+    -o-transition: all 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+    -webkit-transition: all 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+    transition: all 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+    border-radius: 0 !important; }
+  .hero-section .round {
+    -moz-transition: all 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+    -o-transition: all 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+    -webkit-transition: all 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+    transition: all 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+    border-radius: 50px !important; }
+  .hero-section .rand-border-radius {
+    -moz-transition: all 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+    -o-transition: all 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+    -webkit-transition: all 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+    transition: all 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035); }
+  .hero-section hr {
+    border: 0;
+    color: #000000;
+    border-bottom: 3px solid #000000; }
+  .hero-section #btn-makeui {
+    cursor: pointer;
+    position: absolute;
+    width: 8%;
+    height: 5%;
+    bottom: 0;
+    left: 50%;
+    -moz-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%); }
+    .hero-section #btn-makeui .rect-button-top {
+      border-radius: 10px;
+      width: 75%;
+      height: 100%;
+      bottom: 10%;
+      left: 50%;
+      -moz-transform: translateX(-50%);
+      -o-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%); }
+      .hero-section #btn-makeui .rect-button-top.button-pressed {
+        animation: 1s 0.45s buttonpressed; }
+    .hero-section #btn-makeui .rect-button-bottom {
+      width: 100%;
+      height: 40%;
+      bottom: 0;
+      border-bottom: 0; }
+  .hero-section .arm {
+    position: absolute;
+    height: 90%;
+    left: 49.4%;
+    top: -15%;
+    -moz-transform: translateX(-49.4%);
+    -o-transform: translateX(-49.4%);
+    -ms-transform: translateX(-49.4%);
+    -webkit-transform: translateX(-49.4%);
+    transform: translateX(-49.4%); }
+    .hero-section .arm.start {
+      animation: 1s infinite armmove; }
+    .hero-section .arm.button-pressed {
+      animation: 1s cubic-bezier(0.6, -0.28, 0.735, 0.045) armpressed; }
+    .hero-section .arm div {
+      width: 25px;
+      height: 100%;
+      background: black;
+      margin-left: 28px; }
+    .hero-section .arm img {
+      position: absolute;
+      top: 98%; }
+  .hero-section .arrow {
+    position: absolute;
+    width: 46%;
+    top: 50%;
+    right: 0; }
+    .hero-section .arrow img {
+      width: 27px;
+      height: 31px;
+      position: absolute;
+      top: -6px;
+      left: -5px; }
+  .hero-section .radio-button {
+    position: absolute;
+    width: 1.5%;
+    min-width: 20px;
+    left: 45%;
+    top: 35%; }
+  .hero-section .magnify-glass {
+    position: absolute;
+    width: 3%;
+    min-width: 43px;
+    left: 10%;
+    top: 19%; }
+  .hero-section .x-icon {
+    position: absolute;
+    width: 2%;
+    right: 15.5%;
+    bottom: 15%; }
+  .hero-section .carousel {
+    position: absolute;
+    width: 22%;
+    right: 22%;
+    top: 40%; }
+  .hero-section .circle {
+    width: 7%;
+    padding-bottom: 6.5%;
+    border-radius: 50%;
+    border: 3px solid #000000;
+    background: #FFFFFF;
+    position: absolute;
+    -moz-transition: all 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+    -o-transition: all 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+    -webkit-transition: all 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+    transition: all 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035); }
+    .hero-section .circle-1 {
+      left: -1%;
+      top: 35%; }
+    .hero-section .circle-2 {
+      right: -4%;
+      top: 10%; }
+    .hero-section .circle-3 {
+      right: 13%;
+      bottom: -2%; }
+    .hero-section .circle-4 {
+      right: 30%;
+      top: 28%;
+      width: 3.5%;
+      padding-bottom: 3%; }
+    .hero-section .circle-5 {
+      width: 16px;
+      height: 16px;
+      padding-bottom: 0; }
+    .hero-section .circle-black {
+      width: 20px;
+      height: 20px;
+      padding-bottom: 0%;
+      left: 10%;
+      top: -8px;
+      border-radius: 50%;
+      background: #000000; }
+    .hero-section .circle-img {
+      position: absolute;
+      width: 1%; }
+      .hero-section .circle-img-1 {
+        left: 20%;
+        top: 7%; }
+      .hero-section .circle-img-2 {
+        left: 55%;
+        top: 56%; }
+  .hero-section .rect {
+    border: 3px solid #000000;
+    background: #FFFFFF;
+    position: absolute;
+    -moz-transition: all 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+    -o-transition: all 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+    -webkit-transition: all 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+    transition: all 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035); }
+    .hero-section .rect-1 {
+      width: 15%;
+      height: 5%;
+      left: 27%;
+      bottom: 20%; }
+    .hero-section .rect-2 {
+      height: 30%;
+      width: 23px;
+      bottom: -10px;
+      right: 5%;
+      border-radius: 50px;
+      padding: 5px 3px; }
+    .hero-section .rect-3 {
+      width: 60%;
+      margin-top: 10px; }
+    .hero-section .rect-4 {
+      width: 5%;
+      height: 4%;
+      top: 26.5%;
+      right: 26.5%; }
+    .hero-section .rect-5 {
+      width: 20%;
+      height: 10px;
+      border-radius: 50px;
+      left: 22.2%;
+      bottom: 28%; }
+    .hero-section .rect-cardcomp {
+      text-align: center;
+      bottom: 10%;
+      right: 28%;
+      width: 13%;
+      height: 30%;
+      border-bottom: 50px solid #000000; }
+      .hero-section .rect-cardcomp .circle {
+        position: absolute;
+        width: 40%;
+        padding-bottom: 38.5%;
+        left: 50%;
+        top: 10%;
+        -moz-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%); }
+      .hero-section .rect-cardcomp .hr-group {
+        position: absolute;
+        width: 70%;
+        left: 50%;
+        bottom: 10%;
+        -moz-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%); }
+  .hero-section .uielement-1 {
+    position: absolute;
+    width: 12%;
+    left: 30%;
+    top: 10%; }
+  .hero-section .uielement-2 {
+    position: absolute;
+    width: 100%;
+    height: 8%;
+    left: -1%;
+    bottom: 30%; }
+    .hero-section .uielement-2 div {
+      -moz-transition: all 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+      -o-transition: all 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+      -webkit-transition: all 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+      transition: all 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035); }
+  .hero-section .uielement-3 {
+    position: absolute;
+    width: 11%;
+    right: 8%;
+    top: 20%; }
+    .hero-section .uielement-3 .rect {
+      -moz-transition: all 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+      -o-transition: all 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+      -webkit-transition: all 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+      transition: all 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+      width: 100%;
+      height: 28px;
+      padding: 3px;
+      border-radius: 0px; }
+      .hero-section .uielement-3 .rect:nth-child(2) {
+        top: 32px; }
+      .hero-section .uielement-3 .rect:nth-child(3) {
+        top: 64px; }
+      .hero-section .uielement-3 .rect:nth-child(4) {
+        top: 96px; }
+  .hero-section .uielement-4 {
+    position: absolute;
+    width: 100%;
+    height: 8%;
+    left: 55%; }
+    .hero-section .uielement-4-1 {
+      top: -1.5%; }
+    .hero-section .uielement-4-2 {
+      top: 10%; }
+    .hero-section .uielement-4 .comp {
+      width: 5%;
+      height: 100%;
+      float: left;
+      margin-right: 20px; }
+      .hero-section .uielement-4 .comp div {
+        -moz-transition: all 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+        -o-transition: all 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+        -webkit-transition: all 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+        transition: all 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+        width: 100%;
+        height: 100%;
+        background: #FFFFFF;
+        border: 3px solid #000000; }
+    .hero-section .uielement-4 hr {
+      width: 50%; }
+  .hero-section .hr-group hr {
+    margin-bottom: 10px; }
+  .hero-section #wave {
+    position: absolute;
+    bottom: 5%;
+    left: 0;
+    width: 41.5%; }
+    .hero-section #wave path {
+      stroke: #000000;
+      stroke-width: 3px;
+      fill: none; }
+  .hero-section .form {
+    position: absolute;
+    width: 100%;
+    height: 40%;
+    left: 75%;
+    top: 48%; }
+    .hero-section .form .el-1 {
+      width: 7%;
+      margin-bottom: 4%; }
+      .hero-section .form .el-1 .circle {
+        width: 3.5%;
+        padding-bottom: 3%; }
+    .hero-section .form .el-2 {
+      width: 10%;
+      float: left;
+      margin-right: 10px; }
+      .hero-section .form .el-2 .rect {
+        width: 10%;
+        height: 7%; }
+    .hero-section .form .el-3 {
+      width: 5%;
+      float: left; }
+      .hero-section .form .el-3 .rect {
+        width: 5%;
+        height: 7%; }
+        .hero-section .form .el-3 .rect img {
+          position: absolute;
+          top: 50%;
+          right: 5px;
+          width: 10px;
+          -moz-transform: translateY(-50%);
+          -o-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+          -webkit-transform: translateY(-50%);
+          transform: translateY(-50%); }
+    .hero-section .form .el-4 {
+      width: 15.75%;
+      float: left;
+      margin-top: 2%; }
+      .hero-section .form .el-4 .rect {
+        width: 15.75%;
+        height: 7%; }
+    .hero-section .form .el-5 {
+      width: 5%;
+      height: 7%;
+      background: #000000;
+      margin-top: 3%; }
+
+/*# sourceMappingURL=style.css.map */
