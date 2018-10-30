@@ -2,7 +2,6 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
 
-
 const config = {
     apiKey: process.env.FB_API_KEY,
     authDomain: process.env.FB_AUTH_DOMAIN,
