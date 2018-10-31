@@ -9,12 +9,6 @@ const startPurchase = (token) => (dispatch) => {
   const { checked, tier, count } = checkout;
   const { isAuthenticated } = auth;
 
-  console.log(checked);
-  console.log(tier);
-  console.log(count);
-  console.log(isAuthenticated);
-  console.log(token);
-
   let doCharge = true;
 
   if (!isAuthenticated) doCharge = true;
@@ -54,11 +48,25 @@ const startPurchase = (token) => (dispatch) => {
 
 
 const charge = (body) => {
-  return fetch("http://localhost:4000/checkout/charge", {
+  return fetch(`${process.env.BACKEND_URL}/checkout/charge`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(body)
   });
+};
+
+
+const downloadForUnlimited = () => (dispatch) => {
+  const { config, checkout } = store.getState();
+  const { tier, count } = checkout;
+
+  requestGenerate(config, tier, count)
+    .then((link) => {
+      downloadFile(link, 'makeui.sketch');
+    })
+    .catch((err) => {
+      console.error(err);
+    })
 }
 
-export default startPurchase;
+export { startPurchase, downloadForUnlimited };

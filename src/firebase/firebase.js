@@ -9,6 +9,8 @@ const config = {
     projectId: process.env.FB_PROJECT_ID
 };
 
+console.log(config);
+
 firebase.initializeApp(config);
 
 const auth = firebase.auth();

@@ -3,7 +3,7 @@ import React from 'react';
 const Hero = () => {
   return (
     <div className="hero-section">
-      <img src="images/makeui-logo.svg" alt="MakeUI" width={70} style={{ margin: '40px 50px' }} /><a href style={{ fontFamily: '"tenso",sans-serif', fontWeight: 700, fontSize: 20, textDecoration: 'none', color: '#FFFFFF !important', background: 'black', padding: '12px 32px', float: 'right', margin: '40px 50px' }}>Test it out!</a>
+      <img src="images/makeui-logo.svg" alt="MakeUI" width={70} style={{ margin: '40px 50px' }} /><a style={{ fontFamily: '"tenso",sans-serif', fontWeight: 700, fontSize: 20, textDecoration: 'none', color: 'white', background: 'black', padding: '12px 32px', float: 'right', margin: '40px 50px' }}>Test it out!</a>
       <div style={{ position: 'absolute', top: '29%', left: '12%', width: '30%' }}><p style={{ fontFamily: '"tenso",sans-serif', fontWeight: 700, fontStyle: 'italic', fontSize: 'calc(16px + 3vw)' }}>Styled sketch <br />UI kits for quick prototyping!</p></div>
       {/* Black circles */}
       <img src="images/circle-black.svg" className="circle-img circle-img-1" /><img src="images/circle-black.svg" className="circle-img circle-img-2" />{/* Arm */}

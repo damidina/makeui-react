@@ -18,7 +18,7 @@ const requestGenerate = (customOptions, tier = '', count = 1) => getIdToken()
       body: JSON.stringify(payload),
     };
 
-    return fetch(`http://localhost:4000/generate`, options)
+    return fetch(`${process.env.BACKEND_URL}/generate`, options)
       .then(res => res.json())
       .then(data => {
         console.log(data);

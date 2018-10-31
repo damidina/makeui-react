@@ -55,7 +55,8 @@ module.exports = (env) => {
                 'process.env.FB_DB_URL': JSON.stringify(process.env.FB_DB_URL),
                 'process.env.FB_PROJECT_ID': JSON.stringify(process.env.FB_PROJECT_ID),
                 'process.env.UIBLOCKS_SERVER_URL': JSON.stringify(process.env.UIBLOCKS_SERVER_URL),
-                'process.env.STRIPE_PUBLISH_KEY': JSON.stringify(process.env.STRIPE_PUBLISH_KEY)
+                'process.env.STRIPE_PUBLISH_KEY': JSON.stringify(process.env.STRIPE_PUBLISH_KEY),
+                'process.env.BACKEND_URL': JSON.stringify(process.env.BACKEND_URL)
             })
         ],
         devtool: isProduction ? 'source-map' : 'inline-source-map',

@@ -4,10 +4,11 @@ import { connect } from 'react-redux';
 import { setCornerRadius, setColor } from '../../../actions/generate';
 import { updateCheckedTier } from '../../../actions/checkout';
 import CustomizeHeader from './CustomizeHeader';
-import startPurchase from '../../../actions/services/index';
+import { startPurchase, downloadForUnlimited } from '../../../actions/services/index';
 import CheckoutFormModal from '../../stripe/CheckoutFormModal';
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
+import { startSignOut } from '../../../actions/auth';
 
 
 class Customize extends React.Component {
@@ -35,13 +36,41 @@ class Customize extends React.Component {
     }
   };
 
+  /*
+   * When user clicks on action button first check
+   * what tier the user is, if user is unlimited:
+   *    - download file with current config
+   * If user has no tier or is of tier 'once'
+   *    - Open modal for payment
+   */
   onPurchase = (e) => {
     e.preventDefault();
-    this.setState({ charging: true });
-  }
+    if (this.props.checkout.tier === 'unlimited') {
+      this.download()
+    } else {
+      this.setState({ charging: true });
+    }
+  };
 
+  /* 
+   * This method is passed to the modal.
+   * It is called when the user submits
+   * the form with the correct information.
+   * This should only be called when the user:
+   *    - Has not purchased anything before
+   *    - Has only purchased a one time download
+   */
   handleNetworkPurchace = (token) => {
     this.props.startPurchase(token);
+  };
+
+  /* 
+   * This method is only called when the
+   * user is authenticated and the user has
+   * an unlimited tier
+   */
+  download = () => {
+    this.props.downloadForUnlimited();
   };
 
   handleModalClose = () => {
@@ -113,10 +142,24 @@ class Customize extends React.Component {
                 className="purchace-button"
                 onClick={this.onPurchase}
               >
-                Purchace
+                {
+                  this.props.auth.isAuthenticated
+                    ? (this.props.checkout.tier === 'unlimited'
+                      ? 'Download'
+                      : (this.props.checkout.checked === 'unlimited'
+                        ? 'Upgrade'
+                        : 'Purchase again'))
+                    : 'Purchase'
+                }
               </button>
             </div>
+
           </div>
+          {
+            this.props.auth.isAuthenticated
+              ? <p>{this.props.auth.userInfo.email} <a className="link" onClick={this.props.signOut}>sign out</a></p>
+              : <p>Already have an account? <a className="link">sign in</a></p>
+          }
         </div>
         <CheckoutFormModal
           charging={this.state.charging}
@@ -130,14 +173,18 @@ class Customize extends React.Component {
 
 const mapStateToProps = (state) => ({
   config: state.config,
-  keys: Object.keys(state.config.colors)
+  keys: Object.keys(state.config.colors),
+  auth: state.auth,
+  checkout: state.checkout
 });
 
 const mapDispatchToProps = (dispatch) => ({
   setColor: (index, value) => dispatch(setColor({ colorIndex: index, colorValue: value })),
   setCornerRadius: (radius) => dispatch(setCornerRadius(radius)),
   startPurchase: (state) => dispatch(startPurchase(state)),
-  updateCheckedTier: (tier) => dispatch(updateCheckedTier(tier))
+  updateCheckedTier: (tier) => dispatch(updateCheckedTier(tier)),
+  signOut: () => dispatch(startSignOut()),
+  downloadForUnlimited: () => dispatch(downloadForUnlimited())
 });
 
 

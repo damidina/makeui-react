@@ -1,4 +1,11 @@
 import { auth } from '../firebase/firebase';
+import { setTier } from './checkout';
+
+const startSignOut = () => dispatch => {
+    dispatch(signOut());
+    dispatch(setTier(''));
+};
+
 
 const signOut = () => {
     auth.signOut();
@@ -13,6 +20,6 @@ const signInSuccess = (userInfo) => {
 };
 
 export {
-    signOut,
+    startSignOut,
     signInSuccess,
 }

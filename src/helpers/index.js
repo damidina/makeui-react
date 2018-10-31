@@ -1,12 +1,12 @@
 import { auth } from '../firebase/firebase';
-import { signOut, signInSuccess } from '../actions/auth';
+import { startSignOut, signInSuccess } from '../actions/auth';
 
 export default () => dispatch => {
   auth.onAuthStateChanged((user) => {
     if (user) {
       dispatch(signInSuccess(user));
     } else {
-      dispatch(signOut());
+      dispatch(startSignOut());
     }
   });
 
