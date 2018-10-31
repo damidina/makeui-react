@@ -4,6 +4,7 @@ import HowItWorks from './HowItWorks';
 import Customize from './customize/Customize';
 import UpcomingFeatures from './UpcomingFeatures';
 import Timeline from './Timeline';
+import Footer from './Footer';
 
 const LandingPage = () => (
     <div>
@@ -12,6 +13,7 @@ const LandingPage = () => (
         <Customize />
         <UpcomingFeatures />
         <Timeline />
+        <Footer />
     </div>
 );
 
