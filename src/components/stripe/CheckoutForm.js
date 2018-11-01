@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { CardElement, EmailElement, injectStripe } from 'react-stripe-elements';
+import { CardNumberElement, CardExpiryElement, CardCVCElement, injectStripe } from 'react-stripe-elements';
 
 class CheckoutForm extends Component {
   constructor(props) {
@@ -7,7 +7,16 @@ class CheckoutForm extends Component {
     this.submit = this.submit.bind(this);
     this.state = {
       email: '',
-      emailValid: true
+      emailValid: true,
+      once: {
+        title: 'One time download',
+        amount: '$10'
+      },
+      unlimited: {
+        title: 'Unlimited Download',
+        amount: '$30'
+      }
+
     }
   }
 
@@ -26,20 +35,43 @@ class CheckoutForm extends Component {
   }
 
   render() {
+    const type = this.props.whichOption === 'once'
+      ? this.state.once
+      : this.state.unlimited;
     return (
-      <div className="checkout">
-        <p>Would you like to complete the purchase?</p>
-        <input
-          id="email"
-          name="email"
-          type="email"
-          className={`StripeElement ${this.state.emailValid ? '' : 'StripeElement--invalid'}`}
-          placeholder="Email"
-          value={this.state.email}
-          onChange={this.onEmailChange}
-        />
-        <CardElement />
-        <button className="stripe-button" onClick={this.submit}>Pay $30</button>
+      <div>
+        <div className="checkout">
+          <h1 className="modal-title">{type.title}</h1>
+          <div className="email-group">
+            <p>Email</p>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              className={`StripeElement ${this.state.emailValid ? '' : 'StripeElement--invalid'}`}
+              placeholder="Email"
+              value={this.state.email}
+              onChange={this.onEmailChange}
+            />
+          </div>
+          <div className="credit-card-group">
+            <p style={{ alignSelf: "flex-start" }}>Credit Card</p>
+            <div className="card-number">
+              <CardNumberElement className="card-number-input" />
+            </div>
+            <div className="card-exp-ccv">
+              <CardExpiryElement className="exp" />
+              <CardCVCElement className="ccv" />
+            </div>
+          </div>
+
+        </div>
+        <button
+          className="purcahse-button"
+          onClick={this.submit}
+        >
+          Pay {type.amount}
+        </button>
       </div>
     );
   }

@@ -19,9 +19,7 @@
 
 .modal {
   background: white;
-  // border-radius: 4px;
-  padding: $l-size;
-  max-width: 60rem;
+  max-width: 350px;
   outline: none;
   text-align: center;
   @include box_shadow(3);
@@ -41,4 +39,57 @@
   font-weight: 200;
   margin: 0 0 $l-size 0;
   word-break: break-all;
+}
+
+.credit-card-group {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.card-exp-ccv {
+  display: flex;
+  flex-direction: row;
+}
+
+.exp {
+  width: 50% !important;
+  border-bottom: 3px solid black;
+  border-left: 3px solid black;
+  border-right: 1.5px solid black;
+}
+.ccv {
+  width: 50% !important;
+  border-bottom: 3px solid black;
+  border-left: 1.5px solid black;
+  border-right: 3px solid black;
+}
+
+.card-number-input {
+  border: 3px solid black;
+}
+
+.email-group {
+  p {
+    float: left;
+  }
+  input {
+    border: 3px solid black;
+    width: 100%;
+  }
+}
+
+.purcahse-button {
+  position: relative;
+  bottom: 0;
+  background: black;
+  color: white;
+  width: 100%;
+  height: 50px;
+  border: none;
+}
+
+.checkout {
+  padding: $l-size;
 }

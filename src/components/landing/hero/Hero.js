@@ -183,7 +183,7 @@ const Hero = () => {
         <div className="el-5" />
       </div>
       <svg id="wave">
-        <path id="wavepath" d>
+        <path id="wavepath">
         </path></svg>
     </div>
   )

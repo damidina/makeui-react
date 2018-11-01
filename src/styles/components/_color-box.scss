@@ -12,9 +12,23 @@
 }
 
 .color-box--color {
+  cursor: pointer;
   width: 50px;
   height: 100%;
   border-right: 3px solid black;
+  position: relative;
+}
+
+.tooltip-content {
+  position: absolute;
+  z-index: 998;
+  visibility: hidden;
+  top: 110%;
+  left: -3px;
+}
+
+.visible {
+  visibility: visible;
 }
 
 .color-box--hex {

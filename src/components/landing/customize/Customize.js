@@ -165,6 +165,7 @@ class Customize extends React.Component {
           charging={this.state.charging}
           handleModalClose={this.handleModalClose}
           onModalFormSubmit={(token) => this.handleNetworkPurchace(token)}
+          whichOption={this.props.checkout.checked}
         />
       </div>
     )

@@ -34,6 +34,7 @@
     "rc-slider": "^8.6.3",
     "react": "^16.4.0",
     "react-addons-shallow-compare": "^15.6.2",
+    "react-color": "^2.14.1",
     "react-dates": "^17.1.1",
     "react-dom": "^16.4.0",
     "react-modal": "^3.6.1",

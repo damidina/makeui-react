@@ -15,9 +15,11 @@ const CheckoutFormModal = (props) => {
     >
       <StripeProvider apiKey="pk_test_hnMkmoqkvZxUjOrnEkPIVd80">
         <div className="example">
-          <h1 className="modal-title">Make UI Kit</h1>
           <Elements>
-            <CheckoutForm onModalFormSubmit={(token) => props.onModalFormSubmit(token)} />
+            <CheckoutForm
+              onModalFormSubmit={(token) => props.onModalFormSubmit(token)}
+              whichOption={props.whichOption}
+            />
           </Elements>
         </div>
       </StripeProvider>
