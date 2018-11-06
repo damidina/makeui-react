@@ -33,6 +33,14 @@
   font-size: $heading;
 }
 
+.modal-title--complete {
+  font-weight: $font-light;
+  font-size: $heading;
+  margin: 0 0 $l-size 0;
+  text-align: left;
+  max-width: 170px;
+}
+
 .modal__body {
   color: white;
   font-size: 2rem;
@@ -92,4 +100,44 @@
 
 .checkout {
   padding: $l-size;
+}
+
+.makeui-loading {
+  position:absolute;
+  top: 50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+}
+.makeui-loading div {
+display: inline-block;
+width: 75px;
+height: 75px;
+margin-right:15px;
+background: #fff;
+border: 3px solid #000000;
+animation: makeui-loading 3s infinite;
+}
+.makeui-loading div:nth-child(1) {
+animation-delay: -0.50s;
+}
+.makeui-loading div:nth-child(2) {
+animation-delay: -0.25s;
+}
+.makeui-loading div:nth-child(3) {
+margin:0;
+animation-delay: 0;
+}
+@keyframes makeui-loading {
+0% {
+  border-radius: 0%;
+}
+40% {
+  border-radius: 100%;
+}
+50% {
+  border-radius: 100%;
+}
+90%,100% {
+  border-radius: 0%;
+}
 }

@@ -9,10 +9,10 @@
   border: 3px solid black;
   display: flex;
   flex-direction: row;
+  cursor: pointer;
 }
 
 .color-box--color {
-  cursor: pointer;
   width: 50px;
   height: 100%;
   border-right: 3px solid black;
@@ -22,7 +22,6 @@
 .tooltip-content {
   position: absolute;
   z-index: 998;
-  visibility: hidden;
   top: 110%;
   left: -3px;
 }
@@ -41,12 +40,9 @@
 
 .color-box--input {
   border: none;
-  height: 100%;
   width: 100px;
   margin-left: $s-size;
-  &:focus {
-    outline: none;
-  }
+  margin: auto 0 auto 0
 }
 
 .color-box--remove {

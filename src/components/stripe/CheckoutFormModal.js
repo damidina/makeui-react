@@ -1,31 +1,51 @@
 import React from 'react';
 import CheckoutForm from './CheckoutForm';
 import Modal from 'react-modal';
+import CompleteModal from './CompleteModal';
 import { Elements, StripeProvider } from 'react-stripe-elements';
 
-const CheckoutFormModal = (props) => {
-  return (
-    <Modal
-      isOpen={props.charging}
-      contentLabel="payment"
-      ariaHideApp={false}
-      onRequestClose={props.handleModalClose}
-      closeTimeoutMS={200}
-      className="modal"
-    >
-      <StripeProvider apiKey="pk_test_hnMkmoqkvZxUjOrnEkPIVd80">
-        <div className="example">
-          <Elements>
-            <CheckoutForm
-              onModalFormSubmit={(token) => props.onModalFormSubmit(token)}
-              whichOption={props.whichOption}
-            />
-          </Elements>
-        </div>
-      </StripeProvider>
-    </Modal>
+class CheckoutFormModal extends React.Component {
 
-  );
+  state = {
+    loading: this.props.justLoading ? true : false,
+  }
+
+
+
+  render() {
+    return (
+      <Modal
+        isOpen={this.props.charging}
+        contentLabel="payment"
+        ariaHideApp={false}
+        onRequestClose={this.props.handleModalClose}
+        closeTimeoutMS={0}
+        className="modal"
+      >
+
+        {
+          this.props.purchaseComplete
+            ? <CompleteModal message={this.props.whichOption} />
+            : (
+              this.props.justLoading
+                ? <div className="makeui-loading"><div></div><div></div><div></div></div>
+                : (
+                  <StripeProvider apiKey="pk_test_hnMkmoqkvZxUjOrnEkPIVd80">
+                    <div className="example">
+                      <Elements>
+                        <CheckoutForm
+                          onModalFormSubmit={(token) => this.props.onModalFormSubmit(token)}
+                          whichOption={this.props.whichOption}
+                          activateLoading={this.props.activateLoading}
+                        />
+                      </Elements>
+                    </div>
+                  </StripeProvider>
+                ))
+        }
+      </Modal>
+    );
+  }
 };
 
 export default CheckoutFormModal;

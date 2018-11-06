@@ -3,7 +3,7 @@ import { signInNewUser } from '../../helpers/auth';
 import { requestGenerate } from './generate';
 import { downloadFile } from '../../helpers/download';
 
-const startPurchase = (token) => (dispatch) => {
+const startPurchase = (token, callback) => (dispatch) => {
 
   const { config, checkout, auth } = store.getState();
   const { checked, tier, count } = checkout;
@@ -40,6 +40,7 @@ const startPurchase = (token) => (dispatch) => {
     })
     .then((link) => {
       downloadFile(link, 'makeui.sketch');
+      callback();
     })
     .catch((err) => {
       console.error(err);
@@ -56,13 +57,14 @@ const charge = (body) => {
 };
 
 
-const downloadForUnlimited = () => (dispatch) => {
+const downloadForUnlimited = (callback) => (dispatch) => {
   const { config, checkout } = store.getState();
   const { tier, count } = checkout;
 
   requestGenerate(config, tier, count)
     .then((link) => {
       downloadFile(link, 'makeui.sketch');
+      callback();
     })
     .catch((err) => {
       console.error(err);

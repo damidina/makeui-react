@@ -6,15 +6,31 @@ import UpcomingFeatures from './UpcomingFeatures';
 import Timeline from './Timeline';
 import Footer from './Footer';
 
-const LandingPage = () => (
-    <div>
-        <Hero />
-        <HowItWorks />
-        <Customize />
-        <UpcomingFeatures />
-        <Timeline />
-        <Footer />
-    </div>
-);
+class LandingPage extends React.Component {
+
+    state = {
+        shouldScroll: false
+    }
+
+    onTestItOutClick = () => {
+        this.setState(({ shouldScroll: true }));
+        setInterval(() => { this.setState(({ shouldScroll: false })); }, 2000)
+    };
+
+    render() {
+        return (
+            <div>
+                <Hero onTestItOutClick={this.onTestItOutClick} />
+                <HowItWorks />
+                <Customize shouldScroll={this.state.shouldScroll} />
+                <UpcomingFeatures />
+                <Timeline />
+                <Footer />
+            </div>
+        );
+    }
+
+
+}
 
 export default LandingPage;

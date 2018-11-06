@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="33px" height="33px" viewBox="0 0 33 33" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.3 (67297) - http://www.bohemiancoding.com/sketch -->
+    <title>Facebook</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 0.0003 32.076 0.0003 32.076 32.0757 0 32.0757"></polygon>
+    </defs>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Confirmation-Message---One-Time-Download" transform="translate(-549.000000, -553.000000)">
+            <g id="Thank-you-message" transform="translate(446.000000, 161.000000)">
+                <g id="Share" transform="translate(40.000000, 335.000000)">
+                    <g id="Facebook" transform="translate(63.000000, 57.000000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g id="Clip-2"></g>
+                        <path d="M30.3065,-0.0003 L1.7705,-0.0003 C0.7925,-0.0003 -0.0005,0.7927 -0.0005,1.7707 L-0.0005,30.3067 C-0.0005,31.2837 0.7925,32.0757 1.7705,32.0757 L17.1325,32.0757 L17.1325,19.6547 L12.9525,19.6547 L12.9525,14.8127 L17.1325,14.8127 L17.1325,11.2437 C17.1325,7.1007 19.6625,4.8447 23.3595,4.8447 C25.1295,4.8447 26.6515,4.9767 27.0945,5.0347 L27.0945,9.3647 L24.5315,9.3657 C22.5215,9.3657 22.1315,10.3207 22.1315,11.7237 L22.1315,14.8127 L26.9255,14.8127 L26.3015,19.6547 L22.1315,19.6547 L22.1315,32.0757 L30.3065,32.0757 C31.2845,32.0757 32.0765,31.2837 32.0765,30.3067 L32.0765,1.7707 C32.0765,0.7927 31.2845,-0.0003 30.3065,-0.0003" id="Fill-1" fill="#000000" mask="url(#mask-2)"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

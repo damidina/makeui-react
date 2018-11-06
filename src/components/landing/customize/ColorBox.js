@@ -26,30 +26,48 @@ class ColorBox extends React.Component {
     this.setState({ pickerVisible: !this.state.pickerVisible });
   };
 
+  handleClose = () => {
+    this.setState({ pickerVisible: false });
+  }
+
+
   render() {
+
+    const popover = {
+      position: 'relative',
+      zIndex: '2',
+    }
+    const cover = {
+      position: 'fixed',
+      top: 0,
+      bottom: 0,
+      left: 0,
+      right: 0
+    }
+
     return (
       <div>
-        <div className="color-box" >
-          <div className="color-box--color"
-            style={{ background: this.props.color }}
-            onClick={this.onColorClick}
-          >
-            <div className={`tooltip-content ${this.state.pickerVisible ? 'visible' : ''}`} >
-              <SketchPicker color={this.props.color} onChange={this.onPickerChange} />
-            </div>
+        <div className="color-box" onClick={this.onColorClick}>
+          <div className="color-box--color" style={{ background: this.props.color }}>
           </div>
           <div className="color-box--hex">
-            <input
-              className="color-box--input"
-              value={this.props.color}
-              onChange={this.onColorChange}
-            />
-            <button onClick={this.onRemove} className="color-box--remove">x</button>
+            <p className="color-box--input">{this.props.color}</p>
           </div>
         </div>
-
-
-
+        {
+          this.state.pickerVisible
+            ? (
+              <div>
+                <div style={cover} onClick={this.handleClose}></div>
+                <div style={popover}>
+                  <div style={{ position: "absolute" }}>
+                    <SketchPicker color={this.props.color} onChange={this.onPickerChange} />
+                  </div>
+                </div>
+              </div>
+            )
+            : null
+        }
       </div>
 
     );

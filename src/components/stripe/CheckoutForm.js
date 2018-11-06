@@ -31,6 +31,7 @@ class CheckoutForm extends Component {
     } else {
       let { token } = await this.props.stripe.createToken({ email: this.state.email });
       this.props.onModalFormSubmit(token);
+      this.props.activateLoading();
     }
   }
 

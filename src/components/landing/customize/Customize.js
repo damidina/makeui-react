@@ -15,7 +15,17 @@ class Customize extends React.Component {
 
   state = {
     tier: 'once',
-    charging: false
+    charging: false,
+    complete: false,
+    loading: false,
+  };
+
+  componentDidUpdate() {
+    if (this.props.shouldScroll) {
+      console.log('scroll');
+      const pos = this.customize.offsetTop;
+      this.customize.scrollIntoView({ behavior: "smooth", alignToTop: true });
+    }
   }
 
   handleTierChange = (tier) => {
@@ -60,8 +70,14 @@ class Customize extends React.Component {
    *    - Has not purchased anything before
    *    - Has only purchased a one time download
    */
-  handleNetworkPurchace = (token) => {
-    this.props.startPurchase(token);
+  handleNetworkPurchase = (token) => {
+    this.props.startPurchase(token, () => {
+      this.completePurchase()
+    });
+  };
+
+  completePurchase = () => {
+    this.setState(({ complete: true }))
   };
 
   /* 
@@ -70,16 +86,22 @@ class Customize extends React.Component {
    * an unlimited tier
    */
   download = () => {
-    this.props.downloadForUnlimited();
+    this.props.downloadForUnlimited(() => {
+      // this.handleModalClose();
+    });
   };
 
   handleModalClose = () => {
-    this.setState({ charging: false });
+    this.setState({ charging: false, complete: false, loading: false });
+  }
+
+  _activateLoadingState = () => {
+    this.setState(({ loading: true }));
   }
 
   render() {
     return (
-      <div className="customize-section">
+      <div className="customize-section" ref={r => this.customize = r}>
         <CustomizeHeader />
         <div className="content-container flex-row-break-dl">
           <div>
@@ -164,8 +186,11 @@ class Customize extends React.Component {
         <CheckoutFormModal
           charging={this.state.charging}
           handleModalClose={this.handleModalClose}
-          onModalFormSubmit={(token) => this.handleNetworkPurchace(token)}
+          onModalFormSubmit={(token) => this.handleNetworkPurchase(token)}
           whichOption={this.props.checkout.checked}
+          purchaseComplete={this.state.complete}
+          justLoading={this.state.loading}
+          activateLoading={this._activateLoadingState}
         />
       </div>
     )
@@ -182,10 +207,10 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   setColor: (index, value) => dispatch(setColor({ colorIndex: index, colorValue: value })),
   setCornerRadius: (radius) => dispatch(setCornerRadius(radius)),
-  startPurchase: (state) => dispatch(startPurchase(state)),
+  startPurchase: (state, callback) => dispatch(startPurchase(state, callback)),
   updateCheckedTier: (tier) => dispatch(updateCheckedTier(tier)),
   signOut: () => dispatch(startSignOut()),
-  downloadForUnlimited: () => dispatch(downloadForUnlimited())
+  downloadForUnlimited: (callback) => dispatch(downloadForUnlimited(callback))
 });
 
 
