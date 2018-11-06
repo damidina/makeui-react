@@ -9,6 +9,7 @@ import CheckoutFormModal from '../../stripe/CheckoutFormModal';
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import { startSignOut } from '../../../actions/auth';
+import CustomSelect from '../../CustomSelect';
 
 
 class Customize extends React.Component {
@@ -18,6 +19,7 @@ class Customize extends React.Component {
     charging: false,
     complete: false,
     loading: false,
+    selectOptions: ['Select Purchase Option', 'Unlimited', 'One Time']
   };
 
   componentDidUpdate() {
@@ -29,8 +31,13 @@ class Customize extends React.Component {
   }
 
   handleTierChange = (tier) => {
-    this.setState({ tier });
-    this.props.updateCheckedTier(tier);
+    if (tier === 1) {
+      this.setState(({ tier: 'unlimited' }));
+      this.props.updateCheckedTier('unlimited');
+    } else if (tier === 2) {
+      this.setState(({ tier: 'once' }));
+      this.props.updateCheckedTier('once');
+    }
   };
 
   onColorChange = (index, value) => { this.props.setColor(index, value); };
@@ -145,20 +152,10 @@ class Customize extends React.Component {
         <div className="content-container">
           <h2 className="heading">Purchase</h2>
           <div className="flex-row-normal">
-            <div className="radio-purchase">
-              <div className="radio-group">
-                <div onClick={() => this.handleTierChange('once')} className="radio-outer">
-                  {this.state.tier === 'once' && <div className="radio-inner" />}
-                </div>
-                <p>One time</p>
-              </div>
-              <div className="radio-group">
-                <div onClick={() => this.handleTierChange('unlimited')} className="radio-outer">
-                  {this.state.tier === 'unlimited' && <div className="radio-inner" />}
-                </div>
-                <p>Lifetime</p>
-              </div>
-            </div>
+            <CustomSelect
+              titles={this.state.selectOptions}
+              handleOptionSelect={this.handleTierChange}
+            />
             <div className="">
               <button
                 className="purchace-button"
