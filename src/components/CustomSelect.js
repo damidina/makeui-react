@@ -100,7 +100,7 @@ const flex = {
 const itemText = {
   margin: 'auto 0 auto 0',
   padding: '0 0 0 8px',
-  fontSize: '20px'
+  fontSize: '24px'
 }
 
 export default CustomSelect;

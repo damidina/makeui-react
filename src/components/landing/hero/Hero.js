@@ -2,7 +2,7 @@ import React from 'react';
 
 const Hero = (props) => {
   return (
-    <div className="hero-section">
+    <div id="hero-section-id" className="hero-section">
       <img src="images/makeui-logo.svg" alt="MakeUI" width={70} style={{ margin: '40px 50px' }} /><a style={{ cursor: 'pointer', zIndex: '999', fontFamily: '"tenso",sans-serif', fontWeight: 700, fontSize: 20, textDecoration: 'none', color: 'white', background: 'black', padding: '12px 32px', right: 0, position: 'absolute', margin: '40px 50px' }} onClick={props.onTestItOutClick}>Test it out!</a>
       <div style={{ position: 'absolute', top: '29%', left: '12%', width: '30%' }}><p style={{ fontFamily: '"tenso",sans-serif', fontWeight: 700, fontStyle: 'italic', fontSize: 'calc(16px + 3vw)' }}>Styled sketch <br />UI kits for quick prototyping!</p></div>
       {/* Black circles */}

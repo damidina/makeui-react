@@ -9,27 +9,33 @@ const Timeline = () => {
         </div>
         <div className="flex-row align-center timeline-margin">
           <div className="center-h flex-column">
-            <h2 className="heading white no-margin center-text">CURRENTLY SUPPORTS</h2>
-            <p className="sub-heading white center-text">Sketch</p>
+            <h2 className="sub-heading white no-margin center-text">CURRENTLY SUPPORTS</h2>
+            <p style={margin} className="white center-text">Sketch</p>
           </div>
           <div className="hr-container"><hr align="center" /></div>
           <div className="center-h flex-column">
-            <h2 className="heading white no-margin center-text">END OF 2018 REALEASE</h2>
+            <h2 className="sub-heading white no-margin center-text">END OF 2018 REALEASE</h2>
             <div className="flex-row-nobreak">
-              <p className="sub-heading white center-text">Figma</p>
-              <p className="sub-heading white center-text">React</p>
-              <p className="sub-heading white center-text">Framer</p>
+              <p style={margin} className="white center-text">Figma</p>
+              <p style={margin} className="white center-text">React</p>
+              <p style={margin} className="white center-text">Framer</p>
             </div>
           </div>
           <div className="hr-container"><hr align="center" /></div>
           <div className="center-h flex-column">
-            <h2 className="heading white no-margin center-text">SPRING 2019</h2>
-            <p className="sub-heading white center-text">Shopify</p>
+            <h2 className="sub-heading white no-margin center-text">SPRING 2019</h2>
+            <p style={margin} className="white center-text">Shopify</p>
           </div>
         </div>
       </div>
     </div>
   )
 }
+
+const margin = {
+  marginTop: '30px',
+  fontSize: '18px',
+}
+
 
 export default Timeline;

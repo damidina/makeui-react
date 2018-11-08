@@ -11,7 +11,6 @@ import { startSignOut } from '../../../actions/auth';
 import CustomSelect from '../../CustomSelect';
 import 'rc-slider/assets/index.css';
 
-
 class Customize extends React.Component {
 
   state = {
@@ -19,7 +18,8 @@ class Customize extends React.Component {
     charging: false,
     complete: false,
     loading: false,
-    selectOptions: ['Select Purchase Option', 'Unlimited', 'One Time']
+    selectOptions: ['Select Purchase Option', 'Unlimited', 'One Time'],
+    currentColor: ''
   };
 
   componentDidUpdate() {
@@ -61,11 +61,14 @@ class Customize extends React.Component {
    *    - Open modal for payment
    */
   onPurchase = (e) => {
+    const color = document.getElementById('hero-section-id').style.background;
+    const colors = color.split('(')[1].split(')')[0].split(',');
+    const newColor = `rgba(${colors[0]}, ${colors[1]}, ${colors[2]}, 0.95)`
     e.preventDefault();
     if (this.props.checkout.tier === 'unlimited') {
       this.download()
     } else {
-      this.setState({ charging: true });
+      this.setState({ charging: true, currentColor: newColor });
     }
   };
 
@@ -209,6 +212,7 @@ class Customize extends React.Component {
           purchaseComplete={this.state.complete}
           justLoading={this.state.loading}
           activateLoading={this._activateLoadingState}
+          currentColor={this.state.currentColor}
         />
       </div>
     )

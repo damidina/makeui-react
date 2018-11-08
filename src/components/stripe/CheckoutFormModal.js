@@ -10,9 +10,10 @@ class CheckoutFormModal extends React.Component {
     loading: this.props.justLoading ? true : false,
   }
 
-
-
   render() {
+
+    Modal.defaultStyles.overlay.backgroundColor = this.props.currentColor;
+
     return (
       <Modal
         isOpen={this.props.charging}
