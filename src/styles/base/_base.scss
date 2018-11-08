@@ -10,7 +10,6 @@ body {
     color: $dark-gray;
     font-family: tenso, sans-serif;
     font-size: $m-size;
-    line-height: 1.6;
 }
 
 button {
@@ -35,7 +34,8 @@ button:disabled {
 
 .section-heading {
     font-size: $section-heading;
-    font-weight: $font-light;
+    font-weight: bold;
+    font-style: italic;
     margin: 0;
     margin-bottom: $xl-size;
     max-width: 70rem;
@@ -43,7 +43,8 @@ button:disabled {
 
 .section-heading--margin-small {
     font-size: $section-heading;
-    font-weight: $font-light;
+    font-weight: bold;
+    font-style: italic;
     margin: 0;
     margin-bottom: $s-size;
     margin-top: $xl-size;
@@ -57,17 +58,38 @@ button:disabled {
 .heading {
     margin-bottom: 0;
     font-size: $heading;
-    font-weight: $font-light;
+}
+
+.heading-light {
+    margin: 0;
+    font-size: 48px;
+    font-family: tenso, sans-serif;
+    font-weight: 300;
+    max-width: 780px;
+    margin-bottom: 30px; 
+    margin-top: 30px; 
 }
 
 .sub-heading {
+    margin-top: 40px;
     font-size: $sub-heading;
-    font-weight: $font-light;
+    font-weight: bold;
 }
 
 .paragraph {
     font-size: $paragraph;
-    font-weight: $font-light;
+    line-height: 31px;
+}
+
+.paragraph-bold {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+.underline {
+    border-bottom: 3px solid black;
+    cursor: pointer;
 }
 
 .center-text {

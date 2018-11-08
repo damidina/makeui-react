@@ -4,8 +4,8 @@
 
 .color-box {
   margin: $s-size $s-size $s-size 0;
-  height: 50px;
-  width: 200px;
+  height: 68px;
+  width: 300px;
   border: 3px solid black;
   display: flex;
   flex-direction: row;
@@ -13,7 +13,7 @@
 }
 
 .color-box--color {
-  width: 50px;
+  width: 68px;
   height: 100%;
   border-right: 3px solid black;
   position: relative;
@@ -39,6 +39,7 @@
 }
 
 .color-box--input {
+  font-size: $sub-heading;
   border: none;
   width: 100px;
   margin-left: $s-size;
@@ -56,39 +57,38 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50px;
-  height: 50px;
+  width: 68px;
+  height: 68px;
   border: 3px solid black;
-  margin: $s-size $s-size $s-size 0;
+  margin: $s-size $l-size 0 0;
+}
 
-  input {
-    border: none;
-    width: 20px;
-    height: 20px;
-    text-align: center;
-    font-weight: $font-light;
-    font-size: $sub-heading;
+.radius-box--input {
+  border: none;
+  width: 50%;
+  height: 50%;
+  text-align: center;
+  font-size: $sub-heading;
 
-    &:focus {
-      outline: none;
-    }
+  &:focus {
+    outline: none;
   }
+}
+
+.rc-slider-handle:focus {
+  border: 3px solid black !important;
+  box-shadow: none !important;
 }
 
 .slider-container {
   display: flex;
   align-items: center;
-  width: 250px;
+  width: calc(100% - 110px);
 }
 
 .custom-slider-flex {
   display: flex;
   flex-direction: row;
-
-  @media (max-width: $desktop-breakpoint-dl) {
-    flex-direction: column;
-    align-items: center;
-  }
 }
 
 .purchace-button {
@@ -96,7 +96,7 @@
   color: white;
   border: none;
   text-align: center;
-  height: 56px;
+  height: 68px;
   width: 212px;
   margin: $s-size 0 $s-size 0;
   font-weight: $font-light;
@@ -106,4 +106,12 @@
 .link {
   text-decoration: underline;
   cursor: pointer;
+}
+
+.cr-selected {
+  background: black;
+
+  p {
+    color: white;
+  }
 }

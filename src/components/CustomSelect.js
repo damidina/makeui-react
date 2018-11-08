@@ -69,8 +69,8 @@ class CustomSelect extends Component {
 
 const selectStyle = {
   border: 'solid 3px black',
-  minHeight: '50px',
-  minWidth: '350px',
+  minHeight: '62px',
+  minWidth: '300px',
   width: 'calc(100% - 224px)',
   cursor: 'pointer',
   alignSelf: 'flex-start',
@@ -78,7 +78,7 @@ const selectStyle = {
 };
 
 const itemContainer = {
-  height: '50px',
+  height: '62px',
   alignItems: 'center',
   justifyContent: 'flex-start',
   display: 'flex',
@@ -86,7 +86,7 @@ const itemContainer = {
 };
 
 const itemContainerLast = {
-  height: '50px',
+  height: '62px',
   alignItems: 'center',
   justifyContent: 'flex-start',
   display: 'flex',

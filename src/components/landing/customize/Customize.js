@@ -7,9 +7,9 @@ import CustomizeHeader from './CustomizeHeader';
 import { startPurchase, downloadForUnlimited } from '../../../actions/services/index';
 import CheckoutFormModal from '../../stripe/CheckoutFormModal';
 import Slider from 'rc-slider';
-import 'rc-slider/assets/index.css';
 import { startSignOut } from '../../../actions/auth';
 import CustomSelect from '../../CustomSelect';
+import 'rc-slider/assets/index.css';
 
 
 class Customize extends React.Component {
@@ -107,12 +107,15 @@ class Customize extends React.Component {
   }
 
   render() {
+
+    const cornerRadius = this.props.config.cornerRadius;
+
     return (
       <div className="customize-section" ref={r => this.customize = r}>
         <CustomizeHeader />
         <div className="content-container flex-row-break-dl">
           <div>
-            <h2 className="heading">Colours</h2>
+            <h2 className="sub-heading black">COLORS</h2>
             <div className="flex-row-normal max-half">
               {this.props.keys.map((key) => (
                 <ColorBox
@@ -123,11 +126,12 @@ class Customize extends React.Component {
               ))}
             </div>
           </div>
-          <div className="corner-radius-container">
-            <h2 className="heading">Corner Radius</h2>
+          <div style={{ width: '100%' }}>
+            <h2 className="sub-heading black">CORNER RADIUS</h2>
             <div className="custom-slider-flex">
-              <div className="radius-box">
+              <div className="radius-box" style={{ borderRadius: `${cornerRadius}px` }}>
                 <input
+                  className="radius-box--input"
                   type="text"
                   value={this.props.config.cornerRadius}
                   onChange={this.onChangeRadiusInput}
@@ -139,18 +143,35 @@ class Customize extends React.Component {
                   max={48}
                   value={this.props.config.cornerRadius}
                   railStyle={{ background: "black" }}
-                  handleStyle={{ background: "white", border: "2px solid black" }}
+                  handleStyle={{ background: "white", border: "3px solid black", width: '30px', height: '30px', marginLeft: '-13px', marginTop: '-13px' }}
                   trackStyle={{ background: "black" }}
-                  activeDotStyle={{}}
                   step={1}
                   onChange={this.onChangeRadius}
                 />
               </div>
             </div>
+            <p style={{ fontWeight: 'bold', fontSize: '18px', marginBottom: 0 }}>Corners</p>
+            <p style={{ fontSize: '18px', marginTop: '4px', lineHeight: '24px' }}>The radius will be applied to the corners of borders, buttons, and form fields.</p>
+            <p style={{ fontWeight: 'bold', fontSize: '18px', marginBottom: 0 }}>Predefined Corners</p>
+            <div style={{ display: 'flex', flexDirection: 'row' }}>
+              {/* find pdc at bottom of this file */}
+              <div onClick={() => this.onChangeRadius(0)} style={{ ...pdc, borderRadius: '0px', }} className={cornerRadius === 0 ? 'cr-selected' : ''}>
+                <p style={{ fontSize: '18px' }}>0</p>
+              </div>
+              <div onClick={() => this.onChangeRadius(5)} style={{ ...pdc, borderRadius: '5px' }} className={cornerRadius === 5 ? 'cr-selected' : ''}>
+                <p style={{ fontSize: '18px' }}>5</p>
+              </div>
+              <div onClick={() => this.onChangeRadius(10)} style={{ ...pdc, borderRadius: '10px' }} className={cornerRadius === 10 ? 'cr-selected' : ''}>
+                <p style={{ fontSize: '18px' }}>10</p>
+              </div>
+              <div onClick={() => this.onChangeRadius(15)} style={{ ...pdc, borderRadius: '15px' }} className={cornerRadius === 15 ? 'cr-selected' : ''}>
+                <p style={{ fontSize: '18px' }}>15</p>
+              </div>
+            </div>
           </div>
         </div>
         <div className="content-container">
-          <h2 className="heading">Purchase</h2>
+          <h2 className="sub-heading black">PURCHASE</h2>
           <div className="flex-row-normal">
             <CustomSelect
               titles={this.state.selectOptions}
@@ -193,6 +214,18 @@ class Customize extends React.Component {
     )
   }
 }
+
+const pdc = {
+  cursor: 'pointer',
+  border: '3px solid black',
+  height: '42px',
+  width: '42px',
+  marginTop: '10px',
+  marginRight: '42px',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center'
+};
 
 const mapStateToProps = (state) => ({
   config: state.config,

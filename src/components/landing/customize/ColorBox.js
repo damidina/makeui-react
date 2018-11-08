@@ -45,6 +45,21 @@ class ColorBox extends React.Component {
       right: 0
     }
 
+    const title = {
+      fontWeight: 'bold',
+      fontSize: '18px',
+      marginBottom: '0px',
+    }
+
+    const desc = {
+      marginTop: '4px',
+      fontSize: '18px',
+      lineHeight: '24px'
+    }
+
+    const primaryText = "This is usually your brand color that is applied to important parts of the UI.";
+    const secondaryText = "Choose a color that compliments your primary color. This will be applied to less important call-to-actions.";
+
     return (
       <div>
         <div className="color-box" onClick={this.onColorClick}>
@@ -54,6 +69,15 @@ class ColorBox extends React.Component {
             <p className="color-box--input">{this.props.color}</p>
           </div>
         </div>
+
+        {
+          (this.props.index === '02' || this.props.index === '01') && (
+            <div style={{ maxWidth: '300px' }}>
+              <p style={title}>{this.props.index === '01' ? 'Primary Color' : 'Secondary Color'}</p>
+              <p style={desc}>{this.props.index === '01' ? primaryText : secondaryText}</p>
+            </div>
+          )
+        }
         {
           this.state.pickerVisible
             ? (
