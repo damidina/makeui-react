@@ -9,3 +9,9 @@
         display: none;
     }
 }
+
+.full-width-mobile {
+    @media (max-width: 550px) {
+        width: 100% !important;
+    }
+}

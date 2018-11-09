@@ -27,13 +27,14 @@
 
 .modal-title {
   color: black;
+  font-style: italic;
   margin: 0 0 $l-size 0;
-  font-weight: $font-light;
+  font-weight: bold;
   font-size: $heading;
 }
 
 .modal-title--complete {
-  font-weight: $font-light;
+  font-weight: bold;
   font-size: $heading;
   margin: 0 0 $l-size 0;
   text-align: left;

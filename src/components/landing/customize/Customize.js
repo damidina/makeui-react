@@ -1,6 +1,7 @@
 import React from 'react';
 import ColorBox from './ColorBox';
 import { connect } from 'react-redux';
+import MediaQuery from 'react-responsive';
 import { setCornerRadius, setColor } from '../../../actions/generate';
 import { updateCheckedTier } from '../../../actions/checkout';
 import CustomizeHeader from './CustomizeHeader';
@@ -114,12 +115,12 @@ class Customize extends React.Component {
     const cornerRadius = this.props.config.cornerRadius;
 
     return (
-      <div className="customize-section" ref={r => this.customize = r}>
+      <div style={{ overflow: 'hidden' }} className="customize-section" ref={r => this.customize = r}>
         <CustomizeHeader />
         <div className="content-container flex-row-break-dl">
-          <div>
+          <div className="full-width-mobile">
             <h2 className="sub-heading black">COLORS</h2>
-            <div className="flex-row-normal max-half">
+            <div className="flex-row-normal">
               {this.props.keys.map((key) => (
                 <ColorBox
                   key={key}
@@ -156,7 +157,7 @@ class Customize extends React.Component {
             <p style={{ fontWeight: 'bold', fontSize: '18px', marginBottom: 0 }}>Corners</p>
             <p style={{ fontSize: '18px', marginTop: '4px', lineHeight: '24px' }}>The radius will be applied to the corners of borders, buttons, and form fields.</p>
             <p style={{ fontWeight: 'bold', fontSize: '18px', marginBottom: 0 }}>Predefined Corners</p>
-            <div style={{ display: 'flex', flexDirection: 'row' }}>
+            <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
               {/* find pdc at bottom of this file */}
               <div onClick={() => this.onChangeRadius(0)} style={{ ...pdc, borderRadius: '0px', }} className={cornerRadius === 0 ? 'cr-selected' : ''}>
                 <p style={{ fontSize: '18px' }}>0</p>
@@ -180,9 +181,21 @@ class Customize extends React.Component {
               titles={this.state.selectOptions}
               handleOptionSelect={this.handleTierChange}
             />
+
+            <MediaQuery maxWidth={722}>
+              <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <p style={{ fontWeight: 'bold', fontSize: '18px', marginBottom: 0 }}>Payment</p>
+                <p style={{ fontSize: '18px', marginTop: '4px', lineHeight: '24px' }}>We accept credit cards through our secured third party provider Stripe.</p>
+                {
+                  this.props.auth.isAuthenticated
+                    ? <p style={{ fontSize: '18px', marginTop: '4px', lineHeight: '24px' }}>{this.props.auth.userInfo.email} <a className="link" onClick={this.props.signOut}>sign out</a></p>
+                    : <p style={{ fontSize: '18px', marginTop: '4px', lineHeight: '24px' }}>Already have an account? <a className="link">sign in</a></p>
+                }
+              </div>
+            </MediaQuery>
             <div className="">
               <button
-                className="purchace-button"
+                className="purchace-button full-width-mobile"
                 onClick={this.onPurchase}
               >
                 {
@@ -195,14 +208,26 @@ class Customize extends React.Component {
                     : 'Purchase'
                 }
               </button>
+
+              <div style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <div style={{ position: 'relative' }}>
+                  <img style={{ transform: 'rotate(180deg)', width: '60px', alignSelf: 'center', position: 'absolute' }} src="/images/arm.svg" />
+                </div>
+              </div>
             </div>
+            <MediaQuery minWidth={723}>
+              <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <p style={{ fontWeight: 'bold', fontSize: '18px', marginBottom: 0 }}>Payment</p>
+                <p style={{ fontSize: '18px', marginTop: '4px', lineHeight: '24px' }}>We accept credit cards through our secured third party provider Stripe.</p>
+                {
+                  this.props.auth.isAuthenticated
+                    ? <p style={{ fontSize: '18px', marginTop: '4px', lineHeight: '24px' }}>{this.props.auth.userInfo.email} <a className="link" onClick={this.props.signOut}>sign out</a></p>
+                    : <p style={{ fontSize: '18px', marginTop: '4px', lineHeight: '24px' }}>Already have an account? <a className="link">sign in</a></p>
+                }
+              </div>
+            </MediaQuery>
 
           </div>
-          {
-            this.props.auth.isAuthenticated
-              ? <p>{this.props.auth.userInfo.email} <a className="link" onClick={this.props.signOut}>sign out</a></p>
-              : <p>Already have an account? <a className="link">sign in</a></p>
-          }
         </div>
         <CheckoutFormModal
           charging={this.state.charging}
@@ -225,7 +250,6 @@ const pdc = {
   height: '42px',
   width: '42px',
   marginTop: '10px',
-  marginRight: '42px',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center'

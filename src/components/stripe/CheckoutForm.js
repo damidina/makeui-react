@@ -44,7 +44,7 @@ class CheckoutForm extends Component {
         <div className="checkout">
           <h1 className="modal-title">{type.title}</h1>
           <div className="email-group">
-            <p>Email</p>
+            <p style={{ fontWeight: 'bold' }}>EMAIL</p>
             <input
               id="email"
               name="email"
@@ -56,7 +56,7 @@ class CheckoutForm extends Component {
             />
           </div>
           <div className="credit-card-group">
-            <p style={{ alignSelf: "flex-start" }}>Credit Card</p>
+            <p style={{ alignSelf: "flex-start", fontWeight: 'bold' }}>CREDIT CARD</p>
             <div className="card-number">
               <CardNumberElement className="card-number-input" />
             </div>
@@ -68,6 +68,7 @@ class CheckoutForm extends Component {
 
         </div>
         <button
+          style={{ fontWeight: 'bold' }}
           className="purcahse-button"
           onClick={this.submit}
         >

@@ -22,7 +22,7 @@
 .tooltip-content {
   position: absolute;
   z-index: 998;
-  top: 110%;
+  top: 105%;
   left: -3px;
 }
 
@@ -99,7 +99,7 @@
   height: 68px;
   width: 212px;
   margin: $s-size 0 $s-size 0;
-  font-weight: $font-light;
+  font-weight: bold;
   font-size: $sub-heading;
 }
 

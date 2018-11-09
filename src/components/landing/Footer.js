@@ -7,8 +7,8 @@ export default function Footer() {
         <div className="flex-column align-center">
           <div style={{ width: '60px', height: '60px' }}><img src="/images/makeui-logo.svg" /></div>
           <div className="flex-row">
-            <p style={{ marginRight: '30px' }} className="sub-heading center-text">Login</p>
-            <p className="sub-heading center-text">Make</p>
+            <p style={{ marginRight: '30px' }} className="sub-heading center-text">LOGIN</p>
+            <p className="sub-heading center-text">MAKE</p>
           </div>
           <div>
             <p style={feedback} className="center-text">Have questions or feedback? <a style={bold} className="underline" href="mailto:contact@makeui.com"> Contact us</a>

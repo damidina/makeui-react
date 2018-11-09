@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { SketchPicker } from 'react-color';
+import ColorPicker from './ColorPicker'
 import { setColor, addColor, removeColor, setCornerRadius } from '../../../actions/generate';
 
 class ColorBox extends React.Component {
@@ -9,11 +9,12 @@ class ColorBox extends React.Component {
     pickerVisible: false
   }
 
-  onColorChange = (e) => {
-    this.props.setColor(this.props.index, e.target.value);
+  onColorChange = (hex) => {
+    this.props.setColor(this.props.index, hex);
   };
 
   onPickerChange = ({ hex }) => {
+    console.log(hex);
     this.props.setColor(this.props.index, hex);
   };
 
@@ -34,9 +35,10 @@ class ColorBox extends React.Component {
   render() {
 
     const popover = {
-      position: 'relative',
+      position: 'absolute',
       zIndex: '2',
     }
+
     const cover = {
       position: 'fixed',
       top: 0,
@@ -62,22 +64,13 @@ class ColorBox extends React.Component {
 
     return (
       <div>
-        <div className="color-box" onClick={this.onColorClick}>
+        <div className="color-box full-width-mobile" onClick={this.onColorClick}>
           <div className="color-box--color" style={{ background: this.props.color }}>
           </div>
           <div className="color-box--hex">
             <p className="color-box--input">{this.props.color}</p>
           </div>
         </div>
-
-        {
-          (this.props.index === '02' || this.props.index === '01') && (
-            <div style={{ maxWidth: '300px' }}>
-              <p style={title}>{this.props.index === '01' ? 'Primary Color' : 'Secondary Color'}</p>
-              <p style={desc}>{this.props.index === '01' ? primaryText : secondaryText}</p>
-            </div>
-          )
-        }
         {
           this.state.pickerVisible
             ? (
@@ -85,12 +78,21 @@ class ColorBox extends React.Component {
                 <div style={cover} onClick={this.handleClose}></div>
                 <div style={popover}>
                   <div style={{ position: "absolute" }}>
-                    <SketchPicker color={this.props.color} onChange={this.onPickerChange} />
+                    <ColorPicker color={this.props.color} onColorChange={this.onColorChange} onChange={this.onPickerChange} />
                   </div>
                 </div>
               </div>
             )
             : null
+        }
+
+        {
+          (this.props.index === '02' || this.props.index === '01') && (
+            <div style={{ maxWidth: '300px', position: 'relative' }}>
+              <p style={title}>{this.props.index === '01' ? 'Primary Color' : 'Secondary Color'}</p>
+              <p style={desc}>{this.props.index === '01' ? primaryText : secondaryText}</p>
+            </div>
+          )
         }
       </div>
 

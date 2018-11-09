@@ -34,6 +34,7 @@ class CustomSelect extends Component {
   render() {
     return (
       <div
+        className="full-width-mobile"
         style={{ ...selectStyle, ...this.props.selectStyle }}
         onClick={this.toggleShowOptions}
       >
