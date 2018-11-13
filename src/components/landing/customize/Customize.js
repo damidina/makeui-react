@@ -248,7 +248,7 @@ class Customize extends React.Component {
 
               <div style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                 <div style={{ position: 'relative' }}>
-                  {this.props.checkout.tier !== 'unlimited' && <img style={{ transform: 'rotate(180deg)', width: '60px', alignSelf: 'center', position: 'absolute' }} src="/images/arm.svg" />}
+                  {this.props.checkout.tier !== 'unlimited' && <img style={{ width: '60px', alignSelf: 'center', position: 'absolute' }} src="/images/arm-hand.svg" />}
                 </div>
               </div>
             </div>
