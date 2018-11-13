@@ -28,7 +28,6 @@ const startPurchase = (token, callback) => (dispatch) => {
   charge(body)
     .then(res => res.json())
     .then((res) => {
-      console.log(res);
       if (res.authToken) {
         return signInNewUser(res.authToken);
       } else {

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="195px" height="66px" viewBox="0 0 195 66" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.3 (67297) - http://www.bohemiancoding.com/sketch -->
+    <title>Tooltip</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="MakeUI-Desktop-Landing-Page" transform="translate(-1038.000000, -2059.000000)" fill="#FFFFFF" stroke="#000000" stroke-width="3">
+            <g id="Make-Kit" transform="translate(46.000000, 1675.000000)">
+                <g id="Corner-Radius" transform="translate(801.000000, 386.000000)">
+                    <g id="tooltip" transform="translate(193.000000, 0.000000)">
+                        <g id="Tooltip">
+                            <path d="M15.3147153,51 L9.44722465,60.2332323 L3.899339,51 L9.09494702e-13,51 L9.09494702e-13,0 L191.5,0 L191.5,51 L15.3147153,51 Z" id="Triangle-2" transform="translate(95.750000, 30.116616) scale(-1, 1) translate(-95.750000, -30.116616) "></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

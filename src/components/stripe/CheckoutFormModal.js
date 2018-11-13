@@ -35,6 +35,7 @@ class CheckoutFormModal extends React.Component {
                     <div className="example">
                       <Elements>
                         <CheckoutForm
+                          onRequestClose={this.props.handleModalClose}
                           onModalFormSubmit={(token) => this.props.onModalFormSubmit(token)}
                           whichOption={this.props.whichOption}
                           activateLoading={this.props.activateLoading}

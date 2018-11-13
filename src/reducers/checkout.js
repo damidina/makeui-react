@@ -4,7 +4,7 @@ import {
   SET_COUNT,
 } from '../actions/checkout';
 
-export default (state = { checked: 'once', tier: '', count: 1 }, action) => {
+export default (state = { checked: 'none', tier: '', count: 1 }, action) => {
   switch (action.type) {
     case UPDATE_CHECKED_TIER:
       return {

@@ -9,23 +9,42 @@ import { startPurchase, downloadForUnlimited } from '../../../actions/services/i
 import CheckoutFormModal from '../../stripe/CheckoutFormModal';
 import Slider from 'rc-slider';
 import { startSignOut } from '../../../actions/auth';
+import LoginModal from './loginModal';
 import CustomSelect from '../../CustomSelect';
 import 'rc-slider/assets/index.css';
 
 class Customize extends React.Component {
 
   state = {
-    tier: 'once',
+    loginModal: false,
     charging: false,
     complete: false,
     loading: false,
     selectOptions: ['Select Purchase Option', 'Unlimited', 'One Time'],
-    currentColor: ''
+    currentColor: '',
+    tooltipVis: true,
+  };
+
+  handleLoginModalClose = () => {
+    this.setState(({ loginModal: false }));
+  };
+
+  showSignIn = () => {
+    const color = document.getElementById('hero-section-id').style.background;
+    const colors = color.split('(')[1].split(')')[0].split(',');
+    const newColor = `rgba(${colors[0]}, ${colors[1]}, ${colors[2]}, 0.95)`
+
+    this.setState(({ loginModal: true, currentColor: newColor }));
+  };
+
+  toolTipHover = () => {
+    const vis = this.state.tooltipVis ? 'visible' : 'hidden';
+    this.toolTip.style.visibility = vis
+    this.setState(({ tooltipVis: !this.state.tooltipVis }));
   };
 
   componentDidUpdate() {
     if (this.props.shouldScroll) {
-      console.log('scroll');
       const pos = this.customize.offsetTop;
       this.customize.scrollIntoView({ behavior: "smooth", alignToTop: true });
     }
@@ -33,10 +52,8 @@ class Customize extends React.Component {
 
   handleTierChange = (tier) => {
     if (tier === 1) {
-      this.setState(({ tier: 'unlimited' }));
       this.props.updateCheckedTier('unlimited');
     } else if (tier === 2) {
-      this.setState(({ tier: 'once' }));
       this.props.updateCheckedTier('once');
     }
   };
@@ -108,11 +125,12 @@ class Customize extends React.Component {
 
   _activateLoadingState = () => {
     this.setState(({ loading: true }));
-  }
+  };
 
   render() {
 
     const cornerRadius = this.props.config.cornerRadius;
+    const checkoutStatus = this.props.auth.isAuthenticated ? (this.props.checkout.tier === 'unlimited' ? true : this.props.checkout.checked === 'none' ? false : true) : (this.props.checkout.checked === 'none' ? false : true);
 
     return (
       <div style={{ overflow: 'hidden' }} className="customize-section" ref={r => this.customize = r}>
@@ -131,7 +149,19 @@ class Customize extends React.Component {
             </div>
           </div>
           <div style={{ width: '100%' }}>
-            <h2 className="sub-heading black">CORNER RADIUS</h2>
+            <div style={{ display: 'flex', flexDirection: 'row' }}>
+              <h2 className="sub-heading black">CORNER RADIUS</h2>
+              <div style={{ width: '24px', height: '24px', alignSelf: 'center', marginTop: '15px', marginLeft: '10px' }}>
+                <div style={{ position: 'relative' }}>
+                  <div style={{ position: 'absolute', left: '-170px', bottom: '1px' }}>
+                    <div ref={r => this.toolTip = r} className="tooltip">
+                      <p>This defines how round you want your corners! 0 is square!</p>
+                    </div>
+                  </div>
+                </div>
+                <img onMouseOver={this.toolTipHover} onMouseLeave={this.toolTipHover} src="/images/info.svg" />
+              </div>
+            </div>
             <div className="custom-slider-flex">
               <div className="radius-box" style={{ borderRadius: `${cornerRadius}px` }}>
                 <input
@@ -177,10 +207,14 @@ class Customize extends React.Component {
         <div className="content-container">
           <h2 className="sub-heading black">PURCHASE</h2>
           <div className="flex-row-normal">
-            <CustomSelect
-              titles={this.state.selectOptions}
-              handleOptionSelect={this.handleTierChange}
-            />
+            {
+              this.props.checkout.tier !== 'unlimited' && (
+                <CustomSelect
+                  titles={this.state.selectOptions}
+                  handleOptionSelect={this.handleTierChange}
+                />
+              )
+            }
 
             <MediaQuery maxWidth={722}>
               <div style={{ display: 'flex', flexDirection: 'column' }}>
@@ -189,14 +223,17 @@ class Customize extends React.Component {
                 {
                   this.props.auth.isAuthenticated
                     ? <p style={{ fontSize: '18px', marginTop: '4px', lineHeight: '24px' }}>{this.props.auth.userInfo.email} <a className="link" onClick={this.props.signOut}>sign out</a></p>
-                    : <p style={{ fontSize: '18px', marginTop: '4px', lineHeight: '24px' }}>Already have an account? <a className="link">sign in</a></p>
+                    : <p style={{ fontSize: '18px', marginTop: '4px', lineHeight: '24px' }}>Already have an account? <a onClick={this.showSignIn} className="link">sign in</a></p>
                 }
               </div>
             </MediaQuery>
-            <div className="">
+
+            <div style={this.props.checkout.tier === 'unlimited' ? { width: '100%' } : {}}>
               <button
+                disabled={!checkoutStatus}
                 className="purchace-button full-width-mobile"
                 onClick={this.onPurchase}
+                style={!checkoutStatus ? { backgroundColor: 'grey' } : { backgroundColor: 'black' }}
               >
                 {
                   this.props.auth.isAuthenticated
@@ -211,7 +248,7 @@ class Customize extends React.Component {
 
               <div style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                 <div style={{ position: 'relative' }}>
-                  <img style={{ transform: 'rotate(180deg)', width: '60px', alignSelf: 'center', position: 'absolute' }} src="/images/arm.svg" />
+                  {this.props.checkout.tier !== 'unlimited' && <img style={{ transform: 'rotate(180deg)', width: '60px', alignSelf: 'center', position: 'absolute' }} src="/images/arm.svg" />}
                 </div>
               </div>
             </div>
@@ -221,14 +258,26 @@ class Customize extends React.Component {
                 <p style={{ fontSize: '18px', marginTop: '4px', lineHeight: '24px' }}>We accept credit cards through our secured third party provider Stripe.</p>
                 {
                   this.props.auth.isAuthenticated
-                    ? <p style={{ fontSize: '18px', marginTop: '4px', lineHeight: '24px' }}>{this.props.auth.userInfo.email} <a className="link" onClick={this.props.signOut}>sign out</a></p>
-                    : <p style={{ fontSize: '18px', marginTop: '4px', lineHeight: '24px' }}>Already have an account? <a className="link">sign in</a></p>
+                    ? (
+                      <div>
+                        <p style={{ fontSize: '18px', marginTop: '4px', lineHeight: '24px' }}>{this.props.auth.userInfo.email} <a className="link" onClick={this.props.signOut}>sign out</a></p>
+                        <p style={{ fontSize: '18px', marginTop: '4px', lineHeight: '24px' }}>Plan: {this.props.checkout.tier}</p>
+                      </div>
+                    )
+                    : <p style={{ fontSize: '18px', marginTop: '4px', lineHeight: '24px' }}>Already have an account? <a onClick={this.showSignIn} className="link">sign in</a></p>
                 }
               </div>
             </MediaQuery>
 
           </div>
         </div>
+
+        <LoginModal
+          isOpen={this.state.loginModal}
+          handleModalClose={this.handleLoginModalClose}
+          currentColor={this.state.currentColor}
+        />
+
         <CheckoutFormModal
           charging={this.state.charging}
           handleModalClose={this.handleModalClose}
@@ -243,17 +292,6 @@ class Customize extends React.Component {
     )
   }
 }
-
-const pdc = {
-  cursor: 'pointer',
-  border: '3px solid black',
-  height: '42px',
-  width: '42px',
-  marginTop: '10px',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center'
-};
 
 const mapStateToProps = (state) => ({
   config: state.config,
@@ -271,5 +309,15 @@ const mapDispatchToProps = (dispatch) => ({
   downloadForUnlimited: (callback) => dispatch(downloadForUnlimited(callback))
 });
 
-
 export default connect(mapStateToProps, mapDispatchToProps)(Customize);
+
+const pdc = {
+  cursor: 'pointer',
+  border: '3px solid black',
+  height: '42px',
+  width: '42px',
+  marginTop: '10px',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center'
+};

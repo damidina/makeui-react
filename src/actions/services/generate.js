@@ -21,7 +21,6 @@ const requestGenerate = (customOptions, tier = '', count = 1) => getIdToken()
     return fetch(`${process.env.BACKEND_URL}/generate`, options)
       .then(res => res.json())
       .then(data => {
-        console.log(data);
         return data.Location;
       });
   })

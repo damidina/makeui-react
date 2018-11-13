@@ -25,7 +25,7 @@ class LandingPage extends React.Component {
                 <Customize shouldScroll={this.state.shouldScroll} />
                 <UpcomingFeatures />
                 <Timeline />
-                <Footer />
+                <Footer onMakeClick={this.onTestItOutClick} />
             </div>
         );
     }

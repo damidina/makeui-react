@@ -14,7 +14,6 @@ class ColorBox extends React.Component {
   };
 
   onPickerChange = ({ hex }) => {
-    console.log(hex);
     this.props.setColor(this.props.index, hex);
   };
 
@@ -23,7 +22,6 @@ class ColorBox extends React.Component {
   };
 
   onColorClick = () => {
-    console.log('clicked');
     this.setState({ pickerVisible: !this.state.pickerVisible });
   };
 
