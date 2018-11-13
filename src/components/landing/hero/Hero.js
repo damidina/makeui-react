@@ -2,7 +2,7 @@ import React from 'react';
 
 const Hero = (props) => {
   return (
-    <div className="hero-section">
+    <div id="hero-section-id" className="hero-section">
       <img
         src="images/makeui-logo.svg"
         alt="MakeUI"
