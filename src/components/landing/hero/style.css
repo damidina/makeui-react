@@ -37,8 +37,6 @@ div {
 .hero-section {
   width: 100%;
   height: 100vh;
-  /*	background: #FFD692;
-  */
   overflow: hidden;
   position: relative;
   -moz-transition: all 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
@@ -46,6 +44,49 @@ div {
   -webkit-transition: all 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
   transition: all 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
   /* yes */ }
+  .hero-section .logo-makeui {
+    margin: 40px 50px; }
+    @media only screen and (max-width: 600px) {
+      .hero-section .logo-makeui {
+        margin-left: 34px;
+        width: 60px; } }
+  .hero-section .tagline {
+    position: absolute;
+    top: 29%;
+    left: 12%;
+    width: 30%; }
+    @media only screen and (max-width: 600px) {
+      .hero-section .tagline {
+        top: 18%;
+        width: 60%;
+        left: 34px; } }
+    .hero-section .tagline p {
+      font-family: 'tenso',sans-serif;
+      font-weight: 700;
+      font-style: italic;
+      font-size: calc(16px + 3vw); }
+      @media only screen and (max-width: 600px) {
+        .hero-section .tagline p {
+          font-size: 38px; } }
+      @media only screen and (max-width: 320px) {
+        .hero-section .tagline p {
+          font-size: 32px; } }
+  .hero-section .btn-test {
+    font-family: 'tenso',sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    text-decoration: none;
+    color: #FFFFFF !important;
+    background: #000000;
+    padding: 12px 32px;
+    float: right;
+    margin: 40px 50px; }
+    @media only screen and (max-width: 600px) {
+      .hero-section .btn-test {
+        float: left;
+        margin: 0;
+        padding: 8px 18px;
+        font-size: 18px; } }
   .hero-section .square {
     -moz-transition: all 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
     -o-transition: all 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
@@ -92,11 +133,21 @@ div {
       transform: translateX(-50%); }
       .hero-section #btn-makeui .rect-button-top.button-pressed {
         animation: 1s 0.45s buttonpressed; }
+      @media only screen and (max-width: 600px) {
+        .hero-section #btn-makeui .rect-button-top {
+          height: 35px; } }
+      @media only screen and (max-width: 320px) {
+        .hero-section #btn-makeui .rect-button-top {
+          height: 28px; } }
     .hero-section #btn-makeui .rect-button-bottom {
       width: 100%;
       height: 40%;
-      bottom: 0;
+      bottom: -1px;
       border-bottom: 0; }
+    @media only screen and (max-width: 600px) {
+      .hero-section #btn-makeui {
+        width: 80px;
+        left: 80.5%; } }
   .hero-section .arm {
     position: absolute;
     height: 90%;
@@ -119,6 +170,9 @@ div {
     .hero-section .arm img {
       position: absolute;
       top: 98%; }
+    @media only screen and (max-width: 600px) {
+      .hero-section .arm {
+        left: 80%; } }
   .hero-section .arrow {
     position: absolute;
     width: 46%;
@@ -130,18 +184,29 @@ div {
       position: absolute;
       top: -6px;
       left: -5px; }
+    @media only screen and (max-width: 847px) {
+      .hero-section .arrow {
+        display: none; } }
   .hero-section .radio-button {
     position: absolute;
     width: 1.5%;
     min-width: 20px;
     left: 45%;
     top: 35%; }
+    @media only screen and (max-width: 600px) {
+      .hero-section .radio-button {
+        top: 5%;
+        left: 90%; } }
   .hero-section .magnify-glass {
     position: absolute;
     width: 3%;
     min-width: 43px;
     left: 10%;
     top: 19%; }
+    @media only screen and (max-width: 600px) {
+      .hero-section .magnify-glass {
+        top: 62%;
+        left: 53%; } }
   .hero-section .x-icon {
     position: absolute;
     width: 2%;
@@ -159,16 +224,28 @@ div {
     border: 3px solid #000000;
     background: #FFFFFF;
     position: absolute;
-    -moz-transition: all 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
-    -o-transition: all 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
-    -webkit-transition: all 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
-    transition: all 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035); }
+    -moz-transition: border-radius 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+    -o-transition: border-radius 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+    -webkit-transition: border-radius 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+    transition: border-radius 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035); }
     .hero-section .circle-1 {
       left: -1%;
       top: 35%; }
+      @media only screen and (max-width: 600px) {
+        .hero-section .circle-1 {
+          top: -30px;
+          left: 40%;
+          width: 68px;
+          padding-bottom: 60px; } }
     .hero-section .circle-2 {
       right: -4%;
       top: 10%; }
+      @media only screen and (max-width: 600px) {
+        .hero-section .circle-2 {
+          right: -40px;
+          top: 50%;
+          width: 68px;
+          padding-bottom: 60px; } }
     .hero-section .circle-3 {
       right: 13%;
       bottom: -2%; }
@@ -177,6 +254,12 @@ div {
       top: 28%;
       width: 3.5%;
       padding-bottom: 3%; }
+      @media only screen and (max-width: 600px) {
+        .hero-section .circle-4 {
+          top: 18%;
+          right: 35%;
+          width: 46px;
+          padding-bottom: 40px; } }
     .hero-section .circle-5 {
       width: 16px;
       height: 16px;
@@ -198,14 +281,19 @@ div {
       .hero-section .circle-img-2 {
         left: 55%;
         top: 56%; }
+        @media only screen and (max-width: 600px) {
+          .hero-section .circle-img-2 {
+            width: 10px;
+            left: 70%;
+            top: 30%; } }
   .hero-section .rect {
     border: 3px solid #000000;
     background: #FFFFFF;
     position: absolute;
-    -moz-transition: all 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
-    -o-transition: all 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
-    -webkit-transition: all 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
-    transition: all 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035); }
+    -moz-transition: border-radius 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+    -o-transition: border-radius 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+    -webkit-transition: border-radius 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+    transition: border-radius 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035); }
     .hero-section .rect-1 {
       width: 15%;
       height: 5%;
@@ -218,6 +306,10 @@ div {
       right: 5%;
       border-radius: 50px;
       padding: 5px 3px; }
+      @media only screen and (max-width: 600px) {
+        .hero-section .rect-2 {
+          right: 90%;
+          bottom: -12%; } }
     .hero-section .rect-3 {
       width: 60%;
       margin-top: 10px; }
@@ -226,6 +318,12 @@ div {
       height: 4%;
       top: 26.5%;
       right: 26.5%; }
+      @media only screen and (max-width: 600px) {
+        .hero-section .rect-4 {
+          width: 14%;
+          height: 5%;
+          top: 16%;
+          right: 27%; } }
     .hero-section .rect-5 {
       width: 20%;
       height: 10px;
@@ -296,11 +394,19 @@ div {
         top: 64px; }
       .hero-section .uielement-3 .rect:nth-child(4) {
         top: 96px; }
+    @media only screen and (max-width: 600px) {
+      .hero-section .uielement-3 {
+        top: 75%;
+        right: 48%;
+        width: 35%; } }
   .hero-section .uielement-4 {
     position: absolute;
     width: 100%;
     height: 8%;
     left: 55%; }
+    @media only screen and (max-width: 680px) {
+      .hero-section .uielement-4 {
+        display: none; } }
     .hero-section .uielement-4-1 {
       top: -1.5%; }
     .hero-section .uielement-4-2 {
@@ -319,6 +425,9 @@ div {
         height: 100%;
         background: #FFFFFF;
         border: 3px solid #000000; }
+      @media only screen and (max-width: 847px) {
+        .hero-section .uielement-4 .comp:nth-child(3) {
+          display: none; } }
     .hero-section .uielement-4 hr {
       width: 50%; }
   .hero-section .hr-group hr {
@@ -332,6 +441,10 @@ div {
       stroke: #000000;
       stroke-width: 3px;
       fill: none; }
+  .hero-section .wave {
+    position: absolute;
+    width: 42%;
+    bottom: 10%; }
   .hero-section .form {
     position: absolute;
     width: 100%;
@@ -379,5 +492,12 @@ div {
       height: 7%;
       background: #000000;
       margin-top: 3%; }
+
+@media only screen and (max-width: 600px) {
+  .hide-mobile {
+    display: none !important; } }
+@media only screen and (min-width: 601px) {
+  .hide-desktop {
+    display: none !important; } }
 
 /*# sourceMappingURL=style.css.map */

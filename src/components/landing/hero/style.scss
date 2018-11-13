@@ -14,10 +14,60 @@ div {
 .hero-section {
 	width: 100%;
 	height: 100vh;
-/*	background: #FFD692;
-*/	overflow: hidden;
+	overflow: hidden;
 	position: relative;
 	@include transition(all 0.5s $ease);
+
+	.logo-makeui {
+		margin:40px 50px;
+		@media only screen and(max-width:600px) {
+			margin-left: 34px;
+			width: 60px;
+		}
+	}
+
+	.tagline {
+		position:absolute;
+		top:29%;
+		left:12%;
+		width:30%;
+		@media only screen and(max-width:600px) {
+			top: 18%;
+			width: 60%;
+			left: 34px;
+		}
+
+		p {
+			font-family:'tenso',sans-serif;
+			font-weight:700;
+			font-style:italic;
+			font-size:calc(16px + 3vw);
+			@media only screen and(max-width:600px) {
+				font-size: 38px;
+			}
+			@media only screen and (max-width: 320px) {
+				font-size: 32px;
+			}
+		}
+	}
+
+	.btn-test {
+		font-family:'tenso',sans-serif;
+		font-weight:700;
+		font-size:20px;
+		text-decoration:none;
+		color: $white !important;
+		background: $black;
+		padding:12px 32px;
+		float:right;
+		margin:40px 50px;
+		@media only screen and(max-width:600px) {
+			float: left;
+			margin: 0;
+			padding: 8px 18px;
+			font-size: 18px;
+		}
+	}
 
 	.square {
 		@include transition(all 0.5s $ease);
@@ -56,12 +106,23 @@ div {
 			&.button-pressed {
 				animation: 1s 0.45s buttonpressed;
 			}
+
+			@media only screen and(max-width:600px) {
+				height:35px;
+			}
+			@media only screen and(max-width:320px) {
+				height: 28px;
+			}
 		}
 		.rect-button-bottom {
 			width:100%;
 			height:40%;
-			bottom:0;
+			bottom:-1px;
 			border-bottom:0;
+		}
+		@media only screen and(max-width:600px) {
+			width: 80px;
+			left: 80.5%
 		}
 
 	}	
@@ -88,6 +149,9 @@ div {
 			position: absolute;
 			top: 98%;
 		}
+		@media only screen and(max-width:600px) {
+			left: 80%
+		}
 	}
 
 	.arrow {
@@ -101,6 +165,9 @@ div {
 			position:absolute;
 			top:-6px;left:-5px;
 		}
+		@media only screen and (max-width: 847px) {
+			display: none;
+		}
 	}
 
 	.radio-button {
@@ -109,6 +176,10 @@ div {
 		min-width:20px;
 		left:45%;
 		top:35%;
+		@media only screen and(max-width:600px) {
+			top: 5%;
+			left: 90%;
+		}
 	}
 
 	.magnify-glass {
@@ -117,6 +188,10 @@ div {
 		 min-width:43px;
 		 left:10%;
 		 top:19%;
+		 @media only screen and(max-width:600px) {
+			top: 62%;
+			left: 53%;
+		}
 	}
 
 	.x-icon {
@@ -140,13 +215,25 @@ div {
 		border: 3px solid $black;
 		background: $white;	
 		position: absolute;
-		@include transition(all 0.5s $ease);
+		@include transition(border-radius 0.5s $ease);
 
 		&-1 {
-			left:-1%; top:35%
+			left:-1%; top:35%;
+			@media only screen and (max-width:600px) {
+				top: -30px;
+				left: 40%;
+				width: 68px;
+				padding-bottom: 60px;
+			}
 		}
 		&-2 {
 			right: -4%; top: 10%;
+			@media only screen and(max-width:600px) {
+				right: -40px;
+				top: 50%;
+				width: 68px;
+				padding-bottom: 60px;
+			}
 		}
 		&-3 {
 			right: 13%; bottom: -2%;
@@ -156,6 +243,12 @@ div {
 			top:28%;
 			width: 3.5%;
 			padding-bottom:3%;
+			@media only screen and(max-width:600px) {
+				top: 18%;
+				right: 35%;
+				width: 46px;
+				padding-bottom: 40px;
+			}
 		}
 		&-5 {
 			width:16px;
@@ -180,6 +273,10 @@ div {
 			}
 			&-2 {
 				left: 55%;top: 56%;
+				@media only screen and(max-width:600px) {
+					width: 10px;
+					left: 70%;top: 30%;
+				}
 			}
 		}
 
@@ -189,7 +286,7 @@ div {
 		border: 3px solid $black;
 		background: $white;
 		position: absolute;
-		@include transition(all 0.5s $ease);
+		@include transition(border-radius 0.5s $ease);
 		&-1 {
 			width:15%;
 			height:5%;
@@ -203,6 +300,10 @@ div {
 			right:5%;
 			border-radius:50px;
 			padding:5px 3px;
+			@media only screen and(max-width:600px) {
+				right: 90%;
+				bottom: -12%;
+			}
 		}
 		&-3 {
 			width:60%;
@@ -213,6 +314,12 @@ div {
 			height:4%;
 			top:26.5%;
 			right:26.5%;
+			@media only screen and(max-width:600px) {
+				width: 14%;
+			    height: 5%;
+			    top: 16%;
+			    right: 27%;
+			}
 		}
 
 		&-5 {
@@ -283,12 +390,21 @@ div {
 					top:96px;
 				}
 			}
+			@media only screen and (max-width: 600px) {
+				top: 75%;
+				right: 48%;
+				width: 35%;
+			}
 		}
+
 		&-4 {
 			position:absolute;
 			width:100%;
 			height:8%;
 			left:55%;
+			@media only screen and (max-width: 680px) {
+				display: none;
+			}
 
 			&-1 {
 				top:-1.5%;
@@ -308,7 +424,11 @@ div {
 					height:100%;
 					background:$white;
 					border:3px solid $black;
-
+				}
+				&:nth-child(3) {
+					@media only screen and (max-width: 847px) {
+						display: none;
+					}
 				}
 			}
 			hr {
@@ -334,6 +454,9 @@ div {
 			stroke-width: 3px;
 			fill: none;
 		}
+	}
+	.wave {
+		position:absolute;width:42%;bottom: 10%;
 	}
 
 	.form {
@@ -386,6 +509,21 @@ div {
 				background:$black;
 				margin-top:3%;
 			}
+		}
+	}
+}
+
+.hide {
+
+	&-mobile {
+		@media only screen and (max-width: 600px) {
+			display: none !important;
+		}
+	}
+
+	&-desktop {
+		@media only screen and (min-width: 601px) {
+			display: none !important;
 		}
 	}
 }
