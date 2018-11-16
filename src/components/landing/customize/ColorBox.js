@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ColorPicker from './ColorPicker'
-import { setColor, addColor, removeColor, setCornerRadius } from '../../../actions/generate';
+import { setColor, removeColor } from '../../../actions/generate';
 
 class ColorBox extends React.Component {
 
