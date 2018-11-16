@@ -22,7 +22,7 @@ class LandingPage extends React.Component {
             <div>
                 <Hero onTestItOutClick={this.onTestItOutClick} />
                 <HowItWorks />
-                <CustomizeSection shouldScroll={this.state.shouldScroll} />
+                <CustomizeSection history={this.props.history} shouldScroll={this.state.shouldScroll} />
                 <UpcomingFeatures />
                 <Timeline />
                 <Footer onMakeClick={this.onTestItOutClick} />

@@ -8,8 +8,6 @@ class Colors extends Component {
   render() {
     return (
       <div style={{ padding: '16px' }}>
-        <MediaQuery maxWidth={659}><h1 style={{ marginTop: '100px' }}>Colors</h1></MediaQuery>
-        <MediaQuery minWidth={660}><h1>Colors</h1></MediaQuery>
         <div style={content}>
           {this.props.keys.map((key) => (
             <ColorItem

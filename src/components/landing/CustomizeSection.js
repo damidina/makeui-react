@@ -3,6 +3,10 @@ import CustomizeHeader from './customize/CustomizeHeader'
 
 export default class CustomizeSection extends Component {
 
+  toCustomize = () => {
+    this.props.history.push('/customize');
+  };
+
   componentDidUpdate() {
     if (this.props.shouldScroll) {
       const pos = this.customize.offsetTop;
@@ -14,7 +18,7 @@ export default class CustomizeSection extends Component {
     return (
       <div style={container}>
         <CustomizeHeader />
-        <button style={buttonStyle}>Test It Out!</button>
+        <button onClick={this.toCustomize} style={buttonStyle}>Test It Out!</button>
       </div>
     );
   }

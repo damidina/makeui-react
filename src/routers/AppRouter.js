@@ -17,7 +17,6 @@ const titles = ["Theme", "Color", "Corner Radius"]
 const ControllerPage = (props) => (<Controller {...props} titles={titles} views={[Themes, Colors, Corners]} />);
 
 
-
 const AppRouter = () => (
     <Router history={history}>
         <div>

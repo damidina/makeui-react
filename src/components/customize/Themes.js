@@ -15,8 +15,6 @@ class Themes extends Component {
   render() {
     return (
       <div style={{ padding: '16px' }}>
-        <MediaQuery maxWidth={809}><h1 style={{ marginTop: '100px' }}>Themes</h1></MediaQuery>
-        <MediaQuery minWidth={810}><h1>Themes</h1></MediaQuery>
         <MediaQuery maxWidth={809}>
           <div style={contentColumn}>
             <ThemeItem

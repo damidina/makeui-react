@@ -24,7 +24,6 @@ class Corners extends Component {
     const cornerRadius = this.props.config.cornerRadius;
     return (
       <div style={{ padding: '16px' }}>
-        <h1>Corner Radius</h1>
         <div style={content}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
             <div className="radius-box" style={{ borderRadius: `${cornerRadius}px`, marginRight: '24px' }}>

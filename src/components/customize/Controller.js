@@ -43,7 +43,7 @@ class Controller extends Component {
           <div style={left}>
             {this.state.canMoveBackward && <button onClick={this.backward} style={buttonStyle}>Previous</button>}
           </div>
-          <h1>Title</h1>
+          <h1 style={{ zIndex: '-999', position: 'absolute', width: '100vw', textAlign: 'center' }}>{this.props.titles[this.state.currentView]}</h1>
           <div style={right}>
             {this.state.canMoveForward && <button onClick={this.forward} style={buttonStyle}>Next</button>}
           </div>
@@ -128,7 +128,7 @@ const buttonStyle = {
   backgroundColor: 'black',
   fontSize: '20px',
   marginBottom: '25px',
-  border: 'none'
+  border: 'none',
 };
 
 const controller = {
