@@ -9,12 +9,13 @@ import Controller from '../components/customize/Controller';
 import Colors from '../components/customize/Colors';
 import Corners from '../components/customize/Corners';
 import Themes from '../components/customize/Themes';
+import Checkout from '../components/customize/Checkout';
 
 
 export const history = createHistory()
 
-const titles = ["Theme", "Color", "Corner Radius"]
-const ControllerPage = (props) => (<Controller {...props} titles={titles} views={[Themes, Colors, Corners]} />);
+const titles = ["Theme", "Color", "Radius", "Checkout"]
+const ControllerPage = (props) => (<Controller {...props} titles={titles} views={[Themes, Colors, Corners, Checkout]} />);
 
 
 const AppRouter = () => (

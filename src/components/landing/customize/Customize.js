@@ -72,7 +72,7 @@ class Customize extends React.Component {
   };
 
   /*
-   * When user clicks on action button first check
+   * When user clicks purchase button, first check
    * what tier the user is, if user is unlimited:
    *    - download file with current config
    * If user has no tier or is of tier 'once'

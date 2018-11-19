@@ -39,7 +39,7 @@ class CustomSelect extends Component {
         onClick={this.toggleShowOptions}
       >
         <div style={this.state.showOptions ? { ...itemContainer, ...flex } : { ...itemContainerLast, ...flex }}>
-          <p style={itemText} >{this.state.currentOption}</p>
+          <p style={{ ...itemText, fontWeight: 'bold' }} >{this.state.currentOption}</p>
           <div ref={r => this.carret = r} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '50px', height: '50px' }}>
             <img src="images/carret-down.svg" />
           </div>
@@ -72,10 +72,9 @@ const selectStyle = {
   border: 'solid 3px black',
   minHeight: '62px',
   minWidth: '300px',
-  width: 'calc(100% - 224px)',
+  width: '100%',
   cursor: 'pointer',
   alignSelf: 'flex-start',
-  margin: '1.2rem 1.2rem 1.2rem 0'
 };
 
 const itemContainer = {

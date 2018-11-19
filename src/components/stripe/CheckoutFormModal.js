@@ -16,7 +16,7 @@ class CheckoutFormModal extends React.Component {
 
     return (
       <Modal
-        isOpen={this.props.charging}
+        isOpen={this.props.modalOpen}
         contentLabel="payment"
         ariaHideApp={false}
         onRequestClose={this.props.handleModalClose}

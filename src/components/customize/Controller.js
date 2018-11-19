@@ -41,11 +41,11 @@ class Controller extends Component {
       <div style={controller}>
         <div style={controlsTop}>
           <div style={left}>
-            {this.state.canMoveBackward && <button onClick={this.backward} style={buttonStyle}>Previous</button>}
+            {this.state.canMoveBackward && <img src="/images/chevron-down.svg" onClick={this.backward} style={{ ...buttonStyle, transform: 'rotate(90deg)' }} />}
           </div>
-          <h1 style={{ zIndex: '-999', position: 'absolute', width: '100vw', textAlign: 'center' }}>{this.props.titles[this.state.currentView]}</h1>
+          <h2 style={{ marginTop: '20px', zIndex: '-999', position: 'absolute', width: '100vw', textAlign: 'center' }}>{this.props.titles[this.state.currentView]}</h2>
           <div style={right}>
-            {this.state.canMoveForward && <button onClick={this.forward} style={buttonStyle}>Next</button>}
+            {this.state.canMoveForward && <img src="/images/chevron-down.svg" onClick={this.forward} style={{ ...buttonStyle, transform: 'rotate(-90deg)' }} />}
           </div>
         </div>
         <div style={{ marginBottom: '50px' }}>
@@ -122,12 +122,10 @@ const activeCircleBlack = {
 };
 
 const buttonStyle = {
-  padding: '16px',
-  fontWeight: 'bold',
-  color: 'white',
-  backgroundColor: 'black',
-  fontSize: '20px',
+  cursor: 'pointer',
   marginBottom: '25px',
+  width: '20px',
+  height: '20px',
   border: 'none',
 };
 

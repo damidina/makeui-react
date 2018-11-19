@@ -26,7 +26,9 @@ const content = {
   display: 'flex',
   flexDirection: 'row',
   flexWrap: 'wrap',
-  maxWidth: '625px'
+  maxWidth: '625px',
+  marginTop: '50px',
+  marginBottom: '25px',
 };
 
 const mapStateToProps = (state) => ({

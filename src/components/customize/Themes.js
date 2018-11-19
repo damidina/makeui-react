@@ -93,7 +93,9 @@ const contentColumn = {
   display: 'flex',
   flexDirection: 'column',
   width: '100%',
-  alignItems: 'center'
+  alignItems: 'center',
+  marginTop: '60px',
+  marginBottom: '10px',
 };
 
 const mapStateToProps = (state) => ({

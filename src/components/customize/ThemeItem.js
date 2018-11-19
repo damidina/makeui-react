@@ -57,7 +57,7 @@ const themeContainerMobile = {
   flexDirection: 'column',
   width: 'calc(100vw - 32px)',
   height: '250px',
-  marginBottom: '25px'
+  marginBottom: '25px',
 };
 
 const themePreview = {
