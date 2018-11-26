@@ -34,7 +34,7 @@ class Footer extends React.Component {
               </p>
             </div>
             <div>
-              <p style={fine} className="center-text">Created by <span style={bold}>TomYum</span> and designed by <span style={bold}>Equal Parts Studio</span>.</p>
+              <p style={fine} className="center-text">Created by <a style={bold} href="http://tomyum.design/">TomYum</a>and designed by <a style={bold} href="https://equalparts.studio/">Equal Parts Studio</a>.</p>
               <p style={fine} className="center-text">Copyright &copy; 2018 MakeUI. All rights reserved</p>
             </div>
           </div>

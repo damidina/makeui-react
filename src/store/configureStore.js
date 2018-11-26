@@ -3,6 +3,7 @@ import thunk from 'redux-thunk';
 import authReducer from '../reducers/auth';
 import checkoutReducer from '../reducers/checkout';
 import generateReducer from '../reducers/generate';
+import backgroundReducer from '../reducers/background';
 import { setCheckoutProps } from '../actions/checkout';
 import { getUserData } from '../helpers/database';
 
@@ -20,6 +21,7 @@ const authPropsMiddleware = store => next => action => {
 export default () => {
     const store = createStore(
         combineReducers({
+            background: backgroundReducer,
             auth: authReducer,
             config: generateReducer,
             checkout: checkoutReducer

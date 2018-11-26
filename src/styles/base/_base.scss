@@ -46,8 +46,12 @@ button:disabled {
     font-style: italic;
     margin: 0;
     margin-bottom: $s-size;
-    margin-top: $xl-size;
+    margin-top: $s-size;
     max-width: 70rem;
+
+    @media only screen and (max-width: 460px) {
+        font-size: 32px;
+    }
 }
 
 .section-heading-margin {
@@ -73,11 +77,25 @@ button:disabled {
     margin-top: 40px;
     font-size: $sub-heading;
     font-weight: bold;
+    @media only screen and (max-width: 460px) {
+        font-size: 18px;
+    }
+}
+
+.sub-heading-mobile {
+    margin-top: 40px;
+    font-size: $sub-heading-mobile;
+    font-weight: bold;
 }
 
 .paragraph {
     font-size: $paragraph;
     line-height: 31px;
+}
+
+.paragraph-mobile {
+    font-size: $paragraph-mobile;
+    line-height: 25px;
 }
 
 .paragraph-bold {

@@ -20,7 +20,7 @@ class Customize extends React.Component {
     charging: false,
     complete: false,
     loading: false,
-    selectOptions: ['Select Purchase Option', 'Unlimited', 'One Time'],
+    selectOptions: ['Select Purchase Option', '$10 for a one time download', '$25 for a one year unlimited download'],
     currentColor: '',
     tooltipVis: true,
   };
@@ -135,22 +135,27 @@ class Customize extends React.Component {
     return (
       <div style={{ overflow: 'hidden' }} className="customize-section" ref={r => this.customize = r}>
         <CustomizeHeader />
-        <div className="content-container flex-row-break-dl">
-          <div className="full-width-mobile">
+        <div className="grid-container" style={{ padding: '32px' }}>
+          <div className="colors-container">
             <h2 className="sub-heading black">COLORS</h2>
-            <div className="flex-row-normal">
-              {this.props.keys.map((key) => (
-                <ColorBox
-                  key={key}
-                  index={key}
-                  onChange={(key, value) => this.onColorChange(key, value)}
-                  color={this.props.config.colors[key]} />
-              ))}
+            <div className="color-box-container">
+              {this.props.keys.map((key) => {
+                if (key === "01" || key === "02") {
+                  return (
+                    <ColorBox
+                      key={key}
+                      index={key}
+                      onChange={(key, value) => this.onColorChange(key, value)}
+                      color={this.props.config.colors[key]} />
+                  )
+                }
+              }
+              )}
             </div>
           </div>
-          <div style={{ width: '100%' }}>
-            <div style={{ display: 'flex', flexDirection: 'row' }}>
-              <h2 className="sub-heading black">CORNER RADIUS</h2>
+          <div className="corners-container">
+            <div style={{ display: 'flex' }}>
+              <h2 className="sub-heading black" style={{ marginBottom: '2.4rem' }}>CORNER RADIUS</h2>
               <div style={{ width: '24px', height: '24px', alignSelf: 'center', marginTop: '15px', marginLeft: '10px' }}>
                 <div style={{ position: 'relative' }}>
                   <div style={{ position: 'absolute', left: '-170px', bottom: '1px' }}>
@@ -162,7 +167,7 @@ class Customize extends React.Component {
                 <img onMouseOver={this.toolTipHover} onMouseLeave={this.toolTipHover} src="/images/info.svg" />
               </div>
             </div>
-            <div className="custom-slider-flex">
+            <div className="radius-inputs">
               <div className="radius-box" style={{ borderRadius: `${cornerRadius}px` }}>
                 <input
                   className="radius-box--input"
@@ -184,7 +189,7 @@ class Customize extends React.Component {
                 />
               </div>
             </div>
-            <p style={{ fontWeight: 'bold', fontSize: '18px', marginBottom: 0 }}>Corners</p>
+            <p style={{ fontWeight: 'bold', fontSize: '18px', marginBottom: 0, marginTop: '10px' }}>Corners</p>
             <p style={{ fontSize: '18px', marginTop: '4px', lineHeight: '24px' }}>The radius will be applied to the corners of borders, buttons, and form fields.</p>
             <p style={{ fontWeight: 'bold', fontSize: '18px', marginBottom: 0 }}>Predefined Corners</p>
             <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
@@ -203,72 +208,77 @@ class Customize extends React.Component {
               </div>
             </div>
           </div>
-        </div>
-        <div className="content-container">
-          <h2 className="sub-heading black">PURCHASE</h2>
-          <div className="flex-row-normal">
-            {
-              this.props.checkout.tier !== 'unlimited' && (
-                <CustomSelect
-                  titles={this.state.selectOptions}
-                  handleOptionSelect={this.handleTierChange}
-                />
-              )
-            }
 
-            <MediaQuery maxWidth={722}>
-              <div style={{ display: 'flex', flexDirection: 'column' }}>
-                <p style={{ fontWeight: 'bold', fontSize: '18px', marginBottom: 0 }}>Payment</p>
-                <p style={{ fontSize: '18px', marginTop: '4px', lineHeight: '24px' }}>We accept credit cards through our secured third party provider Stripe.</p>
-                {
-                  this.props.auth.isAuthenticated
-                    ? <p style={{ fontSize: '18px', marginTop: '4px', lineHeight: '24px' }}>{this.props.auth.userInfo.email} <a className="link" onClick={this.props.signOut}>sign out</a></p>
-                    : <p style={{ fontSize: '18px', marginTop: '4px', lineHeight: '24px' }}>Already have an account? <a onClick={this.showSignIn} className="link">sign in</a></p>
-                }
-              </div>
-            </MediaQuery>
+          <div className="purchase-container">
+            <h2 className="purchase-title sub-heading black">PURCHASE</h2>
+            <div className="select-container">
+              {
+                this.props.checkout.tier !== 'unlimited' && (
+                  <CustomSelect
+                    titles={this.state.selectOptions}
+                    handleOptionSelect={this.handleTierChange}
+                  />
+                )
+              }
 
-            <div style={this.props.checkout.tier === 'unlimited' ? { width: '100%' } : {}}>
-              <button
-                disabled={!checkoutStatus}
-                className="purchace-button full-width-mobile"
-                onClick={this.onPurchase}
-                style={!checkoutStatus ? { backgroundColor: 'grey' } : { backgroundColor: 'black' }}
-              >
-                {
-                  this.props.auth.isAuthenticated
-                    ? (this.props.checkout.tier === 'unlimited'
-                      ? 'Download'
-                      : (this.props.checkout.checked === 'unlimited'
-                        ? 'Upgrade'
-                        : 'Purchase again'))
-                    : 'Purchase'
-                }
-              </button>
+              <MediaQuery maxWidth={559}>
+                <div className="payment-copy">
+                  <div style={{ display: 'flex', flexDirection: 'column' }}>
+                    <p style={{ fontWeight: 'bold', fontSize: '18px', marginBottom: 0 }}>Payment</p>
+                    <p style={{ fontSize: '18px', marginTop: '4px', lineHeight: '24px' }}>We accept credit cards through our secured third party provider Stripe.</p>
+                    {
+                      this.props.auth.isAuthenticated
+                        ? <p style={{ fontSize: '18px', marginTop: '4px', lineHeight: '24px' }}>{this.props.auth.userInfo.email} <a onClick={this.props.signOut} style={{ textDecoration: 'none', color: 'black', fontWeight: 'bold' }} className="underline">Sign out</a></p>
+                        : <p style={{ fontSize: '18px', marginTop: '4px', lineHeight: '24px' }}>Already have an account? <a onClick={this.showSignIn} style={{ textDecoration: 'none', color: 'black', fontWeight: 'bold' }} className="underline">Sign in</a></p>
+                    }
+                  </div>
+                </div>
+              </MediaQuery>
 
-              <div style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                <div style={{ position: 'relative' }}>
-                  {this.props.checkout.tier !== 'unlimited' && <img style={{ width: '60px', alignSelf: 'center', position: 'absolute' }} src="/images/arm-hand.svg" />}
+              <div className="purchase-button-container" style={this.props.checkout.tier === 'unlimited' ? {} : {}}>
+                <button
+                  disabled={!checkoutStatus}
+                  className="purchace-button"
+                  onClick={this.onPurchase}
+                  style={!checkoutStatus ? { backgroundColor: 'grey' } : { backgroundColor: 'black' }}
+                >
+                  {
+                    this.props.auth.isAuthenticated
+                      ? (this.props.checkout.tier === 'unlimited'
+                        ? 'Download'
+                        : (this.props.checkout.checked === 'unlimited'
+                          ? 'Upgrade'
+                          : 'Purchase again'))
+                      : 'Purchase'
+                  }
+                </button>
+
+                <div style={{ gridColumn: 'span 4', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                  <div style={{ position: 'relative' }}>
+                    {this.props.checkout.tier !== 'unlimited' && <img className="hand-img-hide" style={{ width: '60px', alignSelf: 'center', position: 'absolute' }} src="/images/arm-hand.svg" />}
+                  </div>
                 </div>
               </div>
-            </div>
-            <MediaQuery minWidth={723}>
-              <div style={{ display: 'flex', flexDirection: 'column' }}>
-                <p style={{ fontWeight: 'bold', fontSize: '18px', marginBottom: 0 }}>Payment</p>
-                <p style={{ fontSize: '18px', marginTop: '4px', lineHeight: '24px' }}>We accept credit cards through our secured third party provider Stripe.</p>
-                {
-                  this.props.auth.isAuthenticated
-                    ? (
-                      <div>
-                        <p style={{ fontSize: '18px', marginTop: '4px', lineHeight: '24px' }}>{this.props.auth.userInfo.email} <a className="link" onClick={this.props.signOut}>sign out</a></p>
-                        <p style={{ fontSize: '18px', marginTop: '4px', lineHeight: '24px' }}>Plan: {this.props.checkout.tier}</p>
-                      </div>
-                    )
-                    : <p style={{ fontSize: '18px', marginTop: '4px', lineHeight: '24px' }}>Already have an account? <a onClick={this.showSignIn} className="link">sign in</a></p>
-                }
-              </div>
-            </MediaQuery>
+              <MediaQuery minWidth={560}>
+                <div className="payment-copy">
+                  <div style={{ display: 'flex', flexDirection: 'column' }}>
+                    <p style={{ fontWeight: 'bold', fontSize: '18px', marginBottom: 0 }}>Payment</p>
+                    <p style={{ fontSize: '18px', marginTop: '4px', lineHeight: '24px' }}>We accept credit cards through our secured third party provider Stripe.</p>
+                    {
+                      this.props.auth.isAuthenticated
+                        ? (
+                          <div>
+                            <p style={{ fontSize: '18px', marginTop: '4px', lineHeight: '24px' }}>{this.props.auth.userInfo.email} <a style={{ textDecoration: 'none', color: 'black', fontWeight: 'bold' }} className="underline" onClick={this.props.signOut}>Sign out</a></p>
+                            <p style={{ fontSize: '18px', marginTop: '4px', lineHeight: '24px' }}>Plan: {this.props.checkout.tier}</p>
+                          </div>
+                        )
+                        : <p style={{ fontSize: '18px', marginTop: '4px', lineHeight: '24px' }}>Already have an account? <a onClick={this.showSignIn} style={{ textDecoration: 'none', color: 'black', fontWeight: 'bold' }} className="underline">Sign in</a></p>
+                    }
+                  </div>
+                </div>
+              </MediaQuery>
 
+            </div>
           </div>
         </div>
 

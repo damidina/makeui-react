@@ -1,29 +1,85 @@
 import React from 'react';
 import { CustomPicker } from 'react-color';
-import { Saturation, Hue, EditableInput } from 'react-color/lib/components/common';
+import { Saturation, Hue, Alpha, EditableInput } from 'react-color/lib/components/common';
+import color from 'react-color/lib/helpers/color';
 
 class ColorPicker extends React.Component {
 
-  _onColorChange = ({ hex }) => {
-    const hexStr = String(hex);
-    this.props.onColorChange(hexStr);
-  };
+  onInputChange = (data, e) => {
+    console.log('asdasdasd');
+    if (data.HEX) {
+      color.isValidHex(data.HEX) && this.props.onChange({
+        hex: data.HEX,
+        source: 'hex',
+      }, e)
+    } else if (data.R || data.G || data.B) {
+      this.props.onChange({
+        r: data.R || this.props.rgb.r,
+        g: data.G || this.props.rgb.g,
+        b: data.B || this.props.rgb.b,
+        a: this.props.rgb.a,
+        source: 'rgb',
+      }, e)
+    } else if (data.A) {
+      if (data.A < 0) {
+        data.A = 0
+      } else if (data.A > 100) {
+        data.A = 100
+      }
+
+      data.a /= 100
+      this.props.onChange({
+        h: this.props.hsl.h,
+        s: this.props.hsl.s,
+        l: this.props.hsl.l,
+        a: data.a,
+        source: 'rgb',
+      }, e)
+    }
+  }
 
   render() {
     return (
-      <div style={pickerContainer}>
-        <div style={satContainer}>
+      <div className="picker-container" style={{ width: `${this.props.width}px` }}>
+        <div className="sat-container">
           <Saturation {...this.props} />
         </div>
-        <div style={hueContainer}>
+        <div className="hue-container">
           <Hue {...this.props} />
         </div>
-        <div style={hexContainer}>
+        <div className="alpha-container">
+          <Alpha {...this.props} />
+        </div>
+        <div className="hex-container">
           <EditableInput
-            value={this.props.hex}
-            label={'hex'}
+            value={this.props.hex.replace('#', '')}
+            label={'HEX'}
+            style={inputStylesHex}
+            onChange={this.onInputChange}
+          />
+          <EditableInput
+            value={this.props.rgb.r}
+            label={'R'}
             style={inputStyles}
-            onChange={this._onColorChange}
+            onChange={this.onInputChange}
+          />
+          <EditableInput
+            value={this.props.rgb.g}
+            label={'G'}
+            style={inputStyles}
+            onChange={this.onInputChange}
+          />
+          <EditableInput
+            value={this.props.rgb.b}
+            label={'B'}
+            style={inputStyles}
+            onChange={this.onInputChange}
+          />
+          <EditableInput
+            value={this.props.rgb.a}
+            label={'A'}
+            style={inputStyles}
+            onChange={this.onInputChange}
           />
         </div>
       </div>
@@ -33,49 +89,47 @@ class ColorPicker extends React.Component {
 
 export default CustomPicker(ColorPicker);
 
-const pickerContainer = {
-  width: '300px',
-  padding: '5px',
-  border: 'black 3px solid',
-  background: 'white'
-};
-
-const satContainer = {
-  width: '284px',
-  height: '100px',
-  position: 'relative',
-  border: 'black 3px solid',
-};
-
-const hueContainer = {
-  width: '284px',
-  height: '25px',
-  position: 'relative',
-  marginTop: '8px',
-  border: 'black 3px solid',
-};
-
-const hexContainer = {
-  width: '284px',
-  position: 'relative',
-  marginTop: '8px',
-};
-
 const inputStyles = {
   wrap: {
+    margin: '1px',
     display: 'flex',
-    flexDirection: 'row-reverse',
-    justifyContent: 'flex-end',
+    flexDirection: 'column',
+    alignItems: 'center'
   },
   input: {
+    textAlign: 'center',
+    height: '30px',
+    fontSize: '14px',
     width: '100%',
-    border: 'black 3px solid',
+    border: 'black 2px solid',
   },
   label: {
-    marginRight: '4px',
     paddingTop: '3px',
-    fontSize: '18px',
-    fontWeight: 'bold',
+    fontSize: '14px',
     color: 'black',
+    fontWeight: 'bold'
+  },
+};
+
+const inputStylesHex = {
+  wrap: {
+    margin: '1px',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    width: '80%'
+  },
+  input: {
+    textAlign: 'center',
+    height: '30px',
+    fontSize: '14px',
+    width: '100%',
+    border: 'black 2px solid',
+  },
+  label: {
+    paddingTop: '3px',
+    fontSize: '14px',
+    color: 'black',
+    fontWeight: 'bold'
   },
 };
