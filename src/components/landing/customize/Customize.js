@@ -12,6 +12,7 @@ import { startSignOut } from '../../../actions/auth';
 import LoginModal from './loginModal';
 import CustomSelect from '../../CustomSelect';
 import 'rc-slider/assets/index.css';
+import Themes from './Themes';
 
 class Customize extends React.Component {
 
@@ -136,8 +137,12 @@ class Customize extends React.Component {
       <div style={{ overflow: 'hidden' }} className="customize-section" ref={r => this.customize = r}>
         <CustomizeHeader />
         <div className="grid-container" style={{ padding: '32px' }}>
+          <div className="themes-container">
+            <h2 className="sub-heading black">THEMES</h2>
+            <Themes />
+          </div>
           <div className="colors-container">
-            <h2 className="sub-heading black">COLORS</h2>
+            <h2 className="sub-heading black" style={{ marginBottom: '2.4rem' }}>COLORS</h2>
             <div className="color-box-container">
               {this.props.keys.map((key) => {
                 if (key === "01" || key === "02") {

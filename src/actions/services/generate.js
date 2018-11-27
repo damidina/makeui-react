@@ -4,8 +4,15 @@ const requestGenerate = (customOptions, tier = '', count = 1) => getIdToken()
   .then((authIdToken) => {
     // if (tier === 'once' && count >= 1) return Promise.reject(new Error('Max generation limit reached!'));
 
-    const payload = {
+    console.log(customOptions);
+
+    const optionsWithTheme = {
       ...customOptions,
+      theme: customOptions.theme === '1' ? 'base' : `theme${customOptions.theme}`
+    };
+
+    const payload = {
+      optionsWithTheme,
       authIdToken,
       count,
     };

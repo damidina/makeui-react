@@ -1,5 +1,6 @@
 import React from 'react';
 import LoginModal from './customize/loginModal';
+import MediaQuery from 'react-responsive';
 
 class Footer extends React.Component {
 
@@ -25,16 +26,26 @@ class Footer extends React.Component {
         <div className="content-container flex-center footer-container">
           <div className="flex-column align-center">
             <div style={{ width: '60px', height: '60px' }}><img src="/images/makeui-logo.svg" /></div>
-            <div className="flex-row">
+            <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
               <p style={{ margin: '15px', cursor: 'pointer' }} onClick={this.openLoginModal} className="sub-heading center-text">LOGIN</p>
               <p style={{ margin: '15px', cursor: 'pointer' }} onClick={this.props.onMakeClick} className="sub-heading center-text">MAKE</p>
             </div>
             <div>
-              <p style={feedback} className="center-text">Have questions or feedback? <a style={bold} className="underline" href="mailto:contact@makeui.com"> Contact us</a>
-              </p>
+              <MediaQuery minWidth={500}>
+                {(match) => {
+                  if (match) {
+                    return <p style={feedback} className="center-text">Have questions or feedback? <a style={bold} className="underline" href="mailto:contact@makeui.com"> Contact us</a></p>
+                  } else {
+                    return <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                      <p style={feedback} className="center-text">Have questions or feedback?</p>
+                      <a style={{ ...bold, marginBottom: '20px' }} className="underline" href="mailto:contact@makeui.com"> Contact us</a>
+                    </div>
+                  }
+                }}
+              </MediaQuery>
             </div>
             <div>
-              <p style={fine} className="center-text">Created by <a style={bold} href="http://tomyum.design/">TomYum</a>and designed by <a style={bold} href="https://equalparts.studio/">Equal Parts Studio</a>.</p>
+              <p style={fine} className="center-text">Created by <a style={bold} href="http://tomyum.design/">TomYum</a> and designed by <a style={bold} href="https://equalparts.studio/">Equal Parts Studio</a>.</p>
               <p style={fine} className="center-text">Copyright &copy; 2018 MakeUI. All rights reserved</p>
             </div>
           </div>

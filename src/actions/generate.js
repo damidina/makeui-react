@@ -37,4 +37,9 @@ const setCornerRadius = cornerRadius => ({
   cornerRadius
 });
 
-export { setColor, addColor, removeColor, setCornerRadius };
+const setTheme = (theme) => ({
+  type: 'SET_THEME',
+  theme
+});
+
+export { setColor, addColor, removeColor, setCornerRadius, setTheme };

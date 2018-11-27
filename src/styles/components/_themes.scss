@@ -1,0 +1,24 @@
+.theme-section {
+  grid-column: span 12;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 10px;
+  margin-bottom: 30px;
+}
+
+.theme-item-container {
+  grid-column: span 4;
+  height: 250px;
+  border: 3px solid black;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  @media only screen and (max-width: 745px) {
+    height: 270px;
+  }
+
+  @media only screen and (max-width: 570px) {
+    grid-column: span 12;
+  }
+}
