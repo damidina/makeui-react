@@ -42,7 +42,7 @@ const startPurchase = (token, callback) => (dispatch) => {
       callback();
     })
     .catch((err) => {
-      console.error(err);
+      console.error("Error encountered: ", err);
     })
 };
 
