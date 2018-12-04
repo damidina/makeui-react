@@ -126,3 +126,18 @@ button:disabled {
     height: 33px;
     margin-right: 8px;
 }
+
+.description-header {
+    font-weight: bold;
+    font-size: 18px;
+    @media only screen and (max-width: 430px) {
+        font-size: 14px;
+    }
+}
+
+.description {
+    font-size: 18px;
+    @media only screen and (max-width: 430px) {
+        font-size: 14px;
+    }
+}

@@ -52,9 +52,9 @@ class Customize extends React.Component {
   }
 
   handleTierChange = (tier) => {
-    if (tier === 1) {
+    if (tier === 2) {
       this.props.updateCheckedTier('unlimited');
-    } else if (tier === 2) {
+    } else if (tier === 1) {
       this.props.updateCheckedTier('once');
     }
   };
@@ -134,15 +134,15 @@ class Customize extends React.Component {
     const checkoutStatus = this.props.auth.isAuthenticated ? (this.props.checkout.tier === 'unlimited' ? true : this.props.checkout.checked === 'none' ? false : true) : (this.props.checkout.checked === 'none' ? false : true);
 
     return (
-      <div style={{ overflow: 'hidden' }} className="customize-section" ref={r => this.customize = r}>
+      <div className="customize-section" style={{ overflow: 'hidden' }} ref={r => this.customize = r}>
         <CustomizeHeader />
-        <div className="grid-container" style={{ padding: '32px' }}>
+        <div className="grid-container" style={{ padding: '32px', paddingBottom: '0px' }}>
           <div className="themes-container">
             <h2 className="sub-heading black">THEMES</h2>
             <Themes />
           </div>
           <div className="colors-container">
-            <h2 className="sub-heading black" style={{ marginBottom: '2.4rem' }}>COLORS</h2>
+            <h2 className="sub-heading black" style={{ marginBottom: '1.5rem' }}>COLORS</h2>
             <div className="color-box-container">
               {this.props.keys.map((key) => {
                 if (key === "01" || key === "02") {
@@ -160,17 +160,7 @@ class Customize extends React.Component {
           </div>
           <div className="corners-container">
             <div style={{ display: 'flex' }}>
-              <h2 className="sub-heading black" style={{ marginBottom: '2.4rem' }}>CORNER RADIUS</h2>
-              <div style={{ width: '24px', height: '24px', alignSelf: 'center', marginTop: '15px', marginLeft: '10px' }}>
-                <div style={{ position: 'relative' }}>
-                  <div style={{ position: 'absolute', left: '-170px', bottom: '1px' }}>
-                    <div ref={r => this.toolTip = r} className="tooltip">
-                      <p>This defines how round you want your corners! 0 is square!</p>
-                    </div>
-                  </div>
-                </div>
-                <img onMouseOver={this.toolTipHover} onMouseLeave={this.toolTipHover} src="/images/info.svg" />
-              </div>
+              <h2 className="sub-heading black" style={{ marginBottom: '1.5rem' }}>CORNER RADIUS</h2>
             </div>
             <div className="radius-inputs">
               <div className="radius-box" style={{ borderRadius: `${cornerRadius}px` }}>
@@ -194,9 +184,9 @@ class Customize extends React.Component {
                 />
               </div>
             </div>
-            <p style={{ fontWeight: 'bold', fontSize: '18px', marginBottom: 0, marginTop: '10px' }}>Corners</p>
-            <p style={{ fontSize: '18px', marginTop: '4px', lineHeight: '24px' }}>The radius will be applied to the corners of borders, buttons, and form fields.</p>
-            <p style={{ fontWeight: 'bold', fontSize: '18px', marginBottom: 0 }}>Predefined Corners</p>
+            <p style={{ fontWeight: 'bold', marginBottom: 0, marginTop: '20px' }} className="description-header">Corners</p>
+            <p style={{ marginTop: '4px', lineHeight: '24px' }} className="description">The radius will be applied to the corners of borders, buttons, and form fields.</p>
+            <p style={{ fontWeight: 'bold', marginBottom: 0, marginTop: '20px' }} className="description-header">Predefined Corners</p>
             <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
               {/* find pdc at bottom of this file */}
               <div onClick={() => this.onChangeRadius(0)} style={{ ...pdc, borderRadius: '0px', }} className={cornerRadius === 0 ? 'cr-selected' : ''}>
@@ -229,12 +219,12 @@ class Customize extends React.Component {
               <MediaQuery maxWidth={559}>
                 <div className="payment-copy">
                   <div style={{ display: 'flex', flexDirection: 'column' }}>
-                    <p style={{ fontWeight: 'bold', fontSize: '18px', marginBottom: 0 }}>Payment</p>
-                    <p style={{ fontSize: '18px', marginTop: '4px', lineHeight: '24px' }}>We accept credit cards through our secured third party provider Stripe.</p>
+                    <p style={{ fontWeight: 'bold', marginBottom: 0 }} className="description-header">Payment</p>
+                    <p style={{ marginTop: '4px', lineHeight: '24px' }} className="description">We accept credit cards through our secured third party provider Stripe.</p>
                     {
                       this.props.auth.isAuthenticated
-                        ? <p style={{ fontSize: '18px', marginTop: '4px', lineHeight: '24px' }}>{this.props.auth.userInfo.email} <a onClick={this.props.signOut} style={{ textDecoration: 'none', color: 'black', fontWeight: 'bold' }} className="underline">Sign out</a></p>
-                        : <p style={{ fontSize: '18px', marginTop: '4px', lineHeight: '24px' }}>Already have an account? <a onClick={this.showSignIn} style={{ textDecoration: 'none', color: 'black', fontWeight: 'bold' }} className="underline">Sign in</a></p>
+                        ? <p style={{ marginTop: '4px', lineHeight: '24px' }} className="description">{this.props.auth.userInfo.email} <a onClick={this.props.signOut} style={{ textDecoration: 'none', color: 'black', fontWeight: 'bold' }} className="underline">Sign out</a></p>
+                        : <p style={{ marginTop: '4px', lineHeight: '24px' }} className="description">Already have an account? <a onClick={this.showSignIn} style={{ textDecoration: 'none', color: 'black', fontWeight: 'bold' }} className="underline">Sign in</a></p>
                     }
                   </div>
                 </div>
@@ -265,22 +255,43 @@ class Customize extends React.Component {
                 </div>
               </div>
               <MediaQuery minWidth={560}>
-                <div className="payment-copy">
+                <div className="payment-copy" style={this.props.checkout.tier === 'unlimited' ? { gridColumn: 'span 12' } : {}}>
                   <div style={{ display: 'flex', flexDirection: 'column' }}>
-                    <p style={{ fontWeight: 'bold', fontSize: '18px', marginBottom: 0 }}>Payment</p>
-                    <p style={{ fontSize: '18px', marginTop: '4px', lineHeight: '24px' }}>We accept credit cards through our secured third party provider Stripe.</p>
+                    <p style={{ fontWeight: 'bold', fontSize: '18px', marginBottom: 0 }} className="description-header">Payment</p>
+                    <p style={{ marginTop: '4px', lineHeight: '24px' }} className="description">We accept credit cards through our secured third party provider Stripe.</p>
                     {
                       this.props.auth.isAuthenticated
                         ? (
                           <div>
-                            <p style={{ fontSize: '18px', marginTop: '4px', lineHeight: '24px' }}>{this.props.auth.userInfo.email} <a style={{ textDecoration: 'none', color: 'black', fontWeight: 'bold' }} className="underline" onClick={this.props.signOut}>Sign out</a></p>
-                            <p style={{ fontSize: '18px', marginTop: '4px', lineHeight: '24px' }}>Plan: {this.props.checkout.tier}</p>
+                            <p style={{ marginTop: '4px', lineHeight: '24px' }} className="description">{this.props.auth.userInfo.email} <a style={{ textDecoration: 'none', color: 'black', fontWeight: 'bold' }} className="underline" onClick={this.props.signOut}>Sign out</a></p>
+                            <p style={{ marginTop: '4px', lineHeight: '24px' }} className="description">Plan: {this.props.checkout.tier}</p>
                           </div>
                         )
-                        : <p style={{ fontSize: '18px', marginTop: '4px', lineHeight: '24px' }}>Already have an account? <a onClick={this.showSignIn} style={{ textDecoration: 'none', color: 'black', fontWeight: 'bold' }} className="underline">Sign in</a></p>
+                        : <p style={{ marginTop: '4px', lineHeight: '24px' }} className="description"> Already have an account? <a onClick={this.showSignIn} style={{ textDecoration: 'none', color: 'black', fontWeight: 'bold' }} className="underline">Sign in</a></p>
                     }
                   </div>
                 </div>
+              </MediaQuery>
+              <MediaQuery maxWidth={559}>
+                {
+                  (match) => {
+                    if (match) {
+                      return (
+                        <div style={{ position: 'relative', height: '200px' }}>
+                          <div style={{ width: 'calc(100vw - 64px)', position: 'absolute', bottom: '0px', display: 'flex', justifyContent: 'center' }}>
+                            <img style={{ position: 'absolute', width: '60px', bottom: '-100px' }} src="/images/arm-hand.svg" />
+                          </div>
+                        </div>
+                      )
+                    } else {
+                      return (
+                        <div style={{ height: '200px' }}>
+                        </div>
+                      )
+                    }
+                  }
+                }
+
               </MediaQuery>
 
             </div>
