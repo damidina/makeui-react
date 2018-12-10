@@ -3,105 +3,35 @@ import React from 'react';
 const ThemeItem = (props) => {
   return (
     <div className="theme-item-container">
-      <div style={themePreview}></div>
-      <div style={themeInfo}>
-        <h3 style={{ ...marginNone, marginBottom: '16px' }}>{props.title}</h3>
-        <div style={row}>
-          <div style={circle}></div><p style={marginNone}>{props.components}</p>
-        </div>
-        <div style={row}>
-          <div style={circle}></div><p style={marginNone}>{props.layouts}</p>
-        </div>
+      <div className="icon-title-container">
+        <img className="theme-icon" src="/images/theme-icon.svg" />
+        <div className="theme-title">{props.title}</div>
       </div>
+      <div className="theme-description">
+        <p>{props.description}</p>
+      </div>
+      <div className="theme-info">
+        <p>{props.components}</p>
+        <p>{props.layouts}</p>
+      </div>
+      <button className="theme-button theme-button--left">
+        <img className="theme-button--image" src="/images/tiny-preview-icon.svg" />Preview
+      </button>
       <button
         value={props.value}
         onClick={props.onThemeSelect}
-        style={props.currentTheme === props.value ? themeSelected : themeSelect}
+        className={props.currentTheme === props.value ? "theme-button theme-button--right selected-theme" : "theme-button theme-button--right"}
       >
-        {props.currentTheme === props.value ? 'Selected' : 'Select Theme'}
+        {
+          props.currentTheme === props.value
+            ? <img className="theme-button--image" src="/images/tiny-selected-icon.svg" />
+            : <img className="theme-button--image" src="/images/tiny-select-icon.svg" />
+
+        }
+        {props.currentTheme === props.value ? 'Selected!' : 'Select'}
       </button>
     </div>
   )
 }
-
-
-const row = {
-  display: 'flex',
-  flexDirection: 'row',
-  alignItems: 'center',
-  marginBottom: '4px'
-};
-
-const circle = {
-  width: '14px',
-  height: '14px',
-  borderRadius: '7px',
-  border: '3px solid black',
-  marginRight: '8px'
-};
-
-const themeContainer = {
-  position: 'relative',
-  border: '3px solid black',
-  display: 'flex',
-  flexDirection: 'column',
-  width: '250px',
-  height: '250px',
-  marginBottom: '25px'
-};
-
-const themeContainerMobile = {
-  position: 'relative',
-  border: '3px solid black',
-  display: 'flex',
-  flexDirection: 'column',
-  width: 'calc(100vw - 32px)',
-  height: '250px',
-  marginBottom: '25px',
-};
-
-const themePreview = {
-  height: '100px',
-  width: '100%',
-  backgroundColor: 'grey',
-};
-
-const themeInfo = {
-  display: 'flex',
-  flexDirection: 'column',
-  width: '100%',
-  padding: '8px'
-};
-
-const themeSelect = {
-  outline: 'none',
-  height: '40px',
-  position: 'absolute',
-  border: '3px solid black',
-  color: 'white',
-  backgroundColor: 'black',
-  width: 'calc(100% - 16px)',
-  bottom: '8px',
-  left: '8px',
-  fontWeight: 'bold'
-};
-
-const themeSelected = {
-  outline: 'none',
-  height: '40px',
-  position: 'absolute',
-  border: '3px solid #FFD792',
-  color: 'white',
-  backgroundColor: 'black',
-  width: 'calc(100% - 16px)',
-  bottom: '8px',
-  left: '8px',
-  fontWeight: 'bold'
-};
-
-const marginNone = {
-  margin: '0px',
-}
-
 
 export default ThemeItem;

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="71px" viewBox="0 0 100 71" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>Layouts Icon</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Landing-Page" transform="translate(-76.000000, -2045.000000)">
+            <g id="Make-Kit" transform="translate(44.000000, 1675.000000)">
+                <g id="Themes" transform="translate(2.000000, 259.000000)">
+                    <g id="Theme-One" transform="translate(0.000000, 76.000000)">
+                        <g id="Layouts-Icon" transform="translate(32.000000, 37.000000)">
+                            <g>
+                                <polygon id="Fill-1" fill="#FFFFFF" points="0 66.879 96.419 66.879 96.419 0 0 0"></polygon>
+                                <polygon id="Stroke-2" stroke="#000000" stroke-width="3" points="0 66.879 96.419 66.879 96.419 0 0 0"></polygon>
+                                <path d="M11,11 L28.191,11" id="Stroke-4" stroke="#000000" stroke-width="3"></path>
+                                <path d="M11,16 L28.191,16" id="Stroke-5" stroke="#000000" stroke-width="3"></path>
+                                <path d="M11,22 L28.191,22" id="Stroke-6" stroke="#000000" stroke-width="3"></path>
+                                <path d="M11,56.997 L87.419,56.997 L87.419,46 L11,46 L11,56.997 Z M14,53.997 L84.419,53.997 L84.419,49 L14,49 L14,53.997 Z" id="Fill-7" fill="#000000"></path>
+                                <path d="M33,40.759 L87.228,40.759 L87.228,9 L33,9 L33,40.759 Z M36,37.759 L84.228,37.759 L84.228,12 L36,12 L36,37.759 Z" id="Fill-8" fill="#000000"></path>
+                                <path d="M11,40.75 L28.191,40.75 L28.191,29 L11,29 L11,40.75 Z M14,37.75 L25.191,37.75 L25.191,32 L14,32 L14,37.75 Z" id="Fill-9" fill="#000000"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

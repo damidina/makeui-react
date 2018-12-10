@@ -6,7 +6,6 @@ import { setTheme } from '../../../actions/generate';
 class Themes extends Component {
 
   onThemeSelect = (e) => {
-    console.log(e.target.value);
     this.props.setTheme(parseInt(e.target.value));
   };
 
@@ -18,14 +17,16 @@ class Themes extends Component {
           title="Starter Web App Theme"
           components="150 Components"
           layouts="20 Layouts"
+          description="Best if you are building an app or web platform, this theme offers everything you need for interactive user experiences."
           currentTheme={this.props.theme}
           onThemeSelect={this.onThemeSelect}
         />
         <ThemeItem
           value={2}
-          title="Data Theme"
+          title="Data Visualization Theme"
           components="150 Components"
           layouts="20 Layouts"
+          description="Best if you are building an app or web platform, this theme offers everything you need for interactive user experiences."
           currentTheme={this.props.theme}
           onThemeSelect={this.onThemeSelect}
         />
@@ -34,6 +35,7 @@ class Themes extends Component {
           title="Bootstrap Theme"
           components="150 Components"
           layouts="20 Layouts"
+          description="Best if you are building an app or web platform, this theme offers everything you need for interactive user experiences."
           currentTheme={this.props.theme}
           onThemeSelect={this.onThemeSelect}
         />

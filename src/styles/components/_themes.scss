@@ -8,11 +8,9 @@
 
 .theme-item-container {
   grid-column: span 4;
-  height: 250px;
   border: 3px solid black;
-  position: relative;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
 
   @media only screen and (max-width: 745px) {
     height: 270px;
@@ -21,4 +19,72 @@
   @media only screen and (max-width: 570px) {
     grid-column: span 12;
   }
+}
+
+.icon-title-container {
+  grid-column: span 4;
+  display: flex;
+}
+
+.theme-icon {
+  margin-left: 32px;
+  margin-top: 32px;
+  margin-bottom: 24px;
+  margin-right: 10px;
+  grid-column: span 1;
+  height: 67px;
+}
+
+.theme-title {
+  margin-top: 32px;
+  margin-right: 32px;
+  grid-column: span 3;
+  height: 50px;
+}
+
+.theme-description {
+  margin-left: 32px;
+  margin-right: 32px;
+  margin-bottom: 24px;
+  grid-column: span 4;
+}
+
+.theme-info {
+  margin-left: 32px;
+  margin-bottom: 32px;
+  grid-column: span 4;
+  p {
+    margin: 0px;
+  }
+}
+
+.theme-button {
+  outline: none;
+  grid-column: span 2;
+  height: 50px;
+  background: white;
+  border: none;
+  border-top: 3px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.theme-button--left {
+  border-right: 1.5px solid black
+}
+
+.theme-button--right {
+  border-left: 1.5px solid black
+}
+
+.theme-button--image {
+  height: 25px;
+}
+
+.selected-theme {
+  background: black;
+  color: white;
 }
