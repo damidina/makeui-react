@@ -5,7 +5,10 @@ const ThemeItem = (props) => {
     <div className="theme-item-container">
       <div className="icon-title-container">
         <img className="theme-icon" src="/images/theme-icon.svg" />
-        <div className="theme-title">{props.title}</div>
+        <div>
+          <div className="theme-title">{props.title}</div>
+          <p className="theme-author">By: {props.author}</p>
+        </div>
       </div>
       <div className="theme-description">
         <p>{props.description}</p>

@@ -12,11 +12,11 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 
-  @media only screen and (max-width: 745px) {
-    height: 270px;
+  @media only screen and (max-width: 1176px) {
+    grid-column: span 6;
   }
 
-  @media only screen and (max-width: 570px) {
+  @media only screen and (max-width: 738px) {
     grid-column: span 12;
   }
 }
@@ -40,9 +40,22 @@
   margin-right: 32px;
   grid-column: span 3;
   height: 50px;
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 500;
+}
+
+.theme-author {
+  margin: 0px;
+  font-size: 14px;
+  line-height: 26px;
+  font-weight: 500;
+  grid-column: span 3;
 }
 
 .theme-description {
+  font-size: 20px;
+  line-height: 33px;
   margin-left: 32px;
   margin-right: 32px;
   margin-bottom: 24px;
@@ -55,21 +68,26 @@
   grid-column: span 4;
   p {
     margin: 0px;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 500;
   }
 }
 
 .theme-button {
   outline: none;
   grid-column: span 2;
-  height: 50px;
+  height: 65px;
   background: white;
   border: none;
   border-top: 3px solid black;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 20px;
+  font-weight: 700;
 }
 
 .theme-button--left {
