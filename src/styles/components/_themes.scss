@@ -1,0 +1,108 @@
+.theme-section {
+  grid-column: span 12;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 10px;
+  margin-bottom: 30px;
+}
+
+.theme-item-container {
+  grid-column: span 4;
+  border: 3px solid black;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  @media only screen and (max-width: 1176px) {
+    grid-column: span 6;
+  }
+
+  @media only screen and (max-width: 738px) {
+    grid-column: span 12;
+  }
+}
+
+.icon-title-container {
+  grid-column: span 4;
+  display: flex;
+}
+
+.theme-icon {
+  margin-left: 32px;
+  margin-top: 32px;
+  margin-bottom: 24px;
+  margin-right: 10px;
+  grid-column: span 1;
+  height: 67px;
+}
+
+.theme-title {
+  margin-top: 32px;
+  margin-right: 32px;
+  grid-column: span 3;
+  height: 50px;
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 500;
+}
+
+.theme-author {
+  margin: 0px;
+  font-size: 14px;
+  line-height: 26px;
+  font-weight: 500;
+  grid-column: span 3;
+}
+
+.theme-description {
+  font-size: 20px;
+  line-height: 33px;
+  margin-left: 32px;
+  margin-right: 32px;
+  margin-bottom: 24px;
+  grid-column: span 4;
+}
+
+.theme-info {
+  margin-left: 32px;
+  margin-bottom: 32px;
+  grid-column: span 4;
+  p {
+    margin: 0px;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 500;
+  }
+}
+
+.theme-button {
+  outline: none;
+  grid-column: span 2;
+  height: 65px;
+  background: white;
+  border: none;
+  border-top: 3px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.theme-button--left {
+  border-right: 1.5px solid black
+}
+
+.theme-button--right {
+  border-left: 1.5px solid black
+}
+
+.theme-button--image {
+  height: 25px;
+}
+
+.selected-theme {
+  background: black;
+  color: white;
+}

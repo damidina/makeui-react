@@ -9,7 +9,7 @@ class CheckoutForm extends Component {
       email: '',
       emailValid: true,
       once: {
-        title: 'One time download',
+        title: 'One Time Download',
         amount: '$10'
       },
       unlimited: {
@@ -41,7 +41,7 @@ class CheckoutForm extends Component {
       : this.state.unlimited;
     return (
       <div style={{ position: 'relative' }}>
-        <div style={{ cursor: 'pointer', position: 'absolute', width: '15px', height: '15px', right: '4px', top: '4px' }}>
+        <div style={{ cursor: 'pointer', position: 'absolute', width: '15px', height: '15px', right: '20px', top: '20px' }}>
           <img src="/images/x.svg" onClick={this.props.onRequestClose} />
         </div>
         <div>
@@ -55,7 +55,8 @@ class CheckoutForm extends Component {
               name="email"
               type="email"
               className={`StripeElement ${this.state.emailValid ? '' : 'StripeElement--invalid'}`}
-              placeholder="Email"
+              style={{ outline: 'none' }}
+              placeholder="Enter email address"
               value={this.state.email}
               onChange={this.onEmailChange}
             />
@@ -63,7 +64,7 @@ class CheckoutForm extends Component {
           <div className="credit-card-group">
             <p style={{ alignSelf: "flex-start", fontWeight: 'bold' }}>CREDIT CARD</p>
             <div className="card-number">
-              <CardNumberElement className="card-number-input" />
+              <CardNumberElement placeholder="Card number" className="card-number-input" />
             </div>
             <div className="card-exp-ccv">
               <CardExpiryElement className="exp" />

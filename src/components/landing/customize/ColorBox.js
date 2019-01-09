@@ -2,19 +2,25 @@ import React from 'react';
 import { connect } from 'react-redux';
 import ColorPicker from './ColorPicker'
 import { setColor, addColor, removeColor, setCornerRadius } from '../../../actions/generate';
+import MediaQuery from 'react-responsive';
 
 class ColorBox extends React.Component {
 
   state = {
-    pickerVisible: false
+    pickerVisible: false,
+    pickerWidth: 0
   }
 
   onColorChange = (hex) => {
     this.props.setColor(this.props.index, hex);
   };
 
-  onPickerChange = ({ hex }) => {
-    this.props.setColor(this.props.index, hex);
+  onChangeSat = (data) => {
+    console.log('SAT')
+  };
+
+  onPickerChange = (data) => {
+    this.props.setColor(this.props.index, data.hex);
   };
 
   onRemove = () => {
@@ -22,11 +28,26 @@ class ColorBox extends React.Component {
   };
 
   onColorClick = () => {
-    this.setState({ pickerVisible: !this.state.pickerVisible });
+    this.setState({
+      pickerVisible: !this.state.pickerVisible,
+      pickerWidth: this.colorBox.offsetWidth
+    });
   };
 
   handleClose = () => {
     this.setState({ pickerVisible: false });
+  }
+
+  handleResize = () => {
+    this.setState(({ pickerWidth: this.colorBox.offsetWidth }));
+  };
+
+  componentDidMount() {
+    window.addEventListener('resize', this.handleResize);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleResize);
   }
 
 
@@ -48,6 +69,7 @@ class ColorBox extends React.Component {
     const title = {
       fontWeight: 'bold',
       fontSize: '18px',
+      marginTop: '10px',
       marginBottom: '0px',
     }
 
@@ -61,8 +83,8 @@ class ColorBox extends React.Component {
     const secondaryText = "Choose a color that compliments your primary color. This will be applied to less important call-to-actions.";
 
     return (
-      <div>
-        <div className="color-box full-width-mobile" onClick={this.onColorClick}>
+      <div ref={r => this.colorBox = r} className="color-box">
+        <div className="color-palette" onClick={this.onColorClick}>
           <div className="color-box--color" style={{ background: this.props.color }}>
           </div>
           <div className="color-box--hex">
@@ -72,11 +94,11 @@ class ColorBox extends React.Component {
         {
           this.state.pickerVisible
             ? (
-              <div>
+              <div className="pass-grid">
                 <div style={cover} onClick={this.handleClose}></div>
                 <div style={popover}>
                   <div style={{ position: "absolute" }}>
-                    <ColorPicker color={this.props.color} onColorChange={this.onColorChange} onChange={this.onPickerChange} />
+                    <ColorPicker width={this.state.pickerWidth} color={this.props.color} onChangeSat={this.onChangeSat} onChangeComplete={this.onPickerChange} />
                   </div>
                 </div>
               </div>
@@ -86,10 +108,22 @@ class ColorBox extends React.Component {
 
         {
           (this.props.index === '02' || this.props.index === '01') && (
-            <div style={{ maxWidth: '300px', position: 'relative' }}>
-              <p style={title}>{this.props.index === '01' ? 'Primary Color' : 'Secondary Color'}</p>
-              <p style={desc}>{this.props.index === '01' ? primaryText : secondaryText}</p>
-            </div>
+            <MediaQuery maxWidth={460}>
+              {(match) => {
+                if (match) {
+                  return <div>
+                    <p style={{ ...title, fontSize: '14px' }}>{this.props.index === '01' ? 'Primary Color' : 'Secondary Color'}</p>
+                    <p style={{ ...desc, fontSize: '14px' }}>{this.props.index === '01' ? primaryText : secondaryText}</p>
+                  </div>
+                } else {
+                  return <div>
+                    <p style={title}>{this.props.index === '01' ? 'Primary Color' : 'Secondary Color'}</p>
+                    <p style={desc}>{this.props.index === '01' ? primaryText : secondaryText}</p>
+                  </div>
+                }
+              }
+              }
+            </MediaQuery>
           )
         }
       </div>

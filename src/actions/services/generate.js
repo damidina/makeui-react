@@ -4,8 +4,13 @@ const requestGenerate = (customOptions, tier = '', count = 1) => getIdToken()
   .then((authIdToken) => {
     // if (tier === 'once' && count >= 1) return Promise.reject(new Error('Max generation limit reached!'));
 
-    const payload = {
+    const optionsWithTheme = {
       ...customOptions,
+      theme: customOptions.theme === 1 ? 'base' : `theme${customOptions.theme}`
+    };
+
+    const payload = {
+      ...optionsWithTheme,
       authIdToken,
       count,
     };
@@ -18,8 +23,13 @@ const requestGenerate = (customOptions, tier = '', count = 1) => getIdToken()
       body: JSON.stringify(payload),
     };
 
+    console.log(payload);
+
     return fetch(`${process.env.BACKEND_URL}/generate`, options)
-      .then(res => res.json())
+      .then(res => {
+        console.log(res);
+        return res.json()
+      })
       .then(data => {
         return data.Location;
       });

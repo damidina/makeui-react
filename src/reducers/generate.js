@@ -35,4 +35,13 @@ const cornerRadius = (state = customDefault.cornerRadius, action) => {
   }
 };
 
-export default combineReducers({ colors, cornerRadius });
+const theme = (state = 1, action) => {
+  switch (action.type) {
+    case 'SET_THEME':
+      return action.theme;
+    default:
+      return state;
+  }
+};
+
+export default combineReducers({ colors, cornerRadius, theme });

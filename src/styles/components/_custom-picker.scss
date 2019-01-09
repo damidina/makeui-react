@@ -1,0 +1,34 @@
+.picker-container {
+  grid-column: span 4;
+  padding: 32px;
+  border: black 3px solid;
+  border-top: none;
+  background: white;
+}
+
+.sat-container {
+  height: 125px;
+  position: relative;
+}
+
+.hue-container {
+  width: 100%;
+  height: 15px;
+  position: relative;
+  margin-top: 8px;
+}
+
+.alpha-container {
+  width: 100%;
+  height: 15px;
+  position: relative;
+  margin-top: 8px;
+}
+
+.hex-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  position: relative;
+  margin-top: 8px;
+}

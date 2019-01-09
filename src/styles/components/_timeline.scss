@@ -1,18 +1,11 @@
 .hr-container {
-  min-width: 15%;
+  min-width: 10%;
   align-self: flex-start;
+  margin-left: 16px;
+  margin-right: 16px;
   hr { 
     margin-top: 16px;
-    border: white solid 1px; 
-  }
-
-  @media (max-width: $desktop-breakpoint) {
-    align-self: center;
-    min-height: 80px;
-    margin-top: 20px;
-    hr {
-      transform: rotate(90deg);
-    }
+    border: white solid 1.5px; 
   }
 }
 
@@ -25,5 +18,26 @@
 .timeline-margin {
   margin-top: 5rem;
   margin-bottom: 8rem;
+}
+
+.timeline-contents {
+  display: flex;
+  flex-direction: row;
+  overflow-y: hidden;
+  justify-content: center;
+  @media only screen and (max-width: 620px) {
+    width: calc(240vw - 96px);
+  }
+
+}
+
+.scroll {
+  overflow-y: scroll;
+}
+
+.timeline-peice {
+  @media only screen and (max-width: 720px) {
+    color:red;
+  }
 }
 

@@ -2,18 +2,18 @@ import React from 'react';
 
 const Timeline = () => {
   return (
-    <div className="timeline">
-      <div className="content-container flex-column">
-        <div className="center-h">
-          <h1 className="section-heading--margin-small white">Timeline</h1>
-        </div>
-        <div className="flex-row align-center timeline-margin">
-          <div className="center-h flex-column">
+    <div className="timeline" style={{ overflow: 'hidden' }}>
+      <div className="center-h">
+        <h1 style={{ marginTop: '40px' }} className="section-heading--margin-small white">Timeline</h1>
+      </div>
+      <div className="content-container flex-column scroll">
+        <div className="timeline-contents align-center timeline-margin scroll">
+          <div className="center-h flex-column timeline-peice">
             <h2 className="sub-heading white no-margin center-text">CURRENTLY SUPPORTS</h2>
             <p style={margin} className="white center-text">Sketch</p>
           </div>
           <div className="hr-container"><hr align="center" /></div>
-          <div className="center-h flex-column">
+          <div className="center-h flex-column timeline-peice">
             <h2 className="sub-heading white no-margin center-text">END OF 2018 REALEASE</h2>
             <div className="flex-row-nobreak">
               <p style={margin} className="white center-text">Figma</p>
@@ -22,7 +22,7 @@ const Timeline = () => {
             </div>
           </div>
           <div className="hr-container"><hr align="center" /></div>
-          <div className="center-h flex-column">
+          <div className="center-h flex-column timeline-peice">
             <h2 className="sub-heading white no-margin center-text">SPRING 2019</h2>
             <p style={margin} className="white center-text">Shopify</p>
           </div>

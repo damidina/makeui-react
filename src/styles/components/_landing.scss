@@ -1,23 +1,51 @@
 .how-it-works {
+  padding-top: $l-size;
+  padding-bottom: $l-size;
   display: flex;
   justify-content: center;
-  align-items: center;
-  min-height: 100vh;
   background: black;
-  padding: $l-size;
+  @media (max-width: 800px) {
+    height: 100vh;
+  }
+}
+
+.circle-pagination {
+  height: 20px;
+  width: 20px;
+  border-radius: 10px;
 }
 
 .customize-section {
-  padding: $l-size 0 10rem 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: $l-size 0 0 0;
 }
 
 .upcomming {
   background: #FFD692;
 }
 
+.custom-width-uf {
+  @media only screen and (max-width: 650px) {
+    width: 200px;
+  }
+}
+
 .img-box {
   width: 100px;
   height: 100px;
+}
+
+.img-box-resp {
+  width: 100px;
+  height: 100px;
+  margin-top: 2rem;
+  @media only screen and (max-width: 650px) {
+    width: 80px;
+    height: 80px;
+  }
+
 }
 
 .img-box-black {

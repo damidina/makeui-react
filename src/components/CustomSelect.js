@@ -1,11 +1,31 @@
 import React, { Component } from 'react';
+import { relative } from 'path';
 
 class CustomSelect extends Component {
 
   state = {
     currentOption: this.props.titles[0] ? this.props.titles[0] : 'No titles',
     showOptions: false,
-    carretOffset: 0
+    carretOffset: 0,
+    height: 62
+  }
+
+  handleResize = () => {
+    const width = window.innerWidth
+    if (width <= 520) {
+      this.setState(({ height: 48 }));
+    } else {
+      this.setState(({ height: 62 }));
+    }
+  };
+
+  componentDidMount() {
+    window.addEventListener('resize', this.handleResize);
+    this.handleResize();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleResize);
   }
 
   handleOptionSelect = (index) => {
@@ -22,24 +42,28 @@ class CustomSelect extends Component {
   }
 
   onMouseOver = (e) => {
-    e.target.style.background = 'black';
-    e.target.style.color = 'white';
+    if (e.target.id === "div") {
+      e.target.style.background = 'black';
+      e.target.style.color = 'white';
+    }
   };
 
   onMouseLeave = (e) => {
-    e.target.style.background = 'white'
-    e.target.style.color = 'black';
+    if (e.target.id === "div") {
+      e.target.style.background = 'white'
+      e.target.style.color = 'black';
+    }
+
   };
 
   render() {
     return (
       <div
-        className="full-width-mobile"
-        style={{ ...selectStyle, ...this.props.selectStyle }}
+        className="select-body"
         onClick={this.toggleShowOptions}
       >
-        <div style={this.state.showOptions ? { ...itemContainer, ...flex } : { ...itemContainerLast, ...flex }}>
-          <p style={itemText} >{this.state.currentOption}</p>
+        <div className="addative-select-containers" style={this.state.showOptions ? { ...itemContainer, ...flex, ...borderControl } : { ...itemContainerLast, ...flex, ...borderControl }}>
+          <p style={itemText} className="select-title">{this.state.currentOption}</p>
           <div ref={r => this.carret = r} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '50px', height: '50px' }}>
             <img src="images/carret-down.svg" />
           </div>
@@ -48,18 +72,22 @@ class CustomSelect extends Component {
           this.state.showOptions && this.props.titles.map((title, index) => {
             if (index !== 0 && index !== this.props.titles.length - 1) {
               return <div
+                id="div"
                 onMouseOver={this.onMouseOver}
                 onMouseLeave={this.onMouseLeave}
                 onClick={() => this.handleOptionSelect(index)}
-                style={itemContainer}
-                key={title}><p style={itemText}>{title}</p></div>
+                style={{ ...itemContainer, position: 'absolute', left: '0px', right: '0px', top: `${index * this.state.height}px` }}
+                className="addative-select-containers"
+                key={title}><p style={itemText} className="select-title">{title}</p></div>
             } else if (index === this.props.titles.length - 1) {
               return <div
+                id="div"
                 onMouseOver={this.onMouseOver}
                 onMouseLeave={this.onMouseLeave}
                 onClick={() => this.handleOptionSelect(index)}
-                style={itemContainerLast}
-                key={title}><p style={itemText}>{title}</p></div>
+                style={{ ...itemContainerLast, position: 'absolute', left: '0px', right: '0px', top: `${index * this.state.height}px` }}
+                className="addative-select-containers"
+                key={title}><p style={itemText} className="select-title">{title}</p></div>
             }
           })
         }
@@ -68,8 +96,12 @@ class CustomSelect extends Component {
   }
 }
 
+const borderControl = {
+  borderTop: 'solid 3px black',
+}
+
 const selectStyle = {
-  border: 'solid 3px black',
+  position: 'relative',
   minHeight: '62px',
   minWidth: '300px',
   width: 'calc(100% - 224px)',
@@ -79,17 +111,26 @@ const selectStyle = {
 };
 
 const itemContainer = {
+  width: '100%',
   height: '62px',
   alignItems: 'center',
   justifyContent: 'flex-start',
   display: 'flex',
-  borderBottom: 'solid 3px black'
+  borderBottom: 'solid 3px black',
+  borderLeft: 'solid 3px black',
+  borderRight: 'solid 3px black',
+  background: 'white',
 };
 
 const itemContainerLast = {
+  width: '100%',
+  background: 'white',
   height: '62px',
   alignItems: 'center',
   justifyContent: 'flex-start',
+  borderLeft: 'solid 3px black',
+  borderRight: 'solid 3px black',
+  borderBottom: 'solid 3px black',
   display: 'flex',
 };
 
@@ -100,7 +141,7 @@ const flex = {
 
 const itemText = {
   margin: 'auto 0 auto 0',
-  padding: '0 0 0 8px',
+  padding: '0 0 0 20px',
   fontSize: '24px'
 }
 
