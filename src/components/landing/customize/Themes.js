@@ -42,6 +42,26 @@ class Themes extends Component {
           currentTheme={this.props.theme}
           onThemeSelect={this.onThemeSelect}
         />
+        <ThemeItem
+          value={4}
+          title="Bootstrap Theme 2"
+          components="150 Components"
+          layouts="20 Layouts"
+          description="Best if you are building an app or web platform, this theme offers everything you need for interactive user experiences."
+          author="Dami Dina"
+          currentTheme={this.props.theme}
+          onThemeSelect={this.onThemeSelect}
+        />
+        <ThemeItem
+          value={5}
+          title="Bootstrap Theme 3"
+          components="150 Components"
+          layouts="20 Layouts"
+          description="Best if you are building an app or web platform, this theme offers everything you need for interactive user experiences."
+          author="Dami Dina"
+          currentTheme={this.props.theme}
+          onThemeSelect={this.onThemeSelect}
+        />
       </div>
     );
   }
