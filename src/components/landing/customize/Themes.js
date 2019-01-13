@@ -14,26 +14,6 @@ class Themes extends Component {
       <div className="theme-section">
         <ThemeItem
           value={1}
-          title="Starter Web App Theme"
-          components="150 Components"
-          layouts="20 Layouts"
-          description="Best if you are building an app or web platform, this theme offers everything you need for interactive user experiences."
-          author="Dami Dina"
-          currentTheme={this.props.theme}
-          onThemeSelect={this.onThemeSelect}
-        />
-        <ThemeItem
-          value={2}
-          title="Data Visualization Theme"
-          components="150 Components"
-          layouts="20 Layouts"
-          description="Best if you are building an app or web platform, this theme offers everything you need for interactive user experiences."
-          author="Dami Dina"
-          currentTheme={this.props.theme}
-          onThemeSelect={this.onThemeSelect}
-        />
-        <ThemeItem
-          value={3}
           title="E-Commerce Theme"
           components="150 Components"
           layouts="20 Layouts"
@@ -45,7 +25,7 @@ class Themes extends Component {
           onThemeSelect={this.onThemeSelect}
         />
         <ThemeItem
-          value={4}
+          value={2}
           title="Finance Mobile App Theme"
           components="150 Components"
           layouts="20 Layouts"
@@ -56,7 +36,7 @@ class Themes extends Component {
           onThemeSelect={this.onThemeSelect}
         />
         <ThemeItem
-          value={5}
+          value={3}
           title="Landing Page Set"
           components="150 Components"
           layouts="20 Layouts"

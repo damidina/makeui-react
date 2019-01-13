@@ -4,7 +4,7 @@ const Timeline = () => {
   return (
     <div className="timeline" style={{ overflow: 'hidden' }}>
       <div className="center-h">
-        <h1 style={{ marginTop: '40px' }} className="section-heading--margin-small white"></h1>
+        <h1 style={{ marginTop: '40px' }} className="section-heading--margin-small white">Timeline</h1>
       </div>
       <div className="content-container flex-column scroll">
         <div className="timeline-contents align-center timeline-margin scroll">
