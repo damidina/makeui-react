@@ -15,10 +15,16 @@ class CheckoutForm extends Component {
       unlimited: {
         title: 'Unlimited Download',
         amount: '$30'
-      }
-
+      },
+      emailFocusBorder: '3px solid #000'
     }
   }
+
+  emailOnFocus(){
+    this.setState({
+        emailFocusBorder: `3px solid ${this.props.currentColor}`
+    })
+  };
 
   onEmailChange = (e) => {
     const email = e.target.value;
@@ -55,10 +61,11 @@ class CheckoutForm extends Component {
               name="email"
               type="email"
               className={`StripeElement ${this.state.emailValid ? '' : 'StripeElement--invalid'}`}
-              style={{ outline: 'none' }}
+              style={{ outline: 'none', border: this.state.emailFocusBorder }}
               placeholder="Enter email address"
               value={this.state.email}
               onChange={this.onEmailChange}
+              onFocus={ () => this.emailOnFocus() }
             />
           </div>
           <div className="credit-card-group">

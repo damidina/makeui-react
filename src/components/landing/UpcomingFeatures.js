@@ -36,9 +36,9 @@ const UpcomingFeatures = (props) => {
         </div>
         <div className="grid-3-xs flex-column align-center">
           <div className="img-box-resp">
-            <img src="images/MakeUI_Icons-Themes.svg" />
+            <img src="images/marketplaceicon.png" style={{width: '100px'}} />
           </div>
-          <h2 className="sub-heading black center-text" style={{ marginTop: '20px' }}>THEMES</h2>
+          <h2 className="sub-heading black center-text" style={{ marginTop: '20px' }}>THEME MARKETPLACE</h2>
         </div>
         <div className="grid-3-xs flex-column align-center">
           <div className="img-box-resp">

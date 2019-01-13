@@ -6,7 +6,7 @@ const requestGenerate = (customOptions, tier = '', count = 1) => getIdToken()
 
     const optionsWithTheme = {
       ...customOptions,
-      theme: customOptions.theme === 1 ? 'base' : `theme${customOptions.theme}`
+      theme: `theme${customOptions.theme}`
     };
 
     const payload = {

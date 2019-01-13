@@ -14,51 +14,35 @@ class Themes extends Component {
       <div className="theme-section">
         <ThemeItem
           value={1}
-          title="Starter Web App Theme"
+          title="E-Commerce Theme"
           components="150 Components"
           layouts="20 Layouts"
-          description="Best if you are building an app or web platform, this theme offers everything you need for interactive user experiences."
-          author="Dami Dina"
+          description="Choose this theme if you’re designing or prototyping an online shopping experience like an e-shop or a large marketplace platform."
+          author="Rob Simpson"
+          authorLink="https://www.robsimpson.me/"
+          icon="/images/ecom-theme.png"
           currentTheme={this.props.theme}
           onThemeSelect={this.onThemeSelect}
         />
         <ThemeItem
           value={2}
-          title="Data Visualization Theme"
+          title="Finance Mobile App Theme"
           components="150 Components"
           layouts="20 Layouts"
-          description="Best if you are building an app or web platform, this theme offers everything you need for interactive user experiences."
+          description="This is the theme for you if you are designing a financial mobile app, but it can also be used for other apps with user profiles and payments."
           author="Dami Dina"
+          icon="/images/finance-theme.png"
           currentTheme={this.props.theme}
           onThemeSelect={this.onThemeSelect}
         />
         <ThemeItem
           value={3}
-          title="Bootstrap Theme"
+          title="Landing Page Set"
           components="150 Components"
           layouts="20 Layouts"
-          description="Best if you are building an app or web platform, this theme offers everything you need for interactive user experiences."
-          author="Dami Dina"
-          currentTheme={this.props.theme}
-          onThemeSelect={this.onThemeSelect}
-        />
-        <ThemeItem
-          value={4}
-          title="Bootstrap Theme 2"
-          components="150 Components"
-          layouts="20 Layouts"
-          description="Best if you are building an app or web platform, this theme offers everything you need for interactive user experiences."
-          author="Dami Dina"
-          currentTheme={this.props.theme}
-          onThemeSelect={this.onThemeSelect}
-        />
-        <ThemeItem
-          value={5}
-          title="Bootstrap Theme 3"
-          components="150 Components"
-          layouts="20 Layouts"
-          description="Best if you are building an app or web platform, this theme offers everything you need for interactive user experiences."
-          author="Dami Dina"
+          description="Get this theme if you’re designing a landing page and want to test for performance. The variation of layouts will give you all the options."
+          author=""
+          icon="/images/landing-theme.png"
           currentTheme={this.props.theme}
           onThemeSelect={this.onThemeSelect}
         />

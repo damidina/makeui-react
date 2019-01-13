@@ -4,14 +4,23 @@ const ThemeItem = (props) => {
   return (
     <div className="theme-item-container">
       <div className="icon-title-container">
-        <img className="theme-icon" src="/images/theme-icon.svg" />
+        <img className="theme-icon" src={
+            props.icon ? props.icon : "/images/theme-icon.svg"
+          }
+        />
         <div>
           <div className="theme-title">{props.title}</div>
-          <p className="theme-author">By: {props.author}</p>
         </div>
       </div>
       <div className="theme-description">
         <p>{props.description}</p>
+        <p className="theme-author">
+          {
+            props.authorLink
+              ? <a href={props.authorLink} target="_blank" rel="nofollow noopener noreferrer" style={{ textDecoration: 'none' }}>By: {props.author}</a>
+              : `By: ${props.author}`
+          }
+        </p>
       </div>
       <div className="theme-info">
         <p>{props.components}</p>
