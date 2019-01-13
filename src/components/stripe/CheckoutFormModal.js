@@ -39,6 +39,7 @@ class CheckoutFormModal extends React.Component {
                           onModalFormSubmit={(token) => this.props.onModalFormSubmit(token)}
                           whichOption={this.props.whichOption}
                           activateLoading={this.props.activateLoading}
+                          currentColor={this.props.currentColor}
                         />
                       </Elements>
                     </div>

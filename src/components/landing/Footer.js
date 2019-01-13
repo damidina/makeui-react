@@ -45,8 +45,8 @@ class Footer extends React.Component {
               </MediaQuery>
             </div>
             <div>
-              <p style={fine} className="center-text">Created by <a style={bold} href="http://tomyum.design/">TomYum</a> and designed by <a style={bold} href="https://equalparts.studio/">Equal Parts Studio</a>.</p>
-              <p style={fine} className="center-text">Copyright &copy; 2018 MakeUI. All rights reserved</p>
+              <p style={fine} className="center-text">Created by <a style={bold} href="http://tomyum.design/" target="_blank" rel="nofollow noopener noreferrer">TomYum</a> and designed by <a style={bold} href="https://equalparts.studio/" target="_blank" rel="nofollow noopener noreferrer">Equal Parts Studio</a>.</p>
+              <p style={fine} className="center-text">Copyright &copy; 2018 MakeUI. All rights reserved.</p>
             </div>
           </div>
         </div>

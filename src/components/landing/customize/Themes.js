@@ -40,6 +40,7 @@ class Themes extends Component {
           description="Choose this theme if you’re designing or prototyping an online shopping experience like an e-shop or a large marketplace platform."
           author="Rob Simpson"
           authorLink="https://www.robsimpson.me/"
+          icon="/images/ecom-theme.png"
           currentTheme={this.props.theme}
           onThemeSelect={this.onThemeSelect}
         />
@@ -50,6 +51,7 @@ class Themes extends Component {
           layouts="20 Layouts"
           description="This is the theme for you if you are designing a financial mobile app, but it can also be used for other apps with user profiles and payments."
           author="Dami Dina"
+          icon="/images/finance-theme.png"
           currentTheme={this.props.theme}
           onThemeSelect={this.onThemeSelect}
         />
@@ -60,6 +62,7 @@ class Themes extends Component {
           layouts="20 Layouts"
           description="Get this theme if you’re designing a landing page and want to test for performance. The variation of layouts will give you all the options."
           author=""
+          icon="/images/landing-theme.png"
           currentTheme={this.props.theme}
           onThemeSelect={this.onThemeSelect}
         />
