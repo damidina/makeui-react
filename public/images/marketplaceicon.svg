@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="301px" height="295px" viewBox="0 0 301 295" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.3 (67297) - http://www.bohemiancoding.com/sketch -->
+    <title>Theme Marketplace Icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 94 100.097 94 100.097 0.169 0 0.169"></polygon>
+    </defs>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Landing-Page" transform="translate(-490.000000, -3661.000000)">
+            <rect fill="#FFFFFF" x="0" y="0" width="1280" height="4935"></rect>
+            <g id="Upcoming-Features" transform="translate(0.000000, 3311.000000)">
+                <g id="Themes" transform="translate(516.000000, 450.000000)">
+                    <g id="Theme-Marketplace-Icon" transform="translate(74.000000, 0.000000)">
+                        <g>
+                            <polygon id="Fill-1" fill="#FFFFFF" points="7.613 93.3313 93.346 93.3313 93.346 14.4563 7.613 14.4563"></polygon>
+                            <polygon id="Stroke-2" stroke="#000000" stroke-width="3" points="7.613 93.3313 93.346 93.3313 93.346 14.4563 7.613 14.4563"></polygon>
+                            <polygon id="Fill-4" fill="#FFFFFF" points="30.838 93.3313 69.259 93.3313 69.259 44.1253 30.838 44.1253"></polygon>
+                            <g id="Group-8" transform="translate(30.000000, 43.831300)" stroke="#000000" stroke-width="3">
+                                <polygon id="Stroke-5" points="0.838 49.5 39.259 49.5 39.259 0.294 0.838 0.294"></polygon>
+                                <path d="M20.0486,0.2943 L20.0486,48.6013" id="Stroke-7"></path>
+                            </g>
+                            <path d="M44.1863,65.6334 L44.1863,71.8234" id="Stroke-9" stroke="#000000" stroke-width="3"></path>
+                            <path d="M55.9109,65.6334 L55.9109,71.8234" id="Stroke-10" stroke="#000000" stroke-width="3"></path>
+                            <g id="Group-26" transform="translate(0.000000, 0.831300)">
+                                <g id="Group-14" transform="translate(50.000000, 12.000000)">
+                                    <path d="M24.322,0.1253 C24.322,6.8283 18.888,15.0703 12.185,15.0703 C5.482,15.0703 0.049,6.8283 0.049,0.1253" id="Fill-11" fill="#FFFFFF"></path>
+                                    <path d="M24.322,0.1253 C24.322,6.8283 18.888,15.0703 12.185,15.0703 C5.482,15.0703 0.049,6.8283 0.049,0.1253" id="Stroke-13" stroke="#000000" stroke-width="3"></path>
+                                </g>
+                                <g id="Group-18" transform="translate(25.000000, 12.000000)">
+                                    <path d="M25.0486,0.1253 C25.0486,6.8283 19.6136,15.0703 12.9106,15.0703 C6.2076,15.0703 0.7746,6.8283 0.7746,0.1253" id="Fill-15" fill="#FFFFFF"></path>
+                                    <path d="M25.0486,0.1253 C25.0486,6.8283 19.6136,15.0703 12.9106,15.0703 C6.2076,15.0703 0.7746,6.8283 0.7746,0.1253" id="Stroke-17" stroke="#000000" stroke-width="3"></path>
+                                </g>
+                                <g id="Group-22" transform="translate(1.000000, 12.000000)">
+                                    <path d="M24.7742,0.1253 C24.7742,6.8283 19.3402,15.0703 12.6372,15.0703 C5.9342,15.0703 0.5002,6.8283 0.5002,0.1253 L97.5962,0.1253 C97.5962,6.8283 92.1632,15.0703 85.4602,15.0703 C78.7562,15.0703 73.3222,6.8283 73.3222,0.1253" id="Fill-19" fill="#FFFFFF"></path>
+                                    <path d="M24.7742,0.1253 C24.7742,6.8283 19.3402,15.0703 12.6372,15.0703 C5.9342,15.0703 0.5002,6.8283 0.5002,0.1253 L97.5962,0.1253 C97.5962,6.8283 92.1632,15.0703 85.4602,15.0703 C78.7562,15.0703 73.3222,6.8283 73.3222,0.1253" id="Stroke-21" stroke="#000000" stroke-width="3"></path>
+                                </g>
+                                <mask id="mask-2" fill="white">
+                                    <use xlink:href="#path-1"></use>
+                                </mask>
+                                <g id="Clip-24"></g>
+                                <polygon id="Fill-23" fill="#FFFFFF" mask="url(#mask-2)" points="1.499 12.125 98.596 12.125 98.596 1.668 1.499 1.668"></polygon>
+                                <polygon id="Stroke-25" stroke="#000000" stroke-width="3" mask="url(#mask-2)" points="1.499 12.125 98.596 12.125 98.596 1.668 1.499 1.668"></polygon>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

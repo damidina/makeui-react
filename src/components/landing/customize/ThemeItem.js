@@ -7,7 +7,13 @@ const ThemeItem = (props) => {
         <img className="theme-icon" src="/images/theme-icon.svg" />
         <div>
           <div className="theme-title">{props.title}</div>
-          <p className="theme-author">By: {props.author}</p>
+          <p className="theme-author">
+            {
+              props.authorLink
+                ? <a href={props.authorLink} target="_blank" rel="nofollow noopener noreferrer" style={{ textDecoration: 'none' }}>By: {props.author}</a>
+                : `By: ${props.author}`
+            }
+          </p>
         </div>
       </div>
       <div className="theme-description">

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="266px" height="300px" viewBox="0 0 266 300" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.3 (67297) - http://www.bohemiancoding.com/sketch -->
+    <title>Financial Mobile App Icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 100 66 100 66 0 0 0"></polygon>
+    </defs>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Landing-Page" transform="translate(-379.000000, -1947.000000)">
+            <rect fill="#FFFFFF" x="0" y="0" width="1280" height="4935"></rect>
+            <g id="Make-Kit" transform="translate(44.000000, 1675.000000)">
+                <g id="Themes" transform="translate(2.000000, 259.000000)">
+                    <g id="Theme-Two---Finance-App" transform="translate(400.000000, 76.000000)">
+                        <g id="Financial-Mobile-App-Icon" transform="translate(33.000000, 37.000000)">
+                            <g>
+                                <polygon id="Fill-1" fill="#FFFFFF" points="1.5 98.5 64.5 98.5 64.5 1.5 1.5 1.5"></polygon>
+                                <path d="M0,100 L66,100 L66,0 L0,0 L0,100 Z M3,97 L63,97 L63,3 L3,3 L3,97 Z" id="Fill-2" fill="#000000"></path>
+                                <g id="Group-15">
+                                    <path d="M36.9062,87.5704 C36.9062,89.7444 35.1442,91.5064 32.9702,91.5064 C30.7972,91.5064 29.0352,89.7444 29.0352,87.5704 C29.0352,85.3964 30.7972,83.6344 32.9702,83.6344 C35.1442,83.6344 36.9062,85.3964 36.9062,87.5704" id="Fill-3" fill="#FFFFFF"></path>
+                                    <path d="M36.9062,87.5704 C36.9062,89.7444 35.1442,91.5064 32.9702,91.5064 C30.7972,91.5064 29.0352,89.7444 29.0352,87.5704 C29.0352,85.3964 30.7972,83.6344 32.9702,83.6344 C35.1442,83.6344 36.9062,85.3964 36.9062,87.5704 Z" id="Stroke-5" stroke="#000000" stroke-width="3"></path>
+                                    <mask id="mask-2" fill="white">
+                                        <use xlink:href="#path-1"></use>
+                                    </mask>
+                                    <g id="Clip-8"></g>
+                                    <polygon id="Fill-7" fill="#FFFFFF" mask="url(#mask-2)" points="7.497 76.726 58.548 76.726 58.548 7.5 7.497 7.5"></polygon>
+                                    <path d="M5.997,78.226 L60.048,78.226 L60.048,6 L5.997,6 L5.997,78.226 Z M8.997,75.226 L57.048,75.226 L57.048,9 L8.997,9 L8.997,75.226 Z" id="Fill-9" fill="#000000" mask="url(#mask-2)"></path>
+                                    <path d="M7.4267,27.1446 L58.6187,27.1446" id="Stroke-10" stroke="#000000" stroke-width="3" mask="url(#mask-2)"></path>
+                                    <polyline id="Stroke-11" stroke="#000000" stroke-width="3" mask="url(#mask-2)" points="15.1635 61.1407 20.3095 51.5577 25.3465 60.3657 32.9995 40.7687 41.4195 60.3657 45.8775 48.0357 51.8225 61.4657"></polyline>
+                                    <path d="M12.025,22.624 L22.649,22.624 L22.649,12 L12.025,12 L12.025,22.624 Z M15.025,19.624 L19.649,19.624 L19.649,15 L15.025,15 L15.025,19.624 Z" id="Fill-12" fill="#000000" mask="url(#mask-2)"></path>
+                                    <path d="M44.1552,14.9415 L53.7882,14.9415" id="Stroke-13" stroke="#000000" stroke-width="3" mask="url(#mask-2)"></path>
+                                    <path d="M44.1552,19.6827 L53.7882,19.6827" id="Stroke-14" stroke="#000000" stroke-width="3" mask="url(#mask-2)"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
