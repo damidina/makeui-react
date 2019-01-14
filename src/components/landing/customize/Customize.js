@@ -21,7 +21,7 @@ class Customize extends React.Component {
     charging: false,
     complete: false,
     loading: false,
-    selectOptions: ['Select Purchase Option', '$10 for a one time download', '$25 for a one year unlimited download'],
+    selectOptions: ['Select Purchase Option', '$10 for a one time download', '$55 for a one year unlimited download'],
     currentColor: '',
     tooltipVis: true,
   };
