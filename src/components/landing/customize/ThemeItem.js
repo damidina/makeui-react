@@ -33,12 +33,6 @@ const ThemeItem = (props) => {
         onClick={props.onThemeSelect}
         className={props.currentTheme === props.value ? "theme-button theme-button--right selected-theme" : "theme-button theme-button--right"}
       >
-        {
-          props.currentTheme === props.value
-            ? <img className="theme-button--image" src="/images/tiny-selected-icon.svg" />
-            : <img className="theme-button--image" src="/images/tiny-select-icon.svg" />
-
-        }
         {props.currentTheme === props.value ? 'Selected!' : 'Select'}
       </button>
     </div>
