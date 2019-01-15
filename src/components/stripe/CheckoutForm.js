@@ -10,11 +10,11 @@ class CheckoutForm extends Component {
       emailValid: true,
       once: {
         title: 'One Time Download',
-        amount: '$10'
+        amount: '$3'
       },
       unlimited: {
         title: 'Unlimited Download',
-        amount: '$20'
+        amount: '$10'
       },
       emailFocusBorder: '3px solid #000'
     }

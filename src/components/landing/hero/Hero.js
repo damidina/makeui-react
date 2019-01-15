@@ -29,7 +29,7 @@ class Hero extends React.Component {
         <a className="btn-test hide-mobile" style={{ cursor: 'pointer', zIndex: '999', right: 0, position: 'absolute', }} onClick={this.props.onTestItOutClick}>Test it out!</a>
         <div className="tagline">
           <p>
-            Styled <br className="hide-desktop" />Sketch{" "}
+            Customize your <br className="hide-desktop" />Sketch{" "}
             <br className="hide-mobile" />UI Kits for quick prototyping
         </p>
           <a style={{ cursor: 'pointer', zIndex: '999' }} onClick={this.props.onTestItOutClick} className="btn-test hide-desktop">
