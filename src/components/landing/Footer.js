@@ -37,11 +37,11 @@ class Footer extends React.Component {
               <MediaQuery minWidth={500}>
                 {(match) => {
                   if (match) {
-                    return <p style={feedback} className="center-text">Have questions or feedback? <a style={bold} className="underline" href="mailto:dami@tomyum.design"> Contact us</a></p>
+                    return <p style={feedback} className="center-text">Have questions or feedback? <a style={bold} className="underline" href="mailto:dami@tomyum.design"> Contact us.</a></p>
                   } else {
                     return <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                       <p style={feedback} className="center-text">Have questions or feedback?</p>
-                      <a style={{ ...bold, marginBottom: '20px' }} className="underline" href="mailto:dami@tomyum.design"> Contact us</a>
+                      <a style={{ ...bold, marginBottom: '20px' }} className="underline" href="mailto:dami@tomyum.design"> Contact us.</a>
                     </div>
                   }
                 }}
@@ -49,7 +49,7 @@ class Footer extends React.Component {
             </div>
             <div>
               <p style={fine} className="center-text">Created by <a style={bold} href="http://tomyum.design/" target="_blank" rel="nofollow noopener noreferrer">TomYum</a> and designed by <a style={bold} href="https://equalparts.studio/" target="_blank" rel="nofollow noopener noreferrer">Equal Parts Studio</a>.</p>
-              <p style={fine} className="center-text">Copyright &copy; 2018 MakeUI. All rights reserved.</p>
+              <p style={fine} className="center-text">Copyright &copy; 2019 MakeUI. All rights reserved.</p>
             </div>
           </div>
         </div>

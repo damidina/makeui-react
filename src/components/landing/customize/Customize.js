@@ -91,7 +91,7 @@ class Customize extends React.Component {
     }
   };
 
-  /* 
+  /*
    * This method is passed to the modal.
    * It is called when the user submits
    * the form with the correct information.
@@ -109,7 +109,7 @@ class Customize extends React.Component {
     this.setState(({ complete: true }))
   };
 
-  /* 
+  /*
    * This method is only called when the
    * user is authenticated and the user has
    * an unlimited tier
@@ -224,8 +224,8 @@ class Customize extends React.Component {
                     <p style={{ marginTop: '4px', lineHeight: '24px' }} className="description">We accept credit cards through our secure third party provider Stripe.</p>
                     {
                       this.props.auth.isAuthenticated
-                        ? <p style={{ marginTop: '4px', lineHeight: '24px' }} className="description">{this.props.auth.userInfo.email} <a onClick={this.props.signOut} style={{ textDecoration: 'none', color: 'black', fontWeight: 'bold' }} className="underline">Sign out</a></p>
-                        : <p style={{ marginTop: '4px', lineHeight: '24px' }} className="description">Already have an account? <a onClick={this.showSignIn} style={{ textDecoration: 'none', color: 'black', fontWeight: 'bold' }} className="underline">Sign in</a></p>
+                        ? <p style={{ marginTop: '4px', lineHeight: '24px' }} className="description">{this.props.auth.userInfo.email} <a onClick={this.props.signOut} style={{ textDecoration: 'none', color: 'black', fontWeight: 'bold' }} className="underline">Sign out.</a></p>
+                        : <p style={{ marginTop: '4px', lineHeight: '24px' }} className="description">Already have an account? <a onClick={this.showSignIn} style={{ textDecoration: 'none', color: 'black', fontWeight: 'bold' }} className="underline">Sign in.</a></p>
                     }
                   </div>
                 </div>
@@ -245,7 +245,7 @@ class Customize extends React.Component {
                         : (this.props.checkout.checked === 'unlimited'
                           ? 'Upgrade'
                           : 'Purchase again'))
-                      : 'Purchase'
+                      : 'Buy and Download Your Kit'
                   }
                 </button>
 

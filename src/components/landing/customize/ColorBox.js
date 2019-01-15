@@ -80,7 +80,7 @@ class ColorBox extends React.Component {
     }
 
     const primaryText = "This is usually your brand color that is applied to important parts of the UI.";
-    const secondaryText = "Choose a color that compliments your primary color. This will be applied to less important call-to-actions.";
+    const secondaryText = "Choose a color that compliments your primary color. This will be applied to less important calls to action.";
 
     return (
       <div ref={r => this.colorBox = r} className="color-box">
@@ -138,4 +138,3 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 export default connect(undefined, mapDispatchToProps)(ColorBox);
-

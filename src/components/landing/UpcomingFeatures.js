@@ -32,7 +32,7 @@ const UpcomingFeatures = (props) => {
           <div className="img-box-resp">
             <img src="images/MakeUI_Icons-Layouts.svg" />
           </div>
-          <h2 className="sub-heading black center-text" style={{ marginTop: '20px' }}>LAYOUTS</h2>
+          <h2 className="sub-heading black center-text" style={{ marginTop: '20px' }}>LAYOUTS PREVIEW</h2>
         </div>
         <div className="grid-3-xs flex-column align-center">
           <div className="img-box-resp">

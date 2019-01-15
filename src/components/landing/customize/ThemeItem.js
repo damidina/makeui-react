@@ -13,7 +13,7 @@ const ThemeItem = (props) => {
           <p className="theme-author">
             {
               props.authorLink
-                ? <a href={props.authorLink} target="_blank" rel="nofollow noopener noreferrer" style={{ textDecoration: 'none', color: 'black' }}>By: {props.author}</a>
+                ? <a href={props.authorLink} target="_blank" rel="nofollow noopener noreferrer" style={{ textDecoration: 'none', color: 'black' }}>By {props.author}</a>
                 : `By: ${props.author}`
             }
           </p>

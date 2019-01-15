@@ -5,7 +5,7 @@ const CustomizeHeader = () => (
   <div>
     <div className="content-container flex-column" style={{ padding: '32px' }}>
       <div className="center-h">
-        <h1 className="section-heading--margin-small black center-text">Make your UI Kit</h1>
+        <h1 className="section-heading--margin-small black center-text">Make Your UI Kit</h1>
       </div>
       <div className="center-h">
         <MediaQuery maxWidth={460}>

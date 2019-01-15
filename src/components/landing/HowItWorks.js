@@ -46,7 +46,7 @@ class HowItWorks extends React.Component {
                 <img src="images/MakeUI_Icons-Customize.svg" />
               </div>
               <h2 className="sub-heading white">CUSTOMIZE</h2>
-              <p className="paragraph white center-text" style={{ width: '250px' }}>Quickly input your brand identity style into our customizer.</p>
+              <p className="paragraph white center-text" style={{ width: '250px' }}>Pick a template and input your brand identity style in our customizer.</p>
             </div>
           }
           {this.state.displayAll &&
