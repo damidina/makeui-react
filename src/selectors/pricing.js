@@ -1,10 +1,10 @@
 export default {
   once: {
-    amount: 300,
+    amount: 500,
     description: 'One-time Download',
   },
   unlimited: {
-    amount: 1000,
+    amount: 1500,
     description: 'Unlimited Download',
   },
 };
