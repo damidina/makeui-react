@@ -40,7 +40,13 @@ class HowItWorks extends React.Component {
               : { marginBottom: '6rem', maxWidth: '100%' }
             }>How It Works</h1>
 
+
           {this.state.displayAll &&
+            <div class="videomain">
+            <video class="video-container video-container-overlay" autoplay="" loop="" muted="" data-reactid=".0.1.0.0">
+  <source type="video/mp4" data-reactid=".0.1.0.0.0" src="mov_bbb.mp4">
+</video>
+</div>
             <div className="grid-3 flex-column align-center">
               <div className="img-box">
                 <img src="images/MakeUI_Icons-Customize.svg" />
