@@ -27,9 +27,7 @@ const ThemeItem = (props) => {
         <p>{props.layouts}</p>
       </div>
 
-      <a className="theme-button theme-button--left" href={props.previewLink} target="_blank" rel="nofollow noopener noreferrer" style={{ textDecoration: 'none', color: 'black'}}>
-        <img className="theme-button--image" src="/images/tiny-preview-icon.svg" />Preview
-      </a>
+
       <button
         value={props.value}
         onClick={props.onThemeSelect}
