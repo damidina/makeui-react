@@ -40,7 +40,7 @@ class HowItWorks extends React.Component {
               : { marginBottom: '6rem', maxWidth: '100%' }
             }>How It Works</h1>
 
-            {someCondition &&
+            {this.state.someCondition &&
               <div className="videomain">
                 <video class="video-container video-container-overlay" autoplay="true" loop="true" muted="true" data-reactid=".0.1.0.0">
                   <source type="video/mp4" data-reactid=".0.1.0.0.0" src="images/makeuivideo.mp4" />
