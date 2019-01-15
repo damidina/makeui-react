@@ -31,7 +31,7 @@ class CheckoutFormModal extends React.Component {
               this.props.justLoading
                 ? <div className="makeui-loading"><div></div><div></div><div></div></div>
                 : (
-                  <StripeProvider apiKey="pk_test_hnMkmoqkvZxUjOrnEkPIVd80">
+                  <StripeProvider apiKey="pk_live_krBG1LpB1U9N2X2L45CEFBzT">
                     <div className="example">
                       <Elements>
                         <CheckoutForm

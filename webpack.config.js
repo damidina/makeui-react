@@ -10,7 +10,6 @@ if (process.env.NODE_ENV === 'test') {
     require('dotenv').config({ path: '.env.development' });
 }
 
-console.log(process.env.STRIPE_PUBLISH_KEY)
 module.exports = (env) => {
     const isProduction = env === 'production';
     const CSSExtract = new MiniCssExtractPlugin({ filename: 'styles.css' });
