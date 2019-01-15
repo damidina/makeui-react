@@ -4,6 +4,10 @@ video {
   margin: 0 auto;
 }
 
+.videomain {
+  grid-column: span 12;
+}
+
 
 .how-it-works {
   padding-top: $l-size;
