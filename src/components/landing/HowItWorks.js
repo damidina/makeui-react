@@ -44,7 +44,7 @@ class HowItWorks extends React.Component {
           {this.state.displayAll &&
             <div class="videomain">
             <video class="video-container video-container-overlay" autoplay="true" loop="true" muted="true" data-reactid=".0.1.0.0">
-  <source type="video/mp4" data-reactid=".0.1.0.0.0" src="images/makeuivideo.mp4">
+  <source type="video/mp4" data-reactid=".0.1.0.0.0" src="images/makeuivideo.mp4" />
 </video>
 </div>
             <div className="grid-3 flex-column align-center">
