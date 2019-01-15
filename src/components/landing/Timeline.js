@@ -16,9 +16,11 @@ const Timeline = () => {
           <div className="center-h flex-column timeline-peice">
             <h2 className="sub-heading white no-margin center-text">SPRING 2019 RELEASES</h2>
             <div className="flex-row-nobreak">
+              <p style={margin} className="white center-text">Adobe XD</p>
               <p style={margin} className="white center-text">Figma</p>
               <p style={margin} className="white center-text">React</p>
               <p style={margin} className="white center-text">Framer</p>
+              <p style={margin} className="white center-text">Invision Studio</p>
             </div>
           </div>
           <div className="hr-container"><hr align="center" /></div>

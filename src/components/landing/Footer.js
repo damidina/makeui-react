@@ -31,17 +31,17 @@ class Footer extends React.Component {
               <p style={{ margin: '15px', cursor: 'pointer' }} onClick={this.props.onMakeClick} className="sub-heading center-text">MAKE</p>
             </div>
             <div style={{margin: '15px', fontSize: '18px'}}>
-              <p className="center-text">Are you a designer building amazing themes?</p><p><a style={bold} className="underline" href="mailto:support@makeui.design"> Send us a message</a> to publish themes on our platform.</p>
+              <p className="center-text">Are you a designer building amazing themes?</p><p><a style={bold} className="underline" href="mailto:dami@tomyum.design"> Send us a message</a> to publish themes on our platform.</p>
             </div>
             <div>
               <MediaQuery minWidth={500}>
                 {(match) => {
                   if (match) {
-                    return <p style={feedback} className="center-text">Have questions or feedback? <a style={bold} className="underline" href="mailto:contact@makeui.com"> Contact us</a></p>
+                    return <p style={feedback} className="center-text">Have questions or feedback? <a style={bold} className="underline" href="mailto:dami@tomyum.design"> Contact us</a></p>
                   } else {
                     return <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                       <p style={feedback} className="center-text">Have questions or feedback?</p>
-                      <a style={{ ...bold, marginBottom: '20px' }} className="underline" href="mailto:contact@makeui.com"> Contact us</a>
+                      <a style={{ ...bold, marginBottom: '20px' }} className="underline" href="mailto:dami@tomyum.design"> Contact us</a>
                     </div>
                   }
                 }}

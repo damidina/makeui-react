@@ -21,7 +21,7 @@ class Customize extends React.Component {
     charging: false,
     complete: false,
     loading: false,
-    selectOptions: ['Select Purchase Option', '$10 for a one time download', '$55 for a one year unlimited download'],
+    selectOptions: ['Select Purchase Option', '$10 for a one time download', '$20 for a one year unlimited download'],
     currentColor: '',
     tooltipVis: true,
   };
@@ -145,13 +145,16 @@ class Customize extends React.Component {
             <h2 className="sub-heading black" style={{ marginBottom: '1.5rem' }}>COLORS</h2>
             <div className="color-box-container">
               {this.props.keys.map((key) => {
-                return (
-                  <ColorBox
-                    key={key}
-                    index={key}
-                    onChange={(key, value) => this.onColorChange(key, value)}
-                    color={this.props.config.colors[key]} />
-                )
+                if (key === "01" || key === "02") {
+                  return (
+                    <ColorBox
+                      key={key}
+                      index={key}
+                      onChange={(key, value) => this.onColorChange(key, value)}
+                      color={this.props.config.colors[key]} />
+                  )
+                }
+
               }
               )}
             </div>

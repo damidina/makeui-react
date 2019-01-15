@@ -10,25 +10,26 @@ const ThemeItem = (props) => {
         />
         <div>
           <div className="theme-title">{props.title}</div>
-        </div>
+          <p className="theme-author">
+            {
+              props.authorLink
+                ? <a href={props.authorLink} target="_blank" rel="nofollow noopener noreferrer" style={{ textDecoration: 'none', color: 'black' }}>By: {props.author}</a>
+                : `By: ${props.author}`
+            }
+          </p>
+          </div>
       </div>
       <div className="theme-description">
         <p>{props.description}</p>
-        <p className="theme-author">
-          {
-            props.authorLink
-              ? <a href={props.authorLink} target="_blank" rel="nofollow noopener noreferrer" style={{ textDecoration: 'none' }}>By: {props.author}</a>
-              : `By: ${props.author}`
-          }
-        </p>
       </div>
       <div className="theme-info">
         <p>{props.components}</p>
         <p>{props.layouts}</p>
       </div>
-      <button className="theme-button theme-button--left">
+
+      <a className="theme-button theme-button--left" href={props.previewLink} target="_blank" rel="nofollow noopener noreferrer" style={{ textDecoration: 'none', color: 'black'}}>
         <img className="theme-button--image" src="/images/tiny-preview-icon.svg" />Preview
-      </button>
+      </a>
       <button
         value={props.value}
         onClick={props.onThemeSelect}
