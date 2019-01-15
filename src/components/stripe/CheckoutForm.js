@@ -14,7 +14,7 @@ class CheckoutForm extends Component {
       },
       unlimited: {
         title: 'Unlimited Download',
-        amount: '$30'
+        amount: '$20'
       },
       emailFocusBorder: '3px solid #000'
     }
