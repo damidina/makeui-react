@@ -15,11 +15,10 @@ class Themes extends Component {
         <ThemeItem
           value={1}
           title="E-Commerce Theme"
-          components="150 Components"
-          layouts="20 Layouts"
           description="Choose this theme if you’re designing or prototyping an online shopping experience like an e-shop or a large marketplace platform."
           author="Rob Simpson"
           authorLink="https://www.robsimpson.me/"
+          previewLink="https://sketch.cloud/s/p4o2G"
           icon="/images/ecom-theme.png"
           currentTheme={this.props.theme}
           onThemeSelect={this.onThemeSelect}
@@ -27,10 +26,10 @@ class Themes extends Component {
         <ThemeItem
           value={2}
           title="Finance Mobile App Theme"
-          components="150 Components"
-          layouts="20 Layouts"
           description="This is the theme for you if you are designing a financial mobile app, but it can also be used for other apps with user profiles and payments."
           author="Dami Dina"
+          authorLink="http://damidina.com"
+          previewLink="https://sketch.cloud/s/RVbKx"
           icon="/images/finance-theme.png"
           currentTheme={this.props.theme}
           onThemeSelect={this.onThemeSelect}
@@ -38,10 +37,10 @@ class Themes extends Component {
         <ThemeItem
           value={3}
           title="Landing Page Set"
-          components="150 Components"
-          layouts="20 Layouts"
           description="Get this theme if you’re designing a landing page and want to test for performance. The variation of layouts will give you all the options."
-          author=""
+          author="Dami Dina"
+          authorLink="http://damidina.com"
+          previewLink="https://sketch.cloud/s/14zQn"
           icon="/images/landing-theme.png"
           currentTheme={this.props.theme}
           onThemeSelect={this.onThemeSelect}
