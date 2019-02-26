@@ -47,7 +47,7 @@ class Customize extends React.Component {
   componentDidUpdate() {
     if (this.props.shouldScroll) {
       const pos = this.customize.offsetTop;
-      this.customize.scrollIntoView({ behavior: "smooth", alignToTop: true });
+      this.customize.scrollIntoView({ behavior: "smooth", block: 'start'});
     }
   }
 

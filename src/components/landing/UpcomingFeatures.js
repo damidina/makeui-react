@@ -48,7 +48,7 @@ const UpcomingFeatures = (props) => {
         </div>
         <div style={{ flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }} className="center-h full-width">
           <p style={{ marginBottom: '0px' }} className="description">Have a feature suggestion?</p>
-          <p style={{ fontWeight: 'bold', marginTop: '8px', marginBottom: '60px' }} className="underline bold description"><a style={{ textDecoration: 'none', color: 'black', fontWeight: 'bold' }} className="underline" href="mailto:contact@makeui.com">Drop us a line.</a></p>
+          <p style={{ fontWeight: 'bold', marginTop: '8px', marginBottom: '60px' }} className="underline bold description"><a style={{ textDecoration: 'none', color: 'black', fontWeight: 'bold' }} className="underline" href="mailto:contact@makeui.design">Drop us a line.</a></p>
         </div>
       </div>
     </div>
