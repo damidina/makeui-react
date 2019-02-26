@@ -4,9 +4,8 @@ import ThemeItem from './ThemeItem';
 import { setTheme } from '../../../actions/generate';
 
 class Themes extends Component {
-
-  onThemeSelect = (e) => {
-    this.props.setTheme(parseInt(e.target.value));
+  onThemeSelect = (value) => {
+    this.props.setTheme(parseInt(value));
   };
 
   render() {
@@ -26,7 +25,7 @@ class Themes extends Component {
         <ThemeItem
           value={2}
           title="Finance Mobile App Theme"
-          description="This is the theme for you if you are designing a web application. It comes with all the essential components you require to get started."
+          description="This is the perfect theme if you're designing a financial mobile app. It can also be used for other apps with user profiles and payments."
           author="Dami Dina"
           authorLink="http://damidina.com"
           previewLink="https://upbeat-einstein-84e77d.netlify.com/starter.html"
