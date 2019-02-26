@@ -35,20 +35,22 @@
   height: 67px;
 }
 
+.theme-info {
+  display: flex;
+  flex-direction: column;
+}
+
 .theme-title {
-  margin-top: 32px;
+  margin-top: 28px;
   margin-right: 32px;
   grid-column: span 3;
-  height: 50px;
   font-size: 20px;
-  line-height: 25px;
   font-weight: 500;
 }
 
 .theme-author {
-  margin: 0px;
+  margin: 12px 0 0 0;
   font-size: 14px;
-  line-height: 26px;
   font-weight: 500;
   grid-column: span 3;
 }

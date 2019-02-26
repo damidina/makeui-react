@@ -8,7 +8,7 @@ const ThemeItem = (props) => {
             props.icon ? props.icon : "/images/theme-icon.svg"
           }
         />
-        <div>
+        <div className="theme-info">
           <div className="theme-title">{props.title}</div>
           <p className="theme-author">
             {
@@ -17,7 +17,7 @@ const ThemeItem = (props) => {
                 : `By: ${props.author}`
             }
           </p>
-          </div>
+         </div>
       </div>
       <div className="theme-description">
         <p>{props.description}</p>
