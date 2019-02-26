@@ -48,7 +48,7 @@ class HowItWorks extends React.Component {
                 <img src="images/MakeUI_Icons-Customize.svg" />
               </div>
               <h2 className="sub-heading white">CUSTOMIZE</h2>
-              <p className="paragraph white center-text" style={{ width: '250px' }}>Pick a template and input your brand identity style in our customizer.</p>
+              <p className="paragraph white center-text" style={{ width: '250px' }}>Quickly input your brand identity style into our customizer.</p>
             </div>
           }
           {this.state.displayAll &&
@@ -57,7 +57,7 @@ class HowItWorks extends React.Component {
                 <img src="images/MakeUI_Icons-Download.svg" />
               </div>
               <h2 className="sub-heading white">DOWNLOAD</h2>
-              <p className="paragraph white center-text" style={{ width: '250px' }}>Select your package, purchase, and download your UI kit.</p>
+              <p className="paragraph white center-text" style={{ width: '250px' }}>Select your package, purchase and download your UI kit.</p>
             </div>
           }
           {this.state.displayAll &&
@@ -94,7 +94,7 @@ class HowItWorks extends React.Component {
                     <img src="images/MakeUI_Icons-Download.svg" />
                   </div>
                   <h2 className="sub-heading white">DOWNLOAD</h2>
-                  <p className="paragraph white center-text" style={{ width: '60vw' }}>Select your package, purchase, and download your UI kit.</p>
+                  <p className="paragraph white center-text" style={{ width: '60vw' }}>Select your package, purchase and download your UI kit.</p>
                 </div>
 
                 <div className="grid-3 flex-column align-center">

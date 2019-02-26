@@ -12,10 +12,10 @@ const CompleteModal = (props) => {
         <h1 className="modal-title--complete">Thank you for your purchase!</h1>
       </div>
       <div>
-        <p style={{ textAlign: 'left', marginBottom: '25px' }}>{message[props.message]}</p>
+        <p style={{ textAlign: 'left', lineHeight: '35px', marginBottom: '25px' }}>{message[props.message]}</p>
       </div>
       <div>
-        <p style={{ textAlign: 'left' }}>Share MakeUI with your peers</p>
+        <p style={{ textAlign: 'left', marginTop: '64px' }}>Share MakeUI with your peers</p>
         <div style={{ display: 'flex', flexDirection: 'row' }}>
           <div className="social-icon--small"><img src="/images/Twitter.svg" /></div>
           <div className="social-icon--small"><img src="/images/Facebook.svg" /></div>

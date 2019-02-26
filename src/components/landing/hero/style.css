@@ -62,7 +62,7 @@ div {
         left: 34px; } }
     .hero-section .tagline p {
       font-family: 'tenso',sans-serif;
-      font-weight: 700;
+      font-weight: 500;
       font-style: italic;
       font-size: calc(16px + 3vw); }
       @media only screen and (max-width: 600px) {

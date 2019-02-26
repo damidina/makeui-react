@@ -31,7 +31,7 @@ class Footer extends React.Component {
               <p style={{ margin: '15px', cursor: 'pointer' }} onClick={this.props.onMakeClick} className="sub-heading center-text">MAKE</p>
             </div>
             <div style={{margin: '15px', fontSize: '18px'}}>
-              <p className="center-text">Are you a designer building amazing themes?</p><p><a style={bold} className="underline" href="mailto:dami@tomyum.design"> Send us a message</a> to publish themes on our platform.</p>
+              <p className="center-text" style={{ lineHeight: '27px' }}>Are you a designer building amazing themes?</p><p><a style={bold} className="underline" href="mailto:dami@tomyum.design"> Send us a message</a> to publish themes on our platform.</p>
             </div>
             <div>
               <MediaQuery minWidth={500}>

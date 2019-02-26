@@ -47,7 +47,7 @@ class Customize extends React.Component {
   componentDidUpdate() {
     if (this.props.shouldScroll) {
       const pos = this.customize.offsetTop;
-      this.customize.scrollIntoView({ behavior: "smooth", alignToTop: true });
+      this.customize.scrollIntoView({ behavior: "smooth", block: 'start'});
     }
   }
 
@@ -186,7 +186,7 @@ class Customize extends React.Component {
               </div>
             </div>
             <p style={{ fontWeight: 'bold', marginBottom: 0, marginTop: '20px' }} className="description-header">Corners</p>
-            <p style={{ marginTop: '4px', lineHeight: '24px' }} className="description">The radius will be applied to the corners of borders, buttons, and form fields.</p>
+            <p style={{ marginTop: '4px', lineHeight: '24px' }} className="description">The radius will be applied to the corners of borders, buttons and form fields.</p>
             <p style={{ fontWeight: 'bold', marginBottom: 0, marginTop: '20px' }} className="description-header">Predefined Corners</p>
             <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
               {/* find pdc at bottom of this file */}
@@ -221,7 +221,7 @@ class Customize extends React.Component {
                 <div className="payment-copy">
                   <div style={{ display: 'flex', flexDirection: 'column' }}>
                     <p style={{ fontWeight: 'bold', marginBottom: 0 }} className="description-header">Payment</p>
-                    <p style={{ marginTop: '4px', lineHeight: '24px' }} className="description">We accept credit cards through our secure third party provider Stripe.</p>
+                    <p style={{ marginTop: '4px', lineHeight: '24px' }} className="description">We accept credit cards through our secure third party provider, Stripe.</p>
                     {
                       this.props.auth.isAuthenticated
                         ? <p style={{ marginTop: '4px', lineHeight: '24px' }} className="description">{this.props.auth.userInfo.email} <a onClick={this.props.signOut} style={{ textDecoration: 'none', color: 'black', fontWeight: 'bold' }} className="underline">Sign out.</a></p>
@@ -259,7 +259,7 @@ class Customize extends React.Component {
                 <div className="payment-copy" style={this.props.checkout.tier === 'unlimited' ? { gridColumn: 'span 12' } : {}}>
                   <div style={{ display: 'flex', flexDirection: 'column' }}>
                     <p style={{ fontWeight: 'bold', fontSize: '18px', marginBottom: 0 }} className="description-header">Payment</p>
-                    <p style={{ marginTop: '4px', lineHeight: '24px' }} className="description">We accept credit cards through our secure third party provider Stripe.</p>
+                    <p style={{ marginTop: '4px', lineHeight: '24px' }} className="description">We accept credit cards through our secure third party provider, Stripe.</p>
                     {
                       this.props.auth.isAuthenticated
                         ? (

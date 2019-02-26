@@ -26,6 +26,12 @@ class CheckoutForm extends Component {
     })
   };
 
+  emailOnBlur() {
+    this.setState({
+        emailFocusBorder: `3px solid #000`
+    })
+  }
+
   onEmailChange = (e) => {
     const email = e.target.value;
     this.setState({ email });
@@ -66,12 +72,13 @@ class CheckoutForm extends Component {
               value={this.state.email}
               onChange={this.onEmailChange}
               onFocus={ () => this.emailOnFocus() }
+              onBlur={ () => this.emailOnBlur() }
             />
           </div>
           <div className="credit-card-group">
             <p style={{ alignSelf: "flex-start", fontWeight: 'bold' }}>CREDIT CARD</p>
             <div className="card-number">
-              <CardNumberElement placeholder="Card number" className="card-number-input" />
+              <CardNumberElement placeholder="Card number" className="card-number-input" style={{ border: "3px solid green" }} />
             </div>
             <div className="card-exp-ccv">
               <CardExpiryElement className="exp" />

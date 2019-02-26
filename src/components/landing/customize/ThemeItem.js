@@ -8,7 +8,7 @@ const ThemeItem = (props) => {
             props.icon ? props.icon : "/images/theme-icon.svg"
           }
         />
-        <div>
+        <div className="theme-info">
           <div className="theme-title">{props.title}</div>
           <p className="theme-author">
             {
@@ -17,7 +17,7 @@ const ThemeItem = (props) => {
                 : `By: ${props.author}`
             }
           </p>
-          </div>
+         </div>
       </div>
       <div className="theme-description">
         <p>{props.description}</p>
@@ -30,9 +30,8 @@ const ThemeItem = (props) => {
       <a className="theme-button theme-button--left" href={props.previewLink} target="_blank" rel="nofollow noopener noreferrer" style={{ textDecoration: 'none', color: 'black'}}>
         <img className="theme-button--image" src="/images/tiny-preview-icon.svg" />Preview
       </a>
-      <button
-        value={props.value}
-        onClick={props.onThemeSelect}
+      <div
+        onClick={() => props.onThemeSelect(props.value)}
         className={props.currentTheme === props.value ? "theme-button theme-button--right selected-theme" : "theme-button theme-button--right"}
       >
         {
@@ -42,7 +41,7 @@ const ThemeItem = (props) => {
 
         }
         {props.currentTheme === props.value ? 'Selected!' : 'Select'}
-      </button>
+      </div>
     </div>
   )
 }
