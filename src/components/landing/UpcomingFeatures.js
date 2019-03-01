@@ -36,9 +36,9 @@ const UpcomingFeatures = (props) => {
         </div>
         <div className="grid-3-xs flex-column align-center">
           <div className="img-box-resp">
-            <img src="images/marketplaceicon.png" style={{width: '100px'}} />
+            <img src="images/marketplaceicon.png" className="theme-marketplace-icon"/>
           </div>
-          <h2 className="sub-heading black center-text" style={{ marginTop: '20px' }}>THEME MARKETPLACE</h2>
+          <h2 className="sub-heading black center-text" style={{ marginTop: '20px', padding: '0 16px' }}>THEME MARKETPLACE</h2>
         </div>
         <div className="grid-3-xs flex-column align-center">
           <div className="img-box-resp">
@@ -52,7 +52,6 @@ const UpcomingFeatures = (props) => {
         </div>
       </div>
     </div>
-
   );
 }
 

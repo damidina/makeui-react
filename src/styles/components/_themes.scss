@@ -18,6 +18,16 @@
 
   @media only screen and (max-width: 738px) {
     grid-column: span 12;
+
+    .theme-button--left {
+      display: none;
+    }
+
+    .theme-button--right {
+      border-left: 0;
+      display: flex;
+      grid-column: span 4;
+    }
   }
 }
 

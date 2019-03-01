@@ -52,11 +52,16 @@ video {
   width: 100px;
   height: 100px;
   margin-top: 2rem;
+
+  .theme-marketplace-icon {
+    height: 100%;
+    width: 100%;
+  }
+
   @media only screen and (max-width: 650px) {
     width: 80px;
     height: 80px;
   }
-
 }
 
 .img-box-black {
@@ -80,6 +85,14 @@ video {
 .footer-container {
   margin-top: 5rem;
   margin-bottom: 5rem;
+
+  .footer-credits {
+    font-size: 12px;
+
+    @media only screen and (max-width: 650px) {
+      font-size: 10px;
+    }
+  }
 }
 
 .separate {
