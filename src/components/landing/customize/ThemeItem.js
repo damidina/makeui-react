@@ -17,7 +17,7 @@ const ThemeItem = (props) => {
                 : `By: ${props.author}`
             }
           </p>
-         </div>
+        </div>
       </div>
       <div className="theme-description">
         <p>{props.description}</p>
