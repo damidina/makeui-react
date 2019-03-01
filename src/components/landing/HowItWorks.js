@@ -1,5 +1,6 @@
 import React from 'react';
 import Carousel from 'nuka-carousel';
+import { connect } from 'react-redux';
 
 class HowItWorks extends React.Component {
 
@@ -111,9 +112,9 @@ class HowItWorks extends React.Component {
           {!this.state.displayAll &&
             <div className="full-width" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
               <div style={{ width: '80px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <div className="circle-pagination" style={this.state.currentSlide === 1 ? selected : normal}></div>
-                <div className="circle-pagination" style={this.state.currentSlide === 2 ? selected : normal}></div>
-                <div className="circle-pagination" style={this.state.currentSlide === 3 ? selected : normal}></div>
+                <div className="circle-pagination" style={this.state.currentSlide === 1 ? this.selectedStyle() : normal}></div>
+                <div className="circle-pagination" style={this.state.currentSlide === 2 ? this.selectedStyle() : normal}></div>
+                <div className="circle-pagination" style={this.state.currentSlide === 3 ? this.selectedStyle() : normal}></div>
               </div>
             </div>
           }
@@ -121,16 +122,22 @@ class HowItWorks extends React.Component {
       </div>
     )
   }
+
+  selectedStyle() {
+    return {
+      border: '3px solid white',
+      background: this.props.background,
+    };
+  }
 }
 
-const selected = {
-  border: '3px solid white',
-  background: '#FFD692',
-};
+const mapStateToProps = (state) => ({
+  background: state.background,
+});
 
 const normal = {
   border: '3px solid white',
   background: 'black',
 }
 
-export default HowItWorks;
+export default connect(mapStateToProps)(HowItWorks);
