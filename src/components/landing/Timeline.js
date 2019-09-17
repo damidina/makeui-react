@@ -14,7 +14,7 @@ const Timeline = () => {
           </div>
           <div className="hr-container"><hr align="center" /></div>
           <div className="center-h flex-column timeline-peice">
-            <h2 className="sub-heading white no-margin center-text">SPRING 2019 RELEASES</h2>
+            <h2 className="sub-heading white no-margin center-text">SPRING 2020 RELEASES</h2>
             <div className="flex-row-nobreak">
               <p style={margin} className="white center-text">Adobe XD</p>
               <p style={margin} className="white center-text">Figma</p>
@@ -25,7 +25,7 @@ const Timeline = () => {
           </div>
           <div className="hr-container"><hr align="center" /></div>
           <div className="center-h flex-column timeline-peice">
-            <h2 className="sub-heading white no-margin center-text">SUMMER 2019</h2>
+            <h2 className="sub-heading white no-margin center-text">SUMMER 2020</h2>
             <div className="flex-row-nobreak">
               <p style={margin} className="white center-text">Shopify</p>
               <p style={margin} className="white center-text">WebFlow</p>

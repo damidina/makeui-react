@@ -17,7 +17,6 @@ class Themes extends Component {
           description="Choose this theme if you’re designing or prototyping an online shopping experience like an e-shop or a large marketplace platform."
           author="Rob Simpson"
           authorLink="https://www.robsimpson.me/"
-          previewLink="https://upbeat-einstein-84e77d.netlify.com/"
           icon="/images/ecom-theme.png"
           currentTheme={this.props.theme}
           onThemeSelect={this.onThemeSelect}
@@ -28,7 +27,6 @@ class Themes extends Component {
           description="This is the perfect theme if you're designing a financial mobile app. It can also be used for other apps with user profiles and payments."
           author="Dami Dina"
           authorLink="http://damidina.com"
-          previewLink="https://upbeat-einstein-84e77d.netlify.com/starter.html"
           icon="/images/landing-theme.png"
           currentTheme={this.props.theme}
           onThemeSelect={this.onThemeSelect}
@@ -39,7 +37,6 @@ class Themes extends Component {
           description="Get this theme if you’re designing a landing page and want to test for performance. The variation of layouts will give you all the options."
           author="Dami Dina"
           authorLink="http://damidina.com"
-          previewLink="https://upbeat-einstein-84e77d.netlify.com/landing.html"
           icon="/images/landing-theme.png"
           currentTheme={this.props.theme}
           onThemeSelect={this.onThemeSelect}
