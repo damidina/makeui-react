@@ -26,6 +26,10 @@ const ThemeItem = (props) => {
         <p>{props.components}</p>
         <p>{props.layouts}</p>
       </div>
+
+      <a className="theme-button theme-button--left" href={props.previewLink} target="_blank" rel="nofollow noopener noreferrer" style={{ textDecoration: 'none', color: 'black'}}>
+        <img className="theme-button--image" src="/images/tiny-preview-icon.svg" />Preview
+      </a>
       <div
         onClick={() => props.onThemeSelect(props.value)}
         className={props.currentTheme === props.value ? "theme-button theme-button--right selected-theme" : "theme-button theme-button--right"}
